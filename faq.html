@@ -1,0 +1,189 @@
+<html class="global desktop"><head><meta name="viewport" content="user-scalable=yes,width=device-width,initial-scale=1"><style type="text/css">html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}body{-webkit-text-size-adjust:none}</style><style type="text/css">*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}</style><meta name="viewport" content="initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="global.css">
+<title>Fairwaves</title>
+	</head>
+<body class="homepage">
+	<div class="wrapper">
+
+		<div id="header">
+					<div class="s1"></div>
+					<div class="menu">
+
+					<a href="index.html" class="home">Home</a>
+
+					<a href="faq.html" class="faq">FAQ</a>
+
+
+					</div>
+					<div class="logo">
+					<img class="imglogo" alt=""  src="logo.png">
+					</div>
+
+		</div>
+
+		<div id="content">
+
+			<div id="page_faq">
+				<div class="page_title">FAQ</div>
+				<div class="box">
+
+					  <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">01</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq">Does the units comes with the complete system to start working immediately?</h2>
+						  <center><p>Yes, you can start from the Network-In-The-Box configuration, everything you need for small isolated network in one unit.</p></center>
+
+
+						</div>
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">02</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq">How does the system handle handover between MultiBTS systems?</h2>
+						  <center><p>BSC on a separate server. We use intra BSC handover. How to set up, described below in technical chapter.</p></center>
+
+
+						</div>
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">03</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq">How is roaming handled?</h2>
+						  <center><p>It depends on the type of core network There are several options to implement and it is better to know your current situation and requirements.</p></center>
+
+
+						</div>
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">04</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq">What is your radius coverage?</h2>
+						  <center><p>up to 200 m with 200mW (no external apmlifier),
+                          up to 1-2 km with 1W output power,
+                          up to 10 km with 10W output ,
+                          NOTE: these figures are given as a reference. Coverage area will strongly depend on your local landscape and environment.</p></center>
+
+
+
+						</div>
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">05</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq">Do you have a specific simcards or usual simcards can be used?
+
+</h2>
+						  <center><p>Fairwaves base station could be configured to work with any SIM-cards. However it’s impossible to provide subscriber authentication and traffic encryption if you don’t know Ki secret key of your SIM-cards. If you operate a normal mobile network with encryption and subscriber authentication,you can set up only open network either get SIM-cards with known Ki keys to set up close network. You can buy a SIM-cards and program them.</p></center>
+
+
+
+						</div>
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">06</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq">What is capacity of the subscriber database?
+
+</h2>
+						  <center><p>A base station with one transceiver are able to handle from 200 subscribers (if you offer your subscribers a flat tariff with free local calls) to 500 (normal mode with tariffs still comfortable for subscribers). For example, with 10 000 subscribers you will need around 20 base stations. Please note this is very rough estimation.</p></center>
+
+
+
+						</div>
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">07</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq">Will the UMTRX work with UMTS?
+
+</h2>
+						  <center><p>UmTRX will be able to work with UMTS, but we don't have a software implementation for that.
+</p></center>
+
+
+
+						</div>
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">08</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq">Do you have a stable branch/release set for UmTRX?
+
+</h2>
+						  <center><p>
+<a href="https://github.com/fairwaves/UHD-Fairwaves.git">UHD-Fairwaves</a> (umtx_update)
+  <a href="http://git.osmocom.org/osmo-trx">Osmo-trx</a> (fairwaves/master)
+  <a href="http://git.osmocom.org/libosmocore">libosmocore</a> (fairwaves/master)
+  <a href="http://git.osmocom.org/libosmo-abis">libosmo-abis</a> (fairwaves/master)
+  <a href="http://git.osmocom.org/openbsc">openBSC</a> (fairwaves/master)
+  <a href="http://git.osmocom.org/osmo-bts">osmoBTS</a> (fairwaves/master)
+</center></p>
+
+                        </div>
+
+
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">09</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq">Is it possible to connect through the ISUP/SIP-T as a MSC-MSC?
+
+</h2>
+						  <center><p>No, it doesn't implemented yet.
+</p></center>
+
+
+
+						</div>
+
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">10</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq">Does the SGSN and GGSN are implemented?
+
+</h2>
+						  <center><p>Yes, osmo-sgsn and openggsn. This is not a complete implementation of SGSN and GGSN. For more information refer to <a href="http://openbsc.osmocom.org/trac/wiki/OpenBSC_GPRS">Osmocom</a> .</p></center>
+
+
+
+						</div>
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">11</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq"> How to assign different external DIDs to different mobile phones?
+
+</h2>
+						  <center><p>Create multiple gateways and multiple rules in the dialplan. But we're not recommend that for this case. Usually people use SIP trunks, you need just routing appropriate calls to the trunk with a single rule.
+</p></center>
+
+
+
+						</div>
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">12</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq"> How and where Freeswitch talk to LCR?
+
+</h2>
+						  <center><p>FreeSWITCH talk to LCR throuh the SIP protocol
+(path: etc/lcr/interface.conf)</p></center>
+
+
+
+						</div>
+
+
+		<div id="footer">
+		<div class="s1"></div>
+		<h2 class="font_2">Fairwaves inc 2015</h2>
+		</div>
+
+	</div>
+
+
+</body>
+</html>
