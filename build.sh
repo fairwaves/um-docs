@@ -7,8 +7,8 @@ WATCH_FILE=/tmp/update_docs.github
 echo -n '' > $WATCH_FILE
 
 cd `dirname "$0"`
-/usr/bin/git checkout .
-/usr/bin/git pull origin
+/usr/bin/git checkout --quiet .
+/usr/bin/git pull --quiet origin 
 
 # add front matter to all markdown files
 IFS="
