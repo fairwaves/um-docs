@@ -14,6 +14,7 @@
 
 					<a href="faq.html" class="faq">FAQ</a>
 
+                    <a href="how_to's.html" class="how_to's">How to</a>
 
 					</div>
 					<div class="logo">
@@ -74,7 +75,7 @@
 						  <h2 class="faq">Do you have a specific simcards or usual simcards can be used?
 
 </h2>
-						  <center><p>Fairwaves base station could be configured to work with any SIM-cards. However it is impossible to provide subscriber authentication and traffic encryption if you do not know Ki secret key of your SIM-cards. If you operate a normal mobile network with encryption and subscriber authentication,you can set up only open network either get SIM-cards with known Ki keys to set up close network. You can buy a SIM-cards and program them.</p></center>
+						  <center><p>Fairwaves base station could be configured to work with any SIM-cards. However it’s impossible to provide subscriber authentication and traffic encryption if you don’t know Ki secret key of your SIM-cards. If you operate a normal mobile network with encryption and subscriber authentication,you can set up only open network either get SIM-cards with known Ki keys to set up close network. You can buy a SIM-cards and program them.</p></center>
 
 
 
@@ -108,16 +109,10 @@
                         <div class="grid_4">
 						 <h5 style="text-align: center;" class="font_5">08</h5>
 						  <div class="s2"></div>
-						  <h2 class="faq">Do you have a stable branch/release set for UmTRX?
+						  <h2 class="faq">How do you handle SMS and GPRS in your systems?
 
 </h2>
-						  <center><p>
-<a href="https://github.com/fairwaves/UHD-Fairwaves.git">UHD-Fairwaves</a> (umtx_update)
-  <a href="http://git.osmocom.org/osmo-trx">Osmo-trx</a> (fairwaves/master)
-  <a href="http://git.osmocom.org/libosmocore">libosmocore</a> (fairwaves/master)
-  <a href="http://git.osmocom.org/libosmo-abis">libosmo-abis</a> (fairwaves/master)
-  <a href="http://git.osmocom.org/openbsc">openBSC</a> (fairwaves/master)
-  <a href="http://git.osmocom.org/osmo-bts">osmoBTS</a> (fairwaves/master)
+						  <center><p> Fairwaves base stations are able to provide basic services: Voice and SMS also Fairwaves provide GPRS, in terms of quality it disabled in production systems to get more capacity for the voice and SMS either that’s too slow to use it as data service. We considering to use WiFi instead of GPRS.
 </center></p>
 
                         </div>
@@ -166,17 +161,83 @@
                         <div class="grid_4">
 						 <h5 style="text-align: center;" class="font_5">12</h5>
 						  <div class="s2"></div>
-						  <h2 class="faq"> How and where Freeswitch talk to LCR?
+						  <h2 class="faq"> How does subscribers pay bills in terms of village service?
 
 </h2>
-						  <center><p>FreeSWITCH talk to LCR throuh the SIP protocol
-(path: etc/lcr/interface.conf)</p></center>
+						  <center><p>1. express card payment 2. physically bring money to the person who have an access for the enroll payments.</p></center>
+
+
+
+						</div>
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">13</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq"> How does subscribers provision to network, SIM Cards or Phone?
+
+</h2>
+						  <center><p>Sim card. You can program your own sim cards and that's would be a closed network either you can use existed sim, then network would be open.
+</p></center>
 
 
 
 						</div>
 
 
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">14</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq"> How is the billing system interconnected with MNO?
+
+</h2>
+						  <center><p>It depend from the architecture but in general: fairwaves billing system can be integrated with MNO through the camel and diametr protocol.</p></center>
+
+
+
+						</div>
+
+
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">15</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq"> Is it possible to connect external BTS to the network through A-bis interface?
+
+</h2>
+						  <center><p>We don’t support external BTS connection through A-bis interface, because of this architecture is not fault-tolerant from the connection lost. It does not have local calls switching, there is no a simple ways of backhaul optimization, that brings an extra expenses for the village connection through the VSAT.</p></center>
+
+
+
+						</div>
+
+
+                         <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">16</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq"> Is it possible to collect a segment of independent OpenBTS and OsmoBTS under OpenBSC/SIP controller for the Handover modeling?
+
+</h2>
+						  <center><p>Yes, you need just a two UmTRX</p></center>
+
+
+
+						</div>
+
+
+                         <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">17</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq"> Does the SGSN and GGSN are implemented?
+
+</h2>
+						  <center><p>Yes, osmo-sgsn and openggsn. This is not a complete implementation of SGSN and GGSN. For more information refer to <a href="http://openbsc.osmocom.org/trac/wiki/OpenBSC_GPRS">Osmocom</a>.</p></center>
+
+
+
+						</div>
+
+
+
+    <div>
 		<div id="footer">
 		<div class="s1"></div>
 		<h2 class="font_2">Fairwaves inc 2015</h2>

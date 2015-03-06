@@ -15,7 +15,9 @@
 					<a href="index.html" class="home">Home</a>
 					
 					<a href="faq.html" class="faq">FAQ</a>
-					
+
+                    <a href="how_to's.html" class="how_to's">How to</a> 
+
 					
 					</div>
 					<div class="logo">
@@ -486,7 +488,7 @@ More information about specification, protocol stack, security and etc, you can 
 <p><img src="http://s017.radikal.ru/i414/1501/51/eac454667177.png" /></p>
 <p>Independent Base stations (UmSITE) can be clustered through a distributed HLR connected via peer to peer links</p>
 <p><img src="http://s020.radikal.ru/i709/1501/40/96d0dd3429eb.png" /></p>
-<h3>Core Network</h3>
+<h4>Core Network</h4>
 <p>The <strong>UmCORE</strong> technology provides synchronization across distributed UmSITE installations, and enables integration with existing networks via VoIP and SS7.</p>
 <p>Features include:</p>
 <ul>
@@ -613,10 +615,10 @@ Possible values are:<br />
 <p>There are two parameters which should be set correctly in BTS configuration:</p>
 <ul>
 <li>
-<p>1. ipa unit-id - each BTS should have unique ipa unit-id</p>
+<p>1. <code>ipa unit-id</code> - each BTS should have unique ipa unit-id</p>
 </li>
 <li>
-<p><strong>2. oml remote-ip</strong> - BSC ip address</p>
+<p><strong>2. <code>oml remote-ip</code></strong> - BSC ip address</p>
 </li>
 </ul>
 <p><strong>path:</strong> <em>etc/osmocom/osmo-bts.cfg</em></p>
@@ -678,13 +680,13 @@ Possible values are:<br />
 <p>There are three parameters which should be checked in BSC configuration:</p>
 <ul>
 <li>
-<p><strong>1. ip.access unit_id</strong> - you should set the same unit id in the BSC as well as in BTS, each BTS should have unique ipa unit-id</p>
+<p><strong>1. <code>ip.access unit_id</code></strong> - you should set the same unit id in the BSC as well as in BTS, each BTS should have unique ipa unit-id</p>
 </li>
 <li>
-<p><strong>2. base_station<em>id</em>code</strong> - should be unique in location area &lt;0-63&gt;</p>
+<p><strong>2. <code>base_station_id_code</code></strong> - should be unique in location area &lt;0-63&gt;</p>
 </li>
 <li>
-<p><strong>3. neighbor-list mode automatic</strong></p>
+<p><strong>3. <code>neighbor-list mode automatic</code></strong></p>
 </li>
 </ul>
 <p><strong>path:</strong> <em>etc/osmocom/openbsc.cfg</em></p>
@@ -1042,7 +1044,7 @@ codec,iLBC,mod_ilbc
 <p>3. Semi- automatically from the Virtual Tele Type (VTY)</p>
 </li>
 </ol>
-<p>Subscribers are stored in /etc/osmocom/hlr.sqlite3, which is an SQLite database file. You are able to view or change the database with sqlite3 command.The easiest way to add, assign, and change subscriber properties is semi-automatically through VTY.</p>
+<p>Subscribers are stored in /etc/osmocom/hlr.sqlite3, which is an SQLite database file. You are able to view or change the database with sqlite3 command.The easiest way to add, assign, and change subscriber’s properties is semi-automatically through VTY.</p>
 <b>Create the subscriber IMSI 9875648374658</b>
 <pre><code>    OpenBSC# subscriber create imsi 9875648374658
 </code></pre>
