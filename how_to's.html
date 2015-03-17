@@ -37,8 +37,11 @@
 		<a href="#4. Osmo-TRX rebuild (optional)"> 4. Osmo-TRX rebuild (optional)</a>
 		<a href="#5. How Freeswitch connects to LCR">5. How Freeswitch connects to LCR</a>
 		<a href="#6. How to set up a MultiBTS">6. How to set up a MultiBTS</a>
-		<a href="#7. How to change unit ID">7. How to change unit ID</a></li>
-		<a href="#8. How to get GPRS up">8. How to get GPRS up</a></li>
+		<a href="#7. How to change unit ID">7. How to change unit ID</a>
+		<a href="#8. How to get GPRS up">8. How to get GPRS up</a>
+        <a href="#9. UmTRX 2.2 Box STL file ">9. UmTRX 2.2 Box STL file </a>
+        <a href="#10. UmDESK displaying problem">10. UmDESK displaying problem</a>
+
 		</ul>
       </div>
       <div class="span9 main">
@@ -748,6 +751,24 @@ autoreconf -i
 make
 cd ..
 </code></pre>
+
+<a name="9. UmTRX 2.2 Box STL file"></a><h4>9. UmTRX 2.2 Box STL file<a class="anchorlink" href="#9. UmTRX 2.2 Box STL file"></a></h4>
+
+<p>Here is the 3D box model for the UmTRX 2.2 </p>
+<p><a href="https://drive.google.com/file/d/0B3xPODI_0rbmamM3b0JpYnhKT0E/view?usp=sharing">Google disk</a></p>
+<p><a href="https://cad.onshape.com/documents/edb24e899c054f1fba13e4f7/w/44b26294dc3e4644871fb306/e/97db57be8e74499b820e58ec">OnShape</a> </p>
+
+<a name="10. UmDESK displaying problem"></a><h4>10. UmDESK displaying problem<a class="anchorlink" href="#10. UmDESK displaying problem"></a></h4>
+
+<p>Small inch monitors might have a displaying problem with a console mode resolution. </p>
+<p>in order to disable Linux Kernel Framebuffer for this graphics driver </p>
+<p>just add</p>
+<pre><code>blacklist gma500_gfx
+</code></pre>
+
+<p>line to</p>
+<p><em>/etc/modprobe.d/blacklist-framebuffer.conf</em></p>
+
 
 
 
