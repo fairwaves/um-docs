@@ -983,6 +983,18 @@ add a newly created gateway without restarting the entire profile is:</p>
 <pre><code>    freeswitch@internal&gt; /exit
 </code></pre>
 
+<h4>FreeSWITCH Traces</h4>
+<p>For the calls tracing:</p>
+<p>Run <strong>fs_cli</strong></p>
+<pre><code>    shell&gt; ./fs_cli
+</code></pre>
+
+<p>Type:</p>
+<pre><code>    freeswitch@internal&gt;  sofia global siptrace on
+</code></pre>
+
+<p>Logs show up when the calls will be made.</p>
+
 <h4>3.2 Codecs in FreeSWITCH</h4>
 <p>FreeSWITCH supports a large number of VoIP compression codecs. </p>
 <pre><code>type,name,ikey
