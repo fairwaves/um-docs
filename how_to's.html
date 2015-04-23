@@ -345,7 +345,7 @@ img {
   </tr>
   <tr>
     <td><a href="ht://githtpsomub.c/fairwaves/UHD-Fairwaves.git">UHD-Fairwaves</a></td>
-    <td>umtx_update</td>
+    <td>master</td>
   </tr>
   <tr>
     <td><a href="http://git.osmocom.org/osmo-trx">Osmo-trx</a></td>
@@ -383,20 +383,20 @@ img {
 <p>4. Install latest UHD from ettus and UmTRX module  </p>
 
 <p><h3>Warning: moving to the new driver first and then attempting to upgrade the firmware may brick your UmTRX!</h3></p>
-<p>1. Install old monolithic Fairwaves <a href="https://github.com/fairwaves/UHD-Fairwaves/tree/fairwaves/umtrx/host">UHD</a> (branch* fairwaves/umtrx)</p>
+<p>1. Install old monolithic Fairwaves <a href="https://github.com/fairwaves/UHD-Fairwaves/tree/fairwaves/umtrx/host">UHD</a> (branch* old_master)</p>
 <h4>Upgrade firmware</h4>
-<p>Binary firmware releases can also be found in the GitHub repo, in the <a href="https://github.com/fairwaves/UHD-Fairwaves/tree/umtrx_update/images">images directory</a>.</p>
-<p>A utility provided by <a href="https://github.com/fairwaves/UHD-Fairwaves/tree/umtrx_update/host/utils">UHD-Fairwaves</a>.</p>
+<p>Binary firmware releases can also be found in the GitHub repo, in the <a href="https://github.com/fairwaves/UHD-Fairwaves/tree/master/images">images directory</a>.</p>
+<p>A utility provided by <a href="(https://github.com/fairwaves/UHD-Fairwaves/tree/master/host">UHD-Fairwaves</a>.</p>
 <p>The commands are: </p>
 <pre><code>cd /usr/lib/uhd/utils
 </code></pre>
 
 <h3><p>Load production firmware:</p></h3>
-<pre><code>./usrp_n2xx_net_burner.py --addr=192.168.10.2 --fpga=u2plus_umtrx_v2_test_pa.bin --fw=umtrx_txrx_uhd.bin
+<pre><code>./umtrx_net_burner --addr=192.168.10.2 --fpga=u2plus_umtrx_v2_test_pa.bin --fw=umtrx_txrx_uhd.bin
 </code></pre>
 
 <p><h3>Load safe firmaware:</h3></p>
-<pre><code>./usrp_n2xx_net_burner.py --addr=192.168.10.2 --fpga=u2plus_umtrx_v2_test_pa.bin --overwrite-safe
+<pre><code>./umtrx_net_burner --addr=192.168.10.2 --fpga=u2plus_umtrx_v2_test_pa.bin --overwrite-safe
 </code></pre>
 
 <p>detailed instruction how to:  <strong><a href="http://umtrx.org/hardware/flashing/">umtrx.org</a></strong></p>
@@ -420,7 +420,7 @@ Follow the steps below described in UHD installation chapter.</p>
 <p>For UHD build and installation details see the <a href="http://code.ettus.com/redmine/ettus/projects/uhd/wiki/UHD_Build">UHD Wiki</a>.</p>
 <h4>UmTRX module</h4>
 <p>Once UHD has been installed the <strong>UmTRX module</strong> must be built and installed.</p>
-<p>Go to <em>umtrx_update</em> branch of the UHD-Fairwaves repository,</p>
+<p>Go to <em>master</em> branch of the UHD-Fairwaves repository,</p>
 <pre><code>$ git clone https://github.com/fairwaves/UHD-Fairwaves.git
 $ cd UHD-Fairwaves/host
 $ mkdir build
