@@ -41,6 +41,8 @@
 		<a href="#8. How to get GPRS up">8. How to get GPRS up</a>
         <a href="#9. UmTRX 2.2 Box STL file ">9. UmTRX 2.2 Box STL file </a>
         <a href="#10. UmDESK displaying problem">10. UmDESK displaying problem</a>
+        <a href="#11. How to disable a second TRx">11. How to disable a second TRx</a>
+        <a href="#12. How to set TRx output power">12. How to set TRx output power</a>
 
 		</ul>
       </div>
@@ -790,6 +792,87 @@ cd ..
 
 <p>line to</p>
 <p><em>/etc/modprobe.d/blacklist-framebuffer.conf</em></p>
+
+<a name="11. How to disable a second TRx"></a><h4>11. How to disable a second TRx<a class="anchorlink" href="#11. How to disable a second TRx"></a></h4>
+<p>In order to disable a second channel follow these steps bellow: </p>
+<p>1.Remove <u>TRx 1</u> configuration in <em>/etc/osmocom/openbsc.cfg</em></p>
+<pre><code>    trx 1
+     rf_locked 0
+     arfcn 20
+     nominal power 23
+     max_power_red 0
+     rsl e1 tei 0
+    timeslot 0
+     phys_chan_config TCH/F
+     hopping enabled 0
+    timeslot 1
+     phys_chan_config TCH/F
+     hopping enabled 0
+    timeslot 2
+     phys_chan_config TCH/F
+     hopping enabled 0
+    timeslot 3
+     phys_chan_config TCH/F
+     hopping enabled 0
+    timeslot 4
+     phys_chan_config TCH/F
+     hopping enabled 0
+    timeslot 5
+     phys_chan_config TCH/F
+     hopping enabled 0
+    timeslot 6
+     phys_chan_config TCH/F
+     hopping enabled 0
+    timeslot 7
+     phys_chan_config TCH/F
+</code></pre>
+
+<p>also remove </p>
+<pre><code>trx 1
+  rxgain 12
+  power 0
+</code></pre>
+
+<p>in <em>etc/osmocom/osmo-bts.cfg</em></p>
+<p>2.change value <u>-c 2</u>  on <u>-c 1</u> in <em>/etc/sv/osmo-bts/run</em></p>
+<p>and <u>-t 2</u> on <u>-t 1</u> in <em>/etc/sv/osmo-trx/run</em></p>
+<p>3.restart services</p>
+<pre><code>sudo sv restart osmo-bts osmo-trx osmo-nitb
+</code></pre>
+
+<a name="12. How to set TRx output power"></a><h4>12. How to set TRx output power<a class="anchorlink" href="#12. How to set TRx output power"></a></h4>
+<p>Runtime output power control is not implemented yet, but you can set the default output power through the <u>EEPROM</u></p>
+<p>Write into UmTRX <u>EEPROM</u> correct value &quot;<strong>dcdc_r</strong>&quot;</p>
+<ul>
+<li>dcdc_r=0 about 1W of output power. </li>
+<li>dcdc_r=188 about 3W of output power. </li>
+</ul>
+<p>Values between 0 and 188 will gradually change output power.</p>
+<p>Use </p>
+<pre><code>usrp_burn_mb_eeprom
+</code></pre>
+
+<p>standart utility from <u>Ettus UHD</u>, default path:</p>
+<p><em>/usr/local/lib/uhd/utils/</em></p>
+<p>If this path does not match with your system, run
+</p>
+<pre><code>locate usrp_burn_mb_eeprom
+</code></pre>
+
+<p>to find it either way clone  <a href="https://github.com/fairwaves/UHD-Fairwaves/tree/old_master/host/utils">UHD-Fairwaves</a></p>
+<p>To set <strong>dcdc_r</strong> in EEPROM:</p>
+<pre><code>usrp_burn_mb_eeprom --values &quot;pa_dcdc_r=0&quot;
+</code></pre>
+
+<p>To check the current EEPROM value:</p>
+<pre><code>usrp_burn_mb_eeprom --values &quot;pa_dcdc_r&quot;
+</code></pre>
+
+<p>To overwrite EEPROM value you can set the environment variable for osmo-trx:</p>
+<pre><code>$ UMTRX_PA_DCDC_R=0 osmo-trx -c 2 -s 4
+</code></pre>
+
+<p>osmo-trx start script is located in <em>/etc/sv/osmo-trx/run</em></p>
 
 
 

@@ -342,10 +342,12 @@ img {
 <p>2.1	Log in</p>
 <p>2.2	IP and Network configuration </p>
 <p>2.3	GSM parameters</p>
-<p>2.4	Multi BTS configuration</p>
+<p>2.5  Runtime Log</p>
+<p>2.6	Multi BTS configuration</p>
 <h4>3. FreeSWITCH Configuration</h4>
 <p>3.1 Setiing up a new gateway</p>
-<p>3.2 Codecs</p>
+<p>3.2 FreeSWITCH Traces</p>
+<p>3.3 Codecs</p>
 <h4>4. Subscribers properties</h4>
 <p>4.1	Virtual Teletype. Login. Privileged mode.</p>
 <p>4.2    Add Subscriber</p>
@@ -511,48 +513,62 @@ More information about specification, protocol stack, security and etc, you can 
 <a name="2.Configuration"></a><h4>2. Configuration<a class="anchorlink" href="#2.Configuration"></a></h4>
  <br>
 <h4>2.1	Log in</h4>
-<p>There are two physical ethernet interfaces for the <b>UmDESK</b>, which is have a static IP for the external ethernet card <strong>192.168.50.100</strong> also it's configured to get IP address via DHCP and <strong>192.168.10.10</strong> is internal interface for the UmTRX. In order to configure <strong>UmSITE</strong>, you have to login into device remotely over SSH. Ethernet card has a fixed IP <strong>192.168.50.100</strong> as well as through the DHCP .
-</p>
+<p>There are two physical ethernet interfaces for the <strong>UmDESK</strong>, which is have a static IP for the external ethernet card <u>192.168.50.100</u> also it's configured to get IP address via DHCP.</p>
+<p><u>192.168.10.10</u> is internal interface for the UmTRX.</p>
+<p><h3>NOTE:</h3>to detect radio devices and confirm connectivity run:</p>
+<pre><code>uhd_find_devices
+</code></pre>
+
+<p>or </p>
+<pre><code>uhd_usrp_probe
+</code></pre>
+
+<p>In order to configure <strong>UmSITE</strong>, you have to login into device remotely over SSH. Interface configured to obtain IP address via DHCP and also has a static <u>192.168.50.100</u></p>
 <p>Connect laptop to the UmDESK/UmSITE via Ethernet cable.</p>
-<p><strong><em>NOTE:</em></strong>
-Before startng to work with the device, set up IP address on laptop like this <strong>192.168.50.200</strong>
+<p><h3>NOTE:</h3> Make sure your interface in the same subnet as the UmSITE/UmDESK and has IP like <u>192.168.50.101</u>
 </p>
 <ol>
 <li>1. Run PuTTY
 </li>
-<li>2 . Type IP address: 192.168.50.100
+<li>2. Type IP address: 192.168.50.100
 </li>
 <li>Login: fairwaves</li>
 <li>Password: fairwaves</li>
 </ol>
-<p>Once you have logged into the system, you will be at a Linux shell command prompt. </p>
+<p>Once you logged in, you will get access to Linux terminal. </p>
 <p>You may use a deferent client software for remote access, but we recommend <strong>PuTTY</strong> (you can download at <a href="www.putty.org" title="PuTTY"><strong>www.putty.org</strong></a> ).  PuTTY is an open source SSH and telnet client, for the Windows platform. </p>
-<h5>Login over Serial cable (Only for UmSITE)</h5>
-<p>Serial connection gives you ability to look over the system on the loading level of operation system if something went wrong. </p>
+<h4>Login over Serial cable (Only for UmSITE)</h4>
+<p>Serial connection allows  you to look over the system on the booting level.</p>
 <p>You'll get options like:</p>
 <ol>
-<li> 1. Advanced options for Ubuntu</li>
+<li>1. Advanced options for Ubuntu</li>
 <li>2. Test RAM memory</li>
 </ol>
-<p>First of all you have to use <strong>USB Serial Adapter</strong> for the connection (which is not comes with the UmSITE).</p>
+<p>First of all you have to use <a href="http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2050601.m570.l1311.R1.TR11.TRC1.A0.H2.Xusb+serial+a.TRS0&_nkw=usb+serial+adapter&_sacat=0">USB Serial Adapter</a> for the connection (which is not included in a standard UmSITE package).</p>
+<p><img src="http://s017.radikal.ru/i422/1505/62/53fa6e8aaad9.jpg" /></p>
 <p>For the Windows user <a href="www.putty.org" title="PuTTY"><strong>putty</strong></a> </p>
 <p><img src="http://s017.radikal.ru/i413/1503/ad/0b02ea2dc90f.png" /></p>
-<p>Number of the COM port you will be able to find it in the  <strong>Desktop manager</strong> when you are connecting to the laptop. </p>
+<p>Number of the COM port available at <u>Desktop manager</u> when you are connecting to the laptop. </p>
 <p>For the Linux user <strong><a href="http://www.cyberciti.biz/tips/connect-soekris-single-board-computer-using-minicom.html">minicom</a></strong></p>
 <p>Run this command to connect via serial cabel:</p>
 <pre><code>shell&gt; minicom -D/dev/ttyUSB0 -b38400 -o
 </code></pre>
 
 <h4>2.2	IP and network configuration</h4>
-<p>If you would like to set another static address for the device, edit  <em>/etc/network/interfaces</em>:</p>
+<p>If you would like to set another static address for the device, edit  <u>/etc/network/interfaces</u></p>
 <pre><code>Shell&gt; sudo nano /etc/network/interfaces
 </code></pre>
 
 <p>Refer to <a href="https://help.ubuntu.com/14.04/ubuntu-help/index.html"><strong>Ubuntu</strong></a> documentation for details
 </p>
 
+<p><h3>Note:</h3> Base station configured to get IP address through DHCP.
+We also recommend to keep configuration for the
+<u>eth1:1</u> (192.168.50.50/24), because it's used as a backup IP address. If you
+want to configure a statis IP address, change <u>eth1</u> configuration.</p>
+
 <h4>2.3 GSM parameters</h4>
-<p>If you would like to change  GSM parameters, edit <strong><em>openbsc.cfg</em></strong></p>
+<p>If you would like to change  GSM parameters, edit <u>openbsc.cfg</u></p>
 <pre><code>Shell&gt; sudo nano /etc/osmocom/openbsc.cfg
 </code></pre>
 
@@ -577,9 +593,9 @@ Before startng to work with the device, set up IP address on laptop like this <s
 <p>policy of access to the network. it's open for all by default.
 Possible values are:<br />
 <br></br>
-1.	closed: Don't allow anyone who is not marked as authorized=1 in the HLR database<br />
+1.	<u>closed:</u> Don't allow anyone who is not marked as authorized=1 in the HLR database<br />
 <br></br>
-2.	accept-all: Accept everyone into the network</p>
+2.	<u>accept-all:</u> Accept everyone into the network</p>
 
 <h4>band</h4>
 
@@ -590,27 +606,38 @@ Possible values are:<br />
 
 <p>absolute radio-frequency channel number. This is a code that specifies a pair of physical radio carriers used for transmission and reception signal. Different bands provides a different amount of channels.</p>
 
-<p><strong><em>NOTE:</em></strong> See below at the Configuration via VTY how to change these parameters</p>
+<p><h3>NOTE:</h3> See below at the Configuration via VTY how to change these parameters</p>
 <p>After changing configs, restart the services:</p>
 <pre><code>Shell&gt; sudo sv restart osmo-nitb osmo-bts osmo-trx
 </code></pre>
 
-<p>All osmocom logs stored at:</p>
-<h4>Transceiver module:</h4>
+<h4>2.4 Runtime logs</h4>
+ <br>
+<h5>Transceiver module:</h5>
 <pre><code>            /var/log/osmo-trx/current
 </code></pre>
 
-<h4>Network in the box module</h4>
+<h5>Network in the box module</h5>
 <pre><code>            /var/log/osmo-nitb/current
 </code></pre>
 
-<h4>Base station</h4>
+<h5>Base station</h5>
 <pre><code>            /var/log/osmo-bts/current
 </code></pre>
 
-<p>Refer to Osmocom documentation for details:</p>
-<p><a href="http://openbsc.osmocom.org/trac/">OpenBSC home page</a></p>
-<p><a href="http://openbsc.osmocom.org/trac/wiki/osmo-nitb_VTY">OsmoNITB parameters</a></p>
+<h5>FreeSWITCH:</h5>
+<pre><code>/var/log/freeswitch/current
+</code></pre>
+
+<h5>LCR:</h5>
+<pre><code>/var/log/lcr/current
+</code></pre>
+
+<p>to monitor them live run from directory:</p>
+<pre><code>Shell&gt; sudo tail -f current
+</code></pre>
+
+<p>Refer to <a href="http://manpages.ubuntu.com/manpages/lucid/man1/tail.1.html">Ubuntu help</a> for tail options</p>
 
 <h4>2.4 Multi BTS configuration</h4>
 <p><img src="http://s017.radikal.ru/i400/1501/92/d49ef7c4de2a.png" /></p>
