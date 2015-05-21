@@ -1305,6 +1305,19 @@ to introspect the application.</p>
 <pre><code>OpenBSC(config-net-bts)# write file
 </code></pre>
 
+<p><strong>Real time output power control</strong></p>
+<p>Set <u>power oml</u> in etc/osmocom/osmo-bts.cfg  instead of  <u>power 0</u> before run</p>
+<pre><code>OpenBSC# max_power_red 188
+</code></pre>
+
+<ul>
+<li>  0 about 1W of output power. </li>
+<li>188 about 3W of output power.</li>
+</ul>
+<p><strong><em>NOTE:</em></strong> In terms of ABIS specific, only even values allow</p>
+
+
+
 <p><strong>More commands for that node</strong></p>
 <pre><code>OpenBSC(config-net-bts)# list
 </code></pre>

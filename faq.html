@@ -281,6 +281,99 @@ continuous, unless you have all TCH's on TRX1.</p></center>
 
 						</div>
 
+                        <div class="grid_4">
+						 <h5 style="text-align: center;" class="font_5">20</h5>
+						  <div class="s2"></div>
+						  <h2 class="faq"> Where is registration of mobile station on a SIP server, what kind of billing options available with UmSITE?
+
+</h2>
+						  <center><p>With the current UmSITE software, a VoIP server does not receive SIP INVITE messages for GSM users, so a BTS system can:
+                          <br>
+1. Enable/disable users in the GSM core using a socket API.
+<br>
+2. Route all calls to a SIP server or a SIP proxy for billing purposes.
+<br>
+3. Route all SMS to an SMPP server for billing purposes.
+ <br>
+<a href="https://github.com/Rhizomatica/rccn">Here is an example of a system</a> that implements flat tariff plan for calls inside and per-minute for calls outside of the network.
+<br>
+
+We can help you do a non-standart configuration on demand and run a commercial network with more UmSITEs, in that case we suggest to discuss a commercial agreement to provide you support and network maintenance for upcharge price.
+.</p></center>
+
+
+
+						</div>
+
+                        <div class="grid_4">
+				 	 <h5 style"s2"="text-align: center;" class="font_5">21</h5>
+						  <div class=></div>
+						  <h2 class="faq">  Is there all calls will be charged (inside/outside) ?
+
+</h2>
+						  <center><p> It depends on whether you want to bill local calls or not.</center></p>
+
+
+						</div>
+
+                        <div class="grid_4">
+				 	 <h5 style"s2"="text-align: center;" class="font_5">22</h5>
+						  <div class=></div>
+						  <h2 class="faq">  Wouldn't it get a network congestion cause ? Without bill for inside network calls ?
+
+</h2>
+						  <center><p> We're developing advanced options to avoid full network congestion in UmCORE server which will be available as part of the commercial agreement.</center></p>
+
+
+						</div>
+
+                        <div class="grid_4">
+				 	 <h5 style"s2"="text-align: center;" class="font_5">23</h5>
+						  <div class=></div>
+						  <h2 class="faq">  Do you have another option of commercial billing for inside and outside calls?
+
+</h2>
+						  <center><p> We can build a billing backend for you as part of the commercial agreement.</center></p>
+
+
+						</div>
+                        <div class="grid_4">
+				 	 <h5 style"s2"="text-align: center;" class="font_5">24</h5>
+						  <div class=></div>
+						  <h2 class="faq">  How to control/change the process of automatically assigning a number? Where is the source code?
+
+</h2>
+						  <center><p> The code which generates the random number is <a href="http://cgit.osmocom.org/openbsc/tree/openbsc/src/libmsc/db.c?h=fairwaves/master#n1229">here</a>
+
+But we strongly recommend you against modifying the code. We regularly roll-out updated code and you'll be losing your changes.
+
+The recommended way of assigning numbers is by out of band means:
+ <br>
+1. You can create a simple web-portal for users to register at and claim their numbers.
+<br>
+2. Alternatively you can connect to OsmoNITB through SMPP and implement a special SMS number to claim numbers.
+<br>
+3. You can also intercept the first subscriber's call and play instruction how to claim the number.
+</center></p>
+
+
+						</div>
+
+
+                        <div class="grid_4">
+				 	 <h5 style"s2"="text-align: center;" class="font_5">25</h5>
+						  <div class=></div>
+						  <h2 class="faq">  How to send the person welcome Message with their assigned number?
+
+</h2>
+						  <center><p> Currently this is implemented only for the <u>token</u> authentication mode, but this mode it not recommended. It tried to kick users out of the network, which does not behave consistently for different phones. We would recommend to implement this through external means - e.g. by monitoring new user registrations on SMPP socket.
+
+For the reference, code for the <u>token auth</u> located <a href="http://cgit.osmocom.org/openbsc/tree/openbsc/src/libmsc/token_auth.c?h=fairwaves/master">here</a>
+</center></p>
+
+
+						</div>
+
 
 
     <div>

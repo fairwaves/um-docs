@@ -33,6 +33,7 @@
           <ul class="nav nav-list">
 		<a href="#1. Branch release set for UmTRX">1. Branch release set for UmTRX</a>
         <a href="#2. UmTRX firmware">2. UmTRX firmware</a>
+        <a href="#- Firmware upgrade"> - Firmware upgrade</a>
         <a href="#3. UHD installation">3. UHD installation</a>
     	<a href="#4. Osmo-TRX rebuild (optional)"> 4. Osmo-TRX rebuild (optional)</a>
 		<a href="#5. How Freeswitch connects to LCR">5. How Freeswitch connects to LCR</a>
@@ -376,7 +377,7 @@ img {
 </table>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
  <a name="2. UmTRX firmware"></a><h4>2. UmTRX firmware<a class="anchorlink" href="#2. UmTRX firmware"></a></h4>
-<p>If you are presently using an older UmTRX-specific fork of the main UHD codebase and would like to be up and running with the new driver, you must complete the following steps </p>
+<p>If you are presently using an older UmTRX-specific fork of the main UHD codebase (UHD version 003.004) and would like to be up and running with the new driver (for UHD version 003.008 and later), you must first upgrade the firmware on your UmTRX.  </p>
 <p>in this order:</p>
 
 <p>1. Use the old monolithic driver to upgrade both the production and safe firmware </p>
@@ -386,20 +387,22 @@ img {
 
 <p><h3>Warning: moving to the new driver first and then attempting to upgrade the firmware may brick your UmTRX!</h3></p>
 <p>1. Install old monolithic Fairwaves <a href="https://github.com/fairwaves/UHD-Fairwaves/tree/fairwaves/umtrx/host">UHD</a> (branch* old_master)</p>
-<h4>Upgrade firmware</h4>
+<a name="- Firmware upgrade"></a><h4> - Firmware upgrade<a class="anchorlink" href="#- Firmware upgrade"></a></h4>
 <p>Binary firmware releases can also be found in the GitHub repo, in the <a href="https://github.com/fairwaves/UHD-Fairwaves/tree/master/images">images directory</a>.</p>
-<p>A utility provided by <a href="(https://github.com/fairwaves/UHD-Fairwaves/tree/master/host">UHD-Fairwaves</a>.</p>
+<p>A utility provided by <a href="(https://github.com/fairwaves/UH-FaDirwaves/tree/master/host/utils">UHD-Fairwaves</a>.</p>
+ <br>
+<p>Provided that everything downloaded without any issues you can now proceed with updating. You must ensure that the power source and Ethernet connection with the UmTRX is stable during these operations!</p>
 <p>The commands are: </p>
-<pre><code>cd /usr/lib/uhd/utils
+
+
+<pre><code>
+    $ ./umtrx_net_burner.py ??addr=192.168.10.2 ??fw=umtrx_txrx_uhd.bin ??erase
+    $ ./umtrx_net_burner.py ??addr=192.168.10.2 ??fpga=u2plus_umtrx_v2.bin
+    $ ./umtrx_net_burner.py ??addr=192.168.10.2 ??fpga=u2plus_umtrx_v2.bin ??overwrite-safe
+    $ ./umtrx_net_burner.py ??addr=192.168.10.2 ??fw=umtrx_txrx_uhd.bin
 </code></pre>
 
-<h3><p>Load production firmware:</p></h3>
-<pre><code>./umtrx_net_burner --addr=192.168.10.2 --fpga=u2plus_umtrx_v2.bin --fw=umtrx_txrx_uhd.bin
-</code></pre>
 
-<p><h3>Load safe firmaware:</h3></p>
-<pre><code>./umtrx_net_burner --addr=192.168.10.2 --fpga=u2plus_umtrx_v2.bin --overwrite-safe
-</code></pre>
 
 <p>detailed instruction how to:  <strong><a href="http://umtrx.org/hardware/flashing/">umtrx.org</a></strong></p>
 <p>2. Reboot (power up/down) UmTRX for the final step of firmware loading</p>
