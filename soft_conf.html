@@ -342,8 +342,8 @@ img {
 <p>2.1	Log in</p>
 <p>2.2	IP and Network configuration </p>
 <p>2.3	GSM parameters</p>
-<p>2.5  Runtime Log</p>
-<p>2.6	Multi BTS configuration</p>
+<p>2.4  Runtime Log</p>
+<p>2.5	Multi BTS configuration</p>
 <h4>3. FreeSWITCH Configuration</h4>
 <p>3.1 Setiing up a new gateway</p>
 <p>3.2 FreeSWITCH Traces</p>
@@ -639,7 +639,7 @@ Possible values are:<br />
 
 <p>Refer to <a href="http://manpages.ubuntu.com/manpages/lucid/man1/tail.1.html">Ubuntu help</a> for tail options</p>
 
-<h4>2.4 Multi BTS configuration</h4>
+<h4>2.5 Multi BTS configuration</h4>
 <p><img src="http://s017.radikal.ru/i400/1501/92/d49ef7c4de2a.png" /></p>
 <ul>
 <li>BSC: osmo-nitb 172.30.1.10</li>
@@ -661,7 +661,7 @@ Possible values are:<br />
 <pre><code>bts 0
  band GSM900
  ipa unit-id 1801 0
- oml remote-ip 172.30.1.11
+ oml remote-ip 172.30.1.10
  rtp jitter-buffer 0
  paging lifetime 0
  gsmtap-sapi bcch
@@ -688,7 +688,7 @@ Possible values are:<br />
 <pre><code>bts 1
  band GSM900
  ipa unit-id 1802 0
- oml remote-ip 172.30.1.12
+ oml remote-ip 172.30.1.10
  rtp jitter-buffer 0
  paging lifetime 0
  gsmtap-sapi bcch
