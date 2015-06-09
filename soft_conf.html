@@ -362,6 +362,7 @@ img {
 <p>5.4 Network Configuration</p>
 <p>5.5 BTS Configuration </p>
 <p>5.6 TRX Configuration </p>
+<p>5.7 SMPP Configuration </p>
 <h4>6.	Spectrum License Required</h4>
 
  <br>
@@ -1338,6 +1339,73 @@ to introspect the application.</p>
 </code></pre>
 
 <p>More VTY commands at <a href="http://openbsc.osmocom.org/trac/wiki/osmo-nitb_VTY">osmo NITB VTY</a></p>
+
+<h4>5.7 SMPP Configuration</h4>
+<p>Use SMPP 3.4 protocol for SMS communication</p>
+<p><strong>SMPP configuration node</strong></p>
+<pre><code>OpenBSC(config)# smpp 
+</code></pre>
+
+<p><strong>Print available commands for that node</strong></p>
+<pre><code>OpenBSC(config-smpp)# list
+</code></pre>
+
+<p><strong>Show running configuration</strong></p>
+<pre><code>OpenBSC(config-smpp)# show running-config
+</code></pre>
+
+<p><strong>Set the local TCP port which listen on for SMPP</strong></p>
+<pre><code>OpenBSC(config-smpp)# local-tcp-port &lt;1-65535&gt;
+</code></pre>
+
+<p><strong>Set the System ID of the SMSC</strong></p>
+<pre><code>OpenBSC(config-smpp)# system-id &lt;ID&gt;  
+</code></pre>
+
+<p><strong>Set the authentication policy of the SMSC</strong></p>
+<pre><code>OpenBSC(config-smpp)# policy &lt;accept-all/closed&gt;
+</code></pre>
+
+<p>&#8226 accept-all - Accept all SMPP connections independeint of system ID / passwd
+<br>
+<p>&#8226 closed     - Accept only SMPP connections from configured ESMEs      
+</p>
+<p><strong>Configure a particular ESME</strong></p>
+<pre><code>OpenBSC(config-smpp)# esme &lt;NAME  Alphanumeric System ID of the ESME&gt; 
+</code></pre>
+
+<p><strong>Print available commands for that node</strong></p>
+<pre><code>OpenBSC(config-smpp-esme)# list 
+</code></pre>
+
+<p><strong>Commands</strong></p>
+<pre><code>route               Configure the route for MO-SMS to be send to this ESME
+default-route       Set the ESME as a default-route for all SMS to unknown destinations
+deliver-src-imsi    Enable the use of IMSI as source addres in DELIVER
+osmocom-extensions  Enable the use of Osmocom SMPP Extensions for this ESME
+dcs-transparent     Enable the transparent pass-through of TP-DCS to SMPP DataCoding
+</code></pre>
+
+<p><strong>Write running configuration to file (openbsc.cfg)</strong></p>
+<pre><code>OpenBSC(config-smpp-esme)# write
+</code></pre>
+
+<p><strong>Example:</strong></p>
+<pre><code>telnet 127.0.0.1 4242
+OpenBSC&gt; enable 
+OpenBSC# configure terminal 
+OpenBSC(config)# smpp 
+OpenBSC(config-smpp)# 
+OpenBSC(config-smpp)# local-tcp-port 2775
+OpenBSC(config-smpp)# system-id OSMO-SMPP
+OpenBSC(config-smpp)# esme OSMPP
+OpenBSC(config-smpp-esme)# password 
+OpenBSC(config-smpp-esme)# password &lt;your_pass&gt;
+OpenBSC(config-smpp-esme)# write 
+</code></pre>
+
+<p>Configuration saved at <em>/etc/osmocom/openbsc.cfg</em></p>
+
 <a name="6.Spectrum License Required"></a><h4>6. Spectrum License Required<a class="anchorlink" href="#6.Spectrum License Required"></a></h4>
 <p>GSM operates in licensed frequency spectrum. As a result if you area covered by any GSM provider you should get an agreement from Regulatory authorities. You cannot operate a BTS without having obtained a license. Below the list Regulatory authorities</p>
 <pre><code>    Country         Name
