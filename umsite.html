@@ -36,10 +36,11 @@
 		<a href="#1.2 Software specification">1.2 Software specification</a>
 		<a href="#1.3 Hardware options"> 1.3 Hardware options</a>
 		<h4><a href="#2 Installation">2. Installation</a></h4>
-		<a href="#2.1 Getting started">2.1 Getting started</a>
-        <a href="#2.2 Test call">2.2 Test call</a>
-		<a href="#2.3 Log in">2.3 Log in</a></li>
-		<a href="#2.4 IP and network configuration (optional)">2.4 IP and network configuration (optional)</a></li>
+		<a href="#2.1 Antennas installation">2.1 Antennas installation</a>
+		<a href="#2.2 Getting started">2.2 Getting started</a>
+        <a href="#2.3 Test call">2.3 Test call</a>
+		<a href="#2.4 Log in">2.4 Log in</a></li>
+		<a href="#2.5 IP and network configuration (optional)">2.5 IP and network configuration (optional)</a></li>
 		</ul>
       </div>
       <div class="span9 main">
@@ -336,10 +337,11 @@ img {
 <p>1.2 Software specification</p>
 <p>1.3 Hardware Options</p>
 <h4>2. Installation</h4>
-<p>2.1 Getting started</p>
-<p>2.2 Test call
-<p>2.3 Log in</p>
-<p>2.4 IP and network configuration (optional) </p>
+<p>2.1 Antennas installation</p>
+<p>2.2 Getting started</p>
+<p>2.3 Test call
+<p>2.4 Log in</p>
+<p>2.5 IP and network configuration (optional) </p>
 <br>
 <br>
 <br>
@@ -438,8 +440,31 @@ img {
 <h4><a name="2 Installation"></a>2. Installation<a class="anchorlink" href="#2 Installation"></a></h4>
 <br>
 <p>Base station comes with already installed and configured software, just attach GPS and GSM antennas, power supply.</p>
-<p><h3>Note:</h3> GSM antennas are not included in a standart package, however it possible to make a calls near base station as a testing</p>
-<h4><a name="2.1 Getting started"></a>2.1 Getting started<a class="anchorlink" href="#2.1	Getting started"></a></h4>
+
+<p><h3>Note:</h3> Base station comes with already installed and configured software, just attach GPS antenna, GSM antennas and power supply.</p>
+
+<p>Steps:</p>
+
+<li>&#8226 Place the UmSite on the mast directly connectors down</li>
+<li>&#8226 Attach GSM antennas. We recommend having at least 10 ft (3m) between them</li>
+<li>&#8226 Attach GPS antenna. Good antenna visibility to the sky is required</li>
+<li>&#8226 Turn on Base station</li>
+<p><h3>Note:</h3> GSM antennas are not included in a standard package. We do not recomend to operate base station without antennas</p>
+<h4><a name="2.1 Antennas installation"></a>2.1 Antennas installation<a class="anchorlink" href="#2.1	Antennas installation"></a></h4>
+<p>Each of both antennas complement each other. The second antenna must have the same position as the first antenna on a mast as well as the same direction and incline angle to the ground. </p>
+<p>For the GPS antenna, there are no strict requirements only good antenna visibility to the sky</p>
+<p><img src="http://s017.radikal.ru/i402/1506/7f/752e49433fbb.png" /></p>
+<hr />
+<p>For the mast at least of 100 ft (30m) in height, antennas can be mounted upright within the 10 ft (3m) distance between each other.</p>
+<p><img src="http://s017.radikal.ru/i410/1506/07/2aa41520b371.png" /></p>
+<p><h3>NOTE:</h3></p>
+<p>&#8226TRX1 has a <a href="https://en.wikipedia.org/wiki/Broadcast_control_channel">Beacon (Broadcast) Channel (BCCH) </a></p>
+<p>&#8226TRX2 serves as traffic channels (<a href="http://www.althos.com/tutorial/GSM-tutorial-traffic-channels.html">TCH</a>)</p>
+<p>Therefore TRX1 antenna  has to be situated below TRx2 antenna. In other case, it may cause call disconnection If the connection would be established when the TRx1 antenna is higher and then has assigned to a timeslot of the lower antenna TRX2.  
+</p>
+<p><em>The antenna attached to the TRX1 should not have an advantage by height in that particular case.</em></p>
+
+<h4><a name="2.2 Getting started"></a>2.2 Getting started<a class="anchorlink" href="#2.2	Getting started"></a></h4>
 <ol>
 <li>
 <p>&#8226 Connect to power source and turn it on. LED on the front pannel will flashing in 1-2 minutes later turned on.</p>
@@ -451,7 +476,7 @@ img {
 <p><h3>Note:</h3>We strongly recommend does not put UmSITE on a public network. Connect it to your local network where is access to Internet through NAT or Firewall. Keep <u>UDP port 1195</u> open on your server for fairwaves VPN in case technical support</p>
 <p><img src="http://s019.radikal.ru/i633/1505/04/7e1b573f0b89.png" /></p>
 <p>Take any GSM phone with any SIM card and try to search the network. Network might have a different names such as <u>Fairwaves, 1011, Test, etc.</u></p>
-<h4><a name="2.2 Test call"></a>2.2 Test call<a class="anchorlink" href="#2.2 Test call"></a></h4>
+<h4><a name="2.3 Test call"></a>2.3 Test call<a class="anchorlink" href="#2.3 Test call"></a></h4>
 <h4>Searching for the Network</h4>
 <ol>
 <li>
@@ -482,7 +507,7 @@ img {
 </p>
 </li>
 </ul>
-<h4><a name="2.3 Log in"></a>2.3 Log in<a class="anchorlink" href="#2.3	Log in"></a></h4>
+<h4><a name="2.4 Log in"></a>2.4 Log in<a class="anchorlink" href="#2.4	Log in"></a></h4>
 
 
 <p>In order to configure <strong>UmSITE</strong>, you have to login into device remotely over SSH. Interface configured to obtain IP address via DHCP and also has a static <u>192.168.50.100</u></p>
@@ -517,7 +542,7 @@ img {
 <pre><code>shell&gt; minicom -D/dev/ttyUSB0 -b38400 -o
 </code></pre>
 
-<h4><a name="2.4 IP and network configuration (optional)"></a>2.4 IP and network configuration (optional)<a class="anchorlink" href="#2.4 IP and network configuration (optional)"></a></h4>
+<h4><a name="2.5 IP and network configuration (optional)"></a>2.5 IP and network configuration (optional)<a class="anchorlink" href="#2.5 IP and network configuration (optional)"></a></h4>
 <p>If you would like to set another static address for the device, edit  <u>/etc/network/interfaces</u></p>
 <pre><code>Shell&gt; sudo nano /etc/network/interfaces
 </code></pre>
