@@ -616,15 +616,15 @@ Possible values are:<br />
 <h4>2.4 Runtime logs</h4>
  <br>
 <h5>Transceiver module:</h5>
-<pre><code>            /var/log/osmo-trx/current
+<pre><code>/var/log/osmo-trx/current
 </code></pre>
 
 <h5>Network in the box module</h5>
-<pre><code>            /var/log/osmo-nitb/current
+<pre><code>/var/log/osmo-nitb/current
 </code></pre>
 
 <h5>Base station</h5>
-<pre><code>            /var/log/osmo-bts/current
+<pre><code>/var/log/osmo-bts/current
 </code></pre>
 
 <h5>FreeSWITCH:</h5>
@@ -674,7 +674,7 @@ Possible values are:<br />
 <pre><code>Will degrade system performance; only for use by developers
 </code></pre>
 
-<p><h3>NOTE:</h3> To get different information out of the system, you may set different logging level in the VTY command line</p>
+<p> <u>NOTE:</u> To get different information out of the system, you may set different logging level in the VTY command line</p>
 
 
 <h4>2.5 Multi BTS configuration</h4>
@@ -980,9 +980,9 @@ network
 
 <h4>2.6 Handover</h4>
 <p>Handover is the ability to keep connection an ongoing call between two base stations.</p>
-<ul>
-<li>you should use <em>MultiBTS mode</em> for osmo-nitb and osmo-bts</li>
-<li>
+
+You should use <u>MultiBTS mode</u> for osmo-nitb and osmo-bts
+
 <p>enable handover in osmo-nitb configuration <em>etc/osmocom/openbsc.cfg</em></p>
 <pre><code> handover 1
  handover window rxlev averaging 10
@@ -993,29 +993,28 @@ network
  handover maximum distance 9999
 </code></pre>
 
-</li>
-</ul>
+
 <h4>Parameters</h4>
 
 <p>Enable BSC in-call handover between multiple BTS</p>
 <pre><code>handover (0|1)
 </code></pre>
 
-<br>
+
 
 <p>Over how many SACCH frames should the Rx Level of the serving cell be averaged?</p>
 <pre><code>handover window rxlev averaging &lt;1-10&gt;
 </code></pre>
 
 
-<br>
+
 
 <p>Over how many SACCH frames should the Rx Quality of the serving cell be averaged?</p>
 <pre><code>handover window rxqual averaging &lt;1-10&gt;
 </code></pre>
 
 
-<br>
+
 
 
 <p>Over how many SACCH frames should the Rx Level of a neighbor cell be averaged?</p>
@@ -1023,21 +1022,21 @@ network
 </code></pre>
 
 
-<br>
+
 
 <p>Every how many SACCH frames should the BSC think about performing a power budget (rx level) handover?</p>
 <pre><code>handover power budget interval &lt;1-99&gt;
 </code></pre>
 
 
-<br>
+
 
 <p>How large should the hysteresis be, i.e. to prevent continuous handover back and forth</p>
 <pre><code>handover power budget hysteresis &lt;0-999&gt;
 </code></pre>
 
 
-<br>
+
 
 <p>What is the maximum distance from a BTS, after which we try to perform distance handover?</p>
 <pre><code>handover maximum distance &lt;0-9999&gt;
@@ -1046,7 +1045,7 @@ network
 
 
 
-<p>NOTE: Handover configuration available through the VTY command line. See below at <em>5.4 Network configuration chapter</em></p>
+<p><u>NOTE:</u> Handover configuration available through the VTY command line. See below at <em>5.4 Network configuration chapter</em></p>
 
 <a name="3.FreeSWITCH Configuration"></a><h4>3. FreeSWITCH Configuration<a class="anchorlink" href="#3.FreeSWITCH Configuration"></a></h4>
 <p>FreeSWITCH is a scalable open source cross-platform telephony platform designed to route and interconnect popular communication protocols using audio, video, text or any other form of media.
@@ -1440,7 +1439,7 @@ to introspect the application.</p>
 <pre><code>OpenBSC(config-net)# handover maximum distance &lt;0-9999&gt;
 </code></pre>
 
-<p><strong><em>NOTE:</em></strong> For the changes to take effect you should write it in to a file (see below)</p>
+<p><u>NOTE:</u> For the changes to take effect you should write it in to a file (see below)</p>
 <p><strong>Write running configuration to file (openbsc.cfg)</strong></p>
 <pre><code>OpenBSC(config-net)# write file
 </code></pre>
