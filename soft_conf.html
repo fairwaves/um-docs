@@ -344,6 +344,7 @@ img {
 <p>2.3	GSM parameters</p>
 <p>2.4  Runtime Log</p>
 <p>2.5	Multi BTS configuration</p>
+<p>2.6 Handover</p>
 <h4>3. FreeSWITCH Configuration</h4>
 <p>3.1 Setiing up a new gateway</p>
 <p>3.2 FreeSWITCH Traces</p>
@@ -639,6 +640,42 @@ Possible values are:<br />
 </code></pre>
 
 <p>Refer to <a href="http://manpages.ubuntu.com/manpages/lucid/man1/tail.1.html">Ubuntu help</a> for tail options</p>
+
+<h4>Log levels</h4>
+<p>EMERG</p>
+<pre><code>Report serious faults associated with service failure or hardware damage
+</code></pre>
+
+<p>ALERT</p>
+<pre><code>Report likely service disruption caused by misconfiguration or poor connectivity
+</code></pre>
+
+<p>CRIT</p>
+<pre><code>Report anomalous events that are likely to degrade service
+</code></pre>
+
+<p>ERR</p>
+<pre><code>Report internal errors of the software that may result in degradation of service in unusual circumstances
+</code></pre>
+
+<p>WARNING</p>
+<pre><code>Report anomalous events that may indicate a degradation of normal service
+</code></pre>
+
+<p>NOTICE</p>
+<pre><code>Report anomalous events that probably do not affect service but may be of interest to network operators
+</code></pre>
+
+<p>INFO</p>
+<pre><code>Report normal events
+</code></pre>
+
+<p>DEBUG</p>
+<pre><code>Will degrade system performance; only for use by developers
+</code></pre>
+
+<p><h3>NOTE:</h3> To get different information out of the system, you may set different logging level in the VTY command line</p>
+
 
 <h4>2.5 Multi BTS configuration</h4>
 <p><img src="http://s017.radikal.ru/i400/1501/92/d49ef7c4de2a.png" /></p>
@@ -939,6 +976,78 @@ network
 </code></pre>
 
 <br>
+
+
+<h4>2.6 Handover</h4>
+<p>Handover is the ability to keep connection an ongoing call between two base stations.</p>
+<ul>
+<li>you should use <em>MultiBTS mode</em> for osmo-nitb and osmo-bts</li>
+<li>
+<p>enable handover in osmo-nitb configuration <em>etc/osmocom/openbsc.cfg</em></p>
+<pre><code> handover 1
+ handover window rxlev averaging 10
+ handover window rxqual averaging 1
+ handover window rxlev neighbor averaging 10
+ handover power budget interval 6
+ handover power budget hysteresis 3
+ handover maximum distance 9999
+</code></pre>
+
+</li>
+</ul>
+<h4>Parameters</h4>
+
+<p>Enable BSC in-call handover between multiple BTS</p>
+<pre><code>handover (0|1)
+</code></pre>
+
+<br>
+
+<p>Over how many SACCH frames should the Rx Level of the serving cell be averaged?</p>
+<pre><code>handover window rxlev averaging &lt;1-10&gt;
+</code></pre>
+
+
+<br>
+
+<p>Over how many SACCH frames should the Rx Quality of the serving cell be averaged?</p>
+<pre><code>handover window rxqual averaging &lt;1-10&gt;
+</code></pre>
+
+
+<br>
+
+
+<p>Over how many SACCH frames should the Rx Level of a neighbor cell be averaged?</p>
+<pre><code>handover window rxlev neighbor averaging &lt;1-10&gt;
+</code></pre>
+
+
+<br>
+
+<p>Every how many SACCH frames should the BSC think about performing a power budget (rx level) handover?</p>
+<pre><code>handover power budget interval &lt;1-99&gt;
+</code></pre>
+
+
+<br>
+
+<p>How large should the hysteresis be, i.e. to prevent continuous handover back and forth</p>
+<pre><code>handover power budget hysteresis &lt;0-999&gt;
+</code></pre>
+
+
+<br>
+
+<p>What is the maximum distance from a BTS, after which we try to perform distance handover?</p>
+<pre><code>handover maximum distance &lt;0-9999&gt;
+</code></pre>
+
+
+
+
+<p>NOTE: Handover configuration available through the VTY command line. See below at <em>5.4 Network configuration chapter</em></p>
+
 <a name="3.FreeSWITCH Configuration"></a><h4>3. FreeSWITCH Configuration<a class="anchorlink" href="#3.FreeSWITCH Configuration"></a></h4>
 <p>FreeSWITCH is a scalable open source cross-platform telephony platform designed to route and interconnect popular communication protocols using audio, video, text or any other form of media.
 Licensed under the MPL(Mozilla Public License Version 1.0)</p>
@@ -1173,15 +1282,29 @@ Use count: 1
 
 <a name="5.Configuration via VTY"></a><h4>5. Configuration via VTY<a class="anchorlink" href="#5.Configuration via VTY"></a></h4>
 <p>Along with working on the subscriber database, VTY is used for configuring files as well. The configuration commands are available at runtime, but they are not all applied immediately. It is necessary to save the new configuration and then restart the application.</p>
-<h4>5.1 Connecting</h4>
+<h4>5.1 Log in</h4>
 <pre><code>root@fairwaves:/# telnet localhost 4242
 </code></pre>
 
 <p><strong><em>NOTE:</em></strong> This is the default node when connecting to the VTY interface. This node does not require any additional permission and allows
 to introspect the application.</p>
+
 <p><strong>Print available commands for that node</strong></p>
 <pre><code>OpenBSC&gt; list
 </code></pre>
+
+<p><strong>Enable Logs</strong></p>
+<pre><code>OpenBSC&gt; logging enable
+</code></pre>
+
+<p><strong>Log all messages or not</strong></p>
+<pre><code>OpenBSC&gt; logging filter all (0|1)
+</code></pre>
+
+<p><strong>Set the log level for a specified category</strong></p>
+<pre><code>OpenBSC&gt; logging level (all|rll|cc|mm|rr|rsl|nm|mncc|pag|meas|sccp|msc|mgcp|ho|db|ref|gprs|ns|bssgp|llc|sndcp|nat|ctrl|smpp|lglobal|llapd|linp|lmux|lmi|lmib|lsms) (everything|debug|info|notice|error|fatal)
+</code></pre>
+
 
 <h4>5.2 Privileged mode</h4>
 <p><strong>Turn on privileged mode</strong></p>
@@ -1286,6 +1409,35 @@ to introspect the application.</p>
 
 <p><strong>Set the short GSM network name</strong></p>
 <pre><code>OpenBSC(config-net)# short name NAME
+</code></pre>
+
+<h4>Handover configuration</h4>
+<p>Enable BSC in-call handover between multiple BTS</p>
+<pre><code>OpenBSC(config-net)# handover (0|1)
+</code></pre>
+
+<p>Over how many SACCH frames should the Rx Level of the serving cell be averaged?</p>
+<pre><code>OpenBSC(config-net)# handover window rxlev averaging &lt;1-10&gt;
+</code></pre>
+
+<p>Over how many SACCH frames should the Rx Quality of the serving cell be averaged?</p>
+<pre><code>OpenBSC(config-net)# handover window rxqual averaging &lt;1-10&gt;
+</code></pre>
+
+<p>Over how many SACCH frames should the Rx Level of a neighbor cell be averaged?</p>
+<pre><code>OpenBSC(config-net)# handover window rxlev neighbor averaging &lt;1-10&gt;
+</code></pre>
+
+<p>Every how many SACCH frames should the BSC think about performing a power budget (rx level) handover?</p>
+<pre><code>OpenBSC(config-net)# handover power budget interval &lt;1-99&gt;
+</code></pre>
+
+<p>How large should the hysteresis be, i.e. to prevent continuous handover back and forth</p>
+<pre><code>OpenBSC(config-net)# handover power budget hysteresis &lt;0-999&gt;
+</code></pre>
+
+<p>What is the maximum distance from a BTS, after which we try to perform distance handover?</p>
+<pre><code>OpenBSC(config-net)# handover maximum distance &lt;0-9999&gt;
 </code></pre>
 
 <p><strong><em>NOTE:</em></strong> For the changes to take effect you should write it in to a file (see below)</p>
