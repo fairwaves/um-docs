@@ -458,31 +458,31 @@ The GSM network can be divided into following parts.</p>
 <p><strong><u>1. Base Transceiver Station (BTS)</u></strong> responsible for carrying out radio communications between the network and the MS,it handles speech encoding, encryption, multiplexing (TDMA), and modulation/demodulation of the radio signals.</p>
 </li>
 <li>
-<p><b>2. Base Station Controller (BSC)</b> handles allocation of radio channels, frequency administration, power and signal measurements from the MS, and handovers from one BTS to another.</p>
+<p><u>2. Base Station Controller (BSC)</u> handles allocation of radio channels, frequency administration, power and signal measurements from the MS, and handovers from one BTS to another.</p>
 </li>
 </ul>
 <h4>Network Switching Subsystem (NSS)</h4>
 <p>provides the main control and interfacing for the whole mobile network.</p>
 <ul>
 <li>
-<p><strong>1. Mobile Switching Centre (MSC)</strong> is the main element delivery node for GSM, responsible for the routing voice calls and SMS. MSC acts like a normal switching node within a PSTN or ISDN, but also provides additional functionality to enable the requirements of a mobile user to be supported. These include registration, authentication, call location, inter-MSC handovers and call routing to a mobile subscriber. It also provides an interface to the PSTN so that calls can be routed from the mobile network to a phone connected to a landline. Interfaces to other MSCs are provided to enable calls on different networks.</p>
+<p><strong><u>1. Mobile Switching Centre (MSC)</u></strong> is the main element delivery node for GSM, responsible for the routing voice calls and SMS. MSC acts like a normal switching node within a PSTN or ISDN, but also provides additional functionality to enable the requirements of a mobile user to be supported. These include registration, authentication, call location, inter-MSC handovers and call routing to a mobile subscriber. It also provides an interface to the PSTN so that calls can be routed from the mobile network to a phone connected to a landline. Interfaces to other MSCs are provided to enable calls on different networks.</p>
 </li>
 <li>
-<p><strong>2. Home Location Register (HLR)</strong> is a central database that contains details of each mobile phone subscriber that is authorized (AuC) to use the GSM core network.The HLR maintains information such as the MSISDN, IMSI, current location of the MS, roaming restrictions, and subscriber
+<p><strong><u>2. Home Location Register (HLR)</u></strong> is a central database that contains details of each mobile phone subscriber that is authorized (AuC) to use the GSM core network.The HLR maintains information such as the MSISDN, IMSI, current location of the MS, roaming restrictions, and subscriber
 features.</p>
 </li>
 <li>
-<p><strong>3. Visitor Location Register (VLR)</strong> contains subset of the information about the mobile subscribers which came from the other MSC.</p>
+<p><strong><u>3. Visitor Location Register (VLR)</u></strong> contains subset of the information about the mobile subscribers which came from the other MSC.</p>
 </li>
 <li>
-<p><strong>4. Equipment Identity Register (EIR)</strong> is a database that keeps tracks of handsets on the network using the IMEI.</p>
+<p><strong><u>4. Equipment Identity Register (EIR)</u></strong> is a database that keeps tracks of handsets on the network using the IMEI.</p>
 </li>
 <li>
-<p><strong>5. Authentication Centre (AuC):</strong> is responsible for generating the necessary cryptovariables for authentication and encryption on the network. The Auc also stores the Ki for each IMSI on the network. Although it is not
+<p><strong><u>5. Authentication Centre (AuC)</u></strong> is responsible for generating the necessary cryptovariables for authentication and encryption on the network. The Auc also stores the Ki for each IMSI on the network. Although it is not
 required, the Auc is normally physically collocated with the HLR.</p>
 </li>
 <li>
-<p><strong>6. Gateway Mobile Switching Centre (GMSC)</strong> is a gateway between
+<p><strong><u>6. Gateway Mobile Switching Centre (GMSC)</u></strong> is a gateway between
 two networks. If a mobile subscriber wants to place a call to a regular land line, then the call would have to go through a GMSC in order to
 switch to the Public Switched Telephone Network (PSTN).</p>
 </li>
@@ -491,12 +491,21 @@ switch to the Public Switched Telephone Network (PSTN).</p>
 <p>is used to control and monitor the overall GSM network and it is also used to control the traffic load of the BSS.
 More information about specification, protocol stack, security and etc, you can get <a href="http://www.tutorialspoint.com/gsm/index.htm"><strong>here</strong></a>.</p>
 <h4>1.2 Fairwaves network architecture</h4>
-<p>The architecture is made up of multiple components and interfaces that facilitate build a mobile network with indpeendent distributed VoIP cores and integrates functionality that is usually provided by GSM components such as BSC, MSC, VLR, HLR and SMSC in a single self-contained cellular base station. It's software-centric design enables unprecedented flexibility, supporting remote configuration, maintenance and upgrade, and covering everything from transmit power control to end user features.
+<p> The Fairwaves Architecture defines a set of components, protocols, services and configurations used to build cost-optimized mobile networks in rural and remote areas.</p>
+
+<p>In contrast to the traditional GSM architecture that is highly centralized, dependent upon backhaul and making heavy use of this, the Fairwaves Architecture is built upon a distributed VoIP core that benefits from local switching and is resilient to network failure.</p>
+
+<p>All the functions of a mobile network are integrated into a single, self-contained cellular base station, that is built to withstand the elements and suited to being powered from off-grid energy sources such as solar.</p>
+
+<p>Scaling and integration with operator networks is made possible via local and cloud-based UmCORE servers.</p>
+
+<p>The Fairwaves Architecture significantly reduces the financial and technical barriers to deploying cellular networks, while ensuring that during their operation backhaul costs are minimised thanks to local call routing and
+use of effective voice compression algorithms.</p>
  For more details: <a href="https://fairwaves.co/wp/equipment/" title="fairwaves.co"><strong>fairwaves.co</strong></a> and <a href="http://umtrx.org/hardware/"><strong>umtrx.org</strong></a></p>
 <p>This software is licensed under GNU Affero General Public License Version 3. Refer to <a href="http://openbsc.osmocom.org/trac/wiki/osmo-nitb"><strong>osmocom</strong></a> for details.</p>
 <p><img src="http://s018.radikal.ru/i522/1501/d0/b4e90e8fe0bd.png" />
-<em>Fairwaves software architecture</em></p>
-<p>This <strong>network-in-a-box</strong> can be operated  independently, interconnected, and integrated with existing PLMN, PSTN and private cellular networks, with support for roaming and industry standard billing protocols.</p>
+<p>The <u>UmSITE</u> is more than simply a rugged BTS and is essentially a complete <u>network-in-a-box</u>, seamlessly integrating functionality that is usually provided by GSM components such as BSC, MSC, VLR, HLR and SMSC. Its software-centric design enables unprecedented flexibility, supporting remote configuration, maintenance and upgrade, and covering everything from transmit power control to end user features.
+</p>
 <p><img src="http://s017.radikal.ru/i414/1501/51/eac454667177.png" /></p>
 <p>Independent Base stations (UmSITE) can be clustered through a distributed HLR connected via peer to peer links</p>
 <p><img src="http://s020.radikal.ru/i709/1501/40/96d0dd3429eb.png" /></p>
@@ -511,13 +520,21 @@ More information about specification, protocol stack, security and etc, you can 
 <li>5. HLR</li>
 </ul>
 <p>UmCORE is available in customer co-located and cloud versions.</p>
- <br>
+
+<h5> UmCORE Local</h5>
+<p>UmCORE Local is a turnkey solution comprised of a compact low power server loaded with preconfigured software, designed for ease of deployment and customer co-location.
+</p>
+<p>UmCORE Local can be managed and upgraded remotely via a secure VPN link.    </p>
+
+<h5>UmCORE Cloud </h5>
+<p>UmCORE Cloud is a hosted solution that provides an additional layer of resilience and is used to enable integration with existing operator networks via a VoIP-SS7 gateway.
+</p>
 <a name="2.Configuration"></a><h4>2. Configuration<a class="anchorlink" href="#2.Configuration"></a></h4>
  <br>
 <h4>2.1	Log in</h4>
-<p>There are two physical ethernet interfaces for the <strong>UmDESK</strong>, which is have a static IP for the external ethernet card <u>192.168.50.100</u> also it's configured to get IP address via DHCP.</p>
+<p>There are two physical ethernet interfaces for the <strong><u>UmDESK</u></strong>, which is have a static IP for the external ethernet card <u>192.168.50.100</u> (<i>also it's configured to obtain IP address via DHCP</i>)</p>
 <p><u>192.168.10.10</u> is internal interface for the UmTRX.</p>
-<p><h3>NOTE:</h3>to detect radio devices and confirm connectivity run:</p>
+<p><u>NOTE:</u> to detect radio devices and confirm connectivity run:</p>
 <pre><code>uhd_find_devices
 </code></pre>
 
@@ -525,9 +542,9 @@ More information about specification, protocol stack, security and etc, you can 
 <pre><code>uhd_usrp_probe
 </code></pre>
 
-<p>In order to configure <strong>UmSITE</strong>, you have to login into device remotely over SSH. Interface configured to obtain IP address via DHCP and also has a static <u>192.168.50.100</u></p>
+<p>In order to configure <strong><u>UmSITE</u></strong>, you have to login into device remotely over SSH. Interface configured to obtain IP address via DHCP and also has a static <u>192.168.50.100</u></p>
 <p>Connect laptop to the UmDESK/UmSITE via Ethernet cable.</p>
-<p><h3>NOTE:</h3> Make sure your interface in the same subnet as the UmSITE/UmDESK and has IP like <u>192.168.50.101</u>
+<p><u>NOTE:</u> Make sure your interface in the same subnet as the UmSITE/UmDESK and has IP like <u>192.168.50.101</u>
 </p>
 <ol>
 <li>1. Run PuTTY
@@ -538,9 +555,9 @@ More information about specification, protocol stack, security and etc, you can 
 <li>Password: fairwaves</li>
 </ol>
 <p>Once you logged in, you will get access to Linux terminal. </p>
-<p>You may use a deferent client software for remote access, but we recommend <strong>PuTTY</strong> (you can download at <a href="www.putty.org" title="PuTTY"><strong>www.putty.org</strong></a> ).  PuTTY is an open source SSH and telnet client, for the Windows platform. </p>
+<p>You may use a deferent client software for remote access, we recommend <strong>PuTTY</strong> (you can download at <a href="www.putty.org" title="PuTTY"><strong>www.putty.org</strong></a> ).  PuTTY is an open source SSH and telnet client, for the Windows platform. </p>
 <h4>Login over Serial cable (Only for UmSITE)</h4>
-<p>Serial connection allows  you to look over the system on the booting level.</p>
+<p>Serial connection allows  you to look over the system at the booting level.</p>
 <p>You'll get options like:</p>
 <ol>
 <li>1. Advanced options for Ubuntu</li>
@@ -564,7 +581,7 @@ More information about specification, protocol stack, security and etc, you can 
 <p>Refer to <a href="https://help.ubuntu.com/14.04/ubuntu-help/index.html"><strong>Ubuntu</strong></a> documentation for details
 </p>
 
-<p><h3>Note:</h3> Base station configured to get IP address through DHCP.
+<p><h5>Note:</h5> Base station configured to get IP address through DHCP.
 We also recommend to keep configuration for the
 <u>eth1:1</u> (192.168.50.50/24), because it's used as a backup IP address. If you
 want to configure a statis IP address, change <u>eth1</u> configuration.</p>
