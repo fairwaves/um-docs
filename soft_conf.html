@@ -342,7 +342,7 @@ img {
 <p>2.1	Log in</p>
 <p>2.2	IP and Network configuration </p>
 <p>2.3	GSM parameters</p>
-<p>2.4  Runtime Log</p>
+<p>2.4  Runtime Logs</p>
 <p>2.5	Multi BTS configuration</p>
 <p>2.6 Handover</p>
 <h4>3. FreeSWITCH Configuration</h4>
@@ -581,7 +581,7 @@ use of effective voice compression algorithms.</p>
 <p>Refer to <a href="https://help.ubuntu.com/14.04/ubuntu-help/index.html"><strong>Ubuntu</strong></a> documentation for details
 </p>
 
-<p><h2>Note:</h2> Base station configured to get IP address through DHCP.
+<p><u>NOTE:</u> Base station configured to get IP address through DHCP.
 We also recommend to keep configuration for the
 <u>eth1:1</u> (192.168.50.50/24), because it's used as a backup IP address. If you
 want to configure a statis IP address, change <u>eth1</u> configuration.</p>
@@ -625,8 +625,8 @@ Possible values are:<br />
 
 <p>absolute radio-frequency channel number. This is a code that specifies a pair of physical radio carriers used for transmission and reception signal. Different bands provides a different amount of channels.</p>
 
-<p><h3>NOTE:</h3> See below at the Configuration via VTY how to change these parameters</p>
-<p>After changing configs, restart the services:</p>
+<p><u>NOTE:</u>See below at the Configuration via VTY how to change these parameters</p>
+<p><i>Restart services when config changes:</i></p>
 <pre><code>Shell&gt; sudo sv restart osmo-nitb osmo-bts osmo-trx
 </code></pre>
 
@@ -996,11 +996,9 @@ network
 
 
 <h4>2.6 Handover</h4>
-<p>Handover is the ability to keep connection an ongoing call between two base stations.</p>
-
+<p>Handover is the ability to keep connection an ongoing call between two base stations.
 You should use <u>MultiBTS mode</u> for osmo-nitb and osmo-bts
-
-<p>enable handover in osmo-nitb configuration <em>etc/osmocom/openbsc.cfg</em></p>
+enable handover in <u>osmo-nitb</u> configuration <em>etc/osmocom/openbsc.cfg</em></p>
 <pre><code> handover 1
  handover window rxlev averaging 10
  handover window rxqual averaging 1
@@ -1062,7 +1060,7 @@ You should use <u>MultiBTS mode</u> for osmo-nitb and osmo-bts
 
 
 
-<p><u>NOTE:</u> Handover configuration available through the VTY command line. See below at <em>5.4 Network configuration chapter</em></p>
+<p><u>NOTE:</u> <i>Handover configuration available through the VTY command line. See below at <u>5.4 Network configuration</u> chapter</i></p>
 
 <a name="3.FreeSWITCH Configuration"></a><h4>3. FreeSWITCH Configuration<a class="anchorlink" href="#3.FreeSWITCH Configuration"></a></h4>
 <p>FreeSWITCH is a scalable open source cross-platform telephony platform designed to route and interconnect popular communication protocols using audio, video, text or any other form of media.
