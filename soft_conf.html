@@ -557,7 +557,7 @@ use of effective voice compression algorithms.</p>
 <p>Once you logged in, you will get access to Linux terminal. </p>
 <p>You may use a deferent client software for remote access, we recommend <strong>PuTTY</strong> (you can download at <a href="www.putty.org" title="PuTTY"><strong>www.putty.org</strong></a> ).  PuTTY is an open source SSH and telnet client, for the Windows platform. </p>
 <h4>Login over Serial cable (Only for UmSITE)</h4>
-<p>Serial connection allows  you to look over the system at the booting level.</p>
+<p>Serial connection allows you to choose boot options and log into the system if network connection is not available.</p>
 <p>You'll get options like:</p>
 <ol>
 <li>1. Advanced options for Ubuntu</li>
@@ -1065,9 +1065,9 @@ enable handover in <u>osmo-nitb</u> configuration: <em>etc/osmocom/openbsc.cfg</
 <a name="3.FreeSWITCH Configuration"></a><h4>3. FreeSWITCH Configuration<a class="anchorlink" href="#3.FreeSWITCH Configuration"></a></h4>
 <p>FreeSWITCH is a scalable open source cross-platform telephony platform designed to route and interconnect popular communication protocols using audio, video, text or any other form of media.
 Licensed under the MPL(Mozilla Public License Version 1.0)</p>
-<p>FreeSWITCH comes already installed and configured to route internal calls. If you would like to set external calls, you should set up the gateway for your SIP provider.</p>
+<p>FreeSWITCH comes already installed and configured to route internal calls. If you would like to make external calls, you should set up the gateway for your SIP provider.</p>
 <h4>3.1 Setting up a new gateway</h4>
-<p>In order to add a new gateway, you should create a new XML file in </p>
+<p>In order to add a new gateway you should create a new XML file in </p>
 <pre><code>    /freeswitch/conf/sip_profiles/external
 </code></pre>
 
@@ -1215,7 +1215,7 @@ codec,iLBC,mod_ilbc
 <p>3. Semi- automatically from the Virtual Tele Type (VTY)</p>
 </li>
 </ol>
-<p>Subscribers are stored in /etc/osmocom/hlr.sqlite3, which is a SQLite database file. The easiest way to add, assign, and change subscriber properties is semi-automatically through VTY.</p>
+<p>Subscribers are stored in /etc/osmocom/hlr.sqlite3, which is an SQLite database file. The easiest way to add, assign, and change subscriber properties is semi-automatically through VTY.</p>
 <b>Create the subscriber IMSI 9875648374658</b>
 <pre><code>    OpenBSC# subscriber create imsi 9875648374658
 </code></pre>
