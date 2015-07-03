@@ -446,43 +446,43 @@ The GSM network can be divided into following parts.</p>
 <h4>Mobile Station (MS)</h4>
 <p>is made up of two components:</p>
 <ul>
-<li><p><strong><u>1. Mobile Equipment (ME)</u></strong> refers to the physical phone itself.</p></li>
+<li><p><strong>1. Mobile Equipment (ME)</strong> refers to the physical phone itself.</p></li>
 <li>
-<p><strong><u>2. Subscriber Identity Module (SIM)</u></strong> is a small smart card that carries information specific to the subscriber, such as IMSI, TMSI, Ki (used for encryption), Service Provider Name (SPN), and Local Area Identity (LAI). </p>
+<p><strong>2. Subscriber Identity Module (SIM)</strong> is a small smart card that carries information specific to the subscriber, such as IMSI, TMSI, Ki (used for encryption), Service Provider Name (SPN), and Local Area Identity (LAI). </p>
 </li>
 </ul>
 <h4>Base Station Subsystem (BSS)</h4>
 <p>consists of two elements:</p>
 <ul>
 <li>
-<p><strong><u>1. Base Transceiver Station (BTS)</u></strong> responsible for carrying out radio communications between the network and the MS,it handles speech encoding, encryption, multiplexing (TDMA), and modulation/demodulation of the radio signals.</p>
+<p><strong>1. Base Transceiver Station (BTS)</strong> responsible for carrying out radio communications between the network and the MS,it handles speech encoding, encryption, multiplexing (TDMA), and modulation/demodulation of the radio signals.</p>
 </li>
 <li>
-<p><u>2. Base Station Controller (BSC)</u> handles allocation of radio channels, frequency administration, power and signal measurements from the MS, and handovers from one BTS to another.</p>
+<p><strong>2. Base Station Controller (BSC)</strong> handles allocation of radio channels, frequency administration, power and signal measurements from the MS, and handovers from one BTS to another.</p>
 </li>
 </ul>
 <h4>Network Switching Subsystem (NSS)</h4>
 <p>provides the main control and interfacing for the whole mobile network.</p>
 <ul>
 <li>
-<p><strong><u>1. Mobile Switching Centre (MSC)</u></strong> is the main element delivery node for GSM, responsible for the routing voice calls and SMS. MSC acts like a normal switching node within a PSTN or ISDN, but also provides additional functionality to enable the requirements of a mobile user to be supported. These include registration, authentication, call location, inter-MSC handovers and call routing to a mobile subscriber. It also provides an interface to the PSTN so that calls can be routed from the mobile network to a phone connected to a landline. Interfaces to other MSCs are provided to enable calls on different networks.</p>
+<p><strong>1. Mobile Switching Centre (MSC)</strong> is the main element delivery node for GSM, responsible for the routing voice calls and SMS. MSC acts like a normal switching node within a PSTN or ISDN, but also provides additional functionality to enable the requirements of a mobile user to be supported. These include registration, authentication, call location, inter-MSC handovers and call routing to a mobile subscriber. It also provides an interface to the PSTN so that calls can be routed from the mobile network to a phone connected to a landline. Interfaces to other MSCs are provided to enable calls on different networks.</p>
 </li>
 <li>
-<p><strong><u>2. Home Location Register (HLR)</u></strong> is a central database that contains details of each mobile phone subscriber that is authorized (AuC) to use the GSM core network.The HLR maintains information such as the MSISDN, IMSI, current location of the MS, roaming restrictions, and subscriber
+<p><strong>2. Home Location Register (HLR)</strong> is a central database that contains details of each mobile phone subscriber that is authorized (AuC) to use the GSM core network.The HLR maintains information such as the MSISDN, IMSI, current location of the MS, roaming restrictions, and subscriber
 features.</p>
 </li>
 <li>
-<p><strong><u>3. Visitor Location Register (VLR)</u></strong> contains subset of the information about the mobile subscribers which came from the other MSC.</p>
+<p><strong>3. Visitor Location Register (VLR)</strong> contains subset of the information about the mobile subscribers which came from the other MSC.</p>
 </li>
 <li>
-<p><strong><u>4. Equipment Identity Register (EIR)</u></strong> is a database that keeps tracks of handsets on the network using the IMEI.</p>
+<p><strong>4. Equipment Identity Register (EIR)</strong> is a database that keeps tracks of handsets on the network using the IMEI.</p>
 </li>
 <li>
-<p><strong><u>5. Authentication Centre (AuC)</u></strong> is responsible for generating the necessary cryptovariables for authentication and encryption on the network. The Auc also stores the Ki for each IMSI on the network. Although it is not
+<p><strong>5. Authentication Centre (AuC)</strong> is responsible for generating the necessary cryptovariables for authentication and encryption on the network. The Auc also stores the Ki for each IMSI on the network. Although it is not
 required, the Auc is normally physically collocated with the HLR.</p>
 </li>
 <li>
-<p><strong><u>6. Gateway Mobile Switching Centre (GMSC)</u></strong> is a gateway between
+<p><strong>6. Gateway Mobile Switching Centre (GMSC)</strong> is a gateway between
 two networks. If a mobile subscriber wants to place a call to a regular land line, then the call would have to go through a GMSC in order to
 switch to the Public Switched Telephone Network (PSTN).</p>
 </li>
@@ -521,20 +521,20 @@ use of effective voice compression algorithms.</p>
 </ul>
 <p>UmCORE is available in customer co-located and cloud versions.</p>
 
-<h4> UmCORE Local</h4>
+<strong>   UmCORE Local</strong>
 <p>UmCORE Local is a turnkey solution comprised of a compact low power server loaded with preconfigured software, designed for ease of deployment and customer co-location.
 </p>
 <p>UmCORE Local can be managed and upgraded remotely via a secure VPN link.    </p>
 
-<h4>UmCORE Cloud </h4>
+<strong>  UmCORE Cloud </strong>
 <p>UmCORE Cloud is a hosted solution that provides an additional layer of resilience and is used to enable integration with existing operator networks via a VoIP-SS7 gateway.
 </p>
 <a name="2.Configuration"></a><h4>2. Configuration<a class="anchorlink" href="#2.Configuration"></a></h4>
  <br>
 <h4>2.1	Log in</h4>
-<p>There are two physical ethernet interfaces for the <strong><u>UmDESK</u></strong>, which is have a static IP for the external ethernet card <u>192.168.50.100</u> (<i>also it's configured to obtain IP address via DHCP</i>)</p>
+<p>There are two physical ethernet interfaces for the <strong>UmDESK</strong>, which is have a static IP for the external ethernet card <u>192.168.50.100</u> (<i>also it's configured to obtain IP address via DHCP</i>)</p>
 <p><u>192.168.10.10</u> is internal interface for the UmTRX.</p>
-<p><u>NOTE:</u> to detect radio devices and confirm connectivity run:</p>
+<p><strong>NOTE:</strong>   to detect radio devices and confirm connectivity run:</p>
 <pre><code>uhd_find_devices
 </code></pre>
 
@@ -542,9 +542,9 @@ use of effective voice compression algorithms.</p>
 <pre><code>uhd_usrp_probe
 </code></pre>
 
-<p>In order to configure <strong><u>UmSITE</u></strong>, you have to login into device remotely over SSH. Interface configured to obtain IP address via DHCP and also has a static <u>192.168.50.100</u></p>
+<p>In order to configure <strong>UmSITE</strong>, you have to login into device remotely over SSH. Interface configured to obtain IP address via DHCP and also has a static <u>192.168.50.100</u></p>
 <p>Connect laptop to the UmDESK/UmSITE via Ethernet cable.</p>
-<p><u>NOTE:</u> Make sure your interface in the same subnet as the UmSITE/UmDESK and has IP like <u>192.168.50.101</u>
+<p><strong> NOTE:</strong>   Make sure your interface in the same subnet as the UmSITE/UmDESK and IP like <u>192.168.50.101</u>
 </p>
 <ol>
 <li>1. Run PuTTY
@@ -581,7 +581,7 @@ use of effective voice compression algorithms.</p>
 <p>Refer to <a href="https://help.ubuntu.com/14.04/ubuntu-help/index.html"><strong>Ubuntu</strong></a> documentation for details
 </p>
 
-<p><u>NOTE:</u> Base station configured to get IP address through DHCP.
+<p><strong>  NOTE:</strong>   Base station configured to get IP address through DHCP.
 We also recommend to keep configuration for the
 <u>eth1:1</u> (192.168.50.50/24), because it's used as a backup IP address. If you
 want to configure a statis IP address, change <u>eth1</u> configuration.</p>
@@ -612,9 +612,9 @@ want to configure a statis IP address, change <u>eth1</u> configuration.</p>
 <p>policy of access to the network. it's open for all by default.
 Possible values are:<br />
 <br></br>
-1.	<u>closed:</u> Don't allow anyone who is not marked as authorized=1 in the HLR database<br />
-<br></br>
-2.	<u>accept-all:</u> Accept everyone into the network</p>
+1.	<strong>  closed:</strong>   Don't allow anyone who is not marked as authorized=1 in the HLR database<br />
+<br>
+2.	<strong> accept-all:</strong>   Accept everyone into the network</p>
 
 <h4>band</h4>
 
@@ -625,7 +625,7 @@ Possible values are:<br />
 
 <p>absolute radio-frequency channel number. This is a code that specifies a pair of physical radio carriers used for transmission and reception signal. Different bands provides a different amount of channels.</p>
 
-<p><u>NOTE:</u>See below at the Configuration via VTY how to change these parameters</p>
+<p><strong> NOTE:</strong>  See below at the Configuration via VTY how to change these parameters</p>
 <p><i>Restart services when config changes:</i></p>
 <pre><code>Shell&gt; sudo sv restart osmo-nitb osmo-bts osmo-trx
 </code></pre>
@@ -691,7 +691,7 @@ Possible values are:<br />
 <pre><code>Will degrade system performance; only for use by developers
 </code></pre>
 
-<p> <u>NOTE:</u> To get different information out of the system, you may set different logging level in the VTY command line</p>
+<p> <strong>  NOTE:</strong>   To get different information out of the system, you may set different logging level in the VTY command line</p>
 
 
 <h4>2.5 Multi BTS configuration</h4>
@@ -708,7 +708,7 @@ Possible values are:<br />
 <p>1. <code>ipa unit-id</code> - each BTS should have unique ipa unit-id</p>
 </li>
 <li>
-<p><strong>2. <code>oml remote-ip</code></strong> - BSC ip address</p>
+<p>2. <code>oml remote-ip</code> - BSC ip address</p>
 </li>
 </ul>
 <p><strong>path:</strong> <em>etc/osmocom/osmo-bts.cfg</em></p>
@@ -770,13 +770,13 @@ Possible values are:<br />
 <p>There are three parameters which should be checked in BSC configuration:</p>
 <ul>
 <li>
-<p><strong>1. <code>ip.access unit_id</code></strong> - you should set the same unit id in the BSC as well as in BTS, each BTS should have unique ipa unit-id</p>
+<p>1. <code>ip.access unit_id</code> - you should set the same unit id in the BSC as well as in BTS, each BTS should have unique ipa unit-id</p>
 </li>
 <li>
-<p><strong>2. <code>base_station_id_code</code></strong> - should be unique in location area &lt;0-63&gt;</p>
+<p>2. <code>base_station_id_code</code> - should be unique in location area &lt;0-63&gt;</p>
 </li>
 <li>
-<p><strong>3. <code>neighbor-list mode automatic</code></strong></p>
+<p>3. <code>neighbor-list mode automatic</code></p>
 </li>
 </ul>
 <p><strong>path:</strong> <em>etc/osmocom/openbsc.cfg</em></p>
@@ -997,8 +997,8 @@ network
 
 <h4>2.6 Handover</h4>
 <p>Handover is the ability to keep connection an ongoing call between two base stations.
-You should use <u>MultiBTS mode</u> for osmo-nitb and osmo-bts
-enable handover in <u>osmo-nitb</u> configuration <em>etc/osmocom/openbsc.cfg</em></p>
+You should use <strong>  MultiBTS mode</strong>   for osmo-nitb and osmo-bts
+enable handover in <u>osmo-nitb</u> configuration: <em>etc/osmocom/openbsc.cfg</em></p>
 <pre><code> handover 1
  handover window rxlev averaging 10
  handover window rxqual averaging 1
@@ -1060,14 +1060,14 @@ enable handover in <u>osmo-nitb</u> configuration <em>etc/osmocom/openbsc.cfg</e
 
 
 
-<p><u>NOTE:</u> <i>Handover configuration available through the VTY command line. See below at <u>5.4 Network configuration</u> chapter</i></p>
+<p><b>NOTE:</b> <i>Handover configuration available through the VTY command line. See below at <u>5.4 Network configuration</u> chapter</i></p>
 
 <a name="3.FreeSWITCH Configuration"></a><h4>3. FreeSWITCH Configuration<a class="anchorlink" href="#3.FreeSWITCH Configuration"></a></h4>
 <p>FreeSWITCH is a scalable open source cross-platform telephony platform designed to route and interconnect popular communication protocols using audio, video, text or any other form of media.
 Licensed under the MPL(Mozilla Public License Version 1.0)</p>
-<p>FreeSWITCH comes already installed and configured for the internal working, but if you would like to make external calls, you need to set up gateway for your SIP provider.</p>
-<h4>3.1 Setiing up a new gateway</h4>
-<p>In order to add new gateway you should create a new XML file in </p>
+<p>FreeSWITCH comes already installed and configured to route internal calls. If you would like to set external calls, you should set up the gateway for your SIP provider.</p>
+<h4>3.1 Setting up a new gateway</h4>
+<p>In order to add a new gateway, you should create a new XML file in </p>
 <pre><code>    /freeswitch/conf/sip_profiles/external
 </code></pre>
 
@@ -1090,7 +1090,7 @@ Licensed under the MPL(Mozilla Public License Version 1.0)</p>
 &lt;/include&gt;
 </code></pre>
 
-<p>and then you should add configuration in <strong>gateway.xml</strong> file </p>
+<p>then you should add the configuration in the <strong>gateway.xml</strong> file </p>
 <h5>Change directory</h5>
 <pre><code>    shell&gt;cd ../../dialplan/
 </code></pre>
@@ -1099,7 +1099,7 @@ Licensed under the MPL(Mozilla Public License Version 1.0)</p>
 <pre><code>    shell&gt; sudo nano gateway.xml
 </code></pre>
 
-<p>and change the line </p>
+<p>change the line </p>
 <pre><code>&lt;action application=&quot;bridge&quot; data=&quot;sofia/gateway/net2phone/$1&quot;/&gt;
 </code></pre>
 
@@ -1107,11 +1107,11 @@ Licensed under the MPL(Mozilla Public License Version 1.0)</p>
 <pre><code>&lt;action application=&quot;bridge&quot; data=&quot;sofia/gateway/yourprovidername/$1&quot;/&gt;
 </code></pre>
 
-<p>restart the service </p>
+<p>restart services </p>
 <pre><code>    shell&gt; sudo sv restart freeswitch
 </code></pre>
 
-<p><strong><em>NOTE</em></strong>:  If your system already in production you should use  <strong>fs_cli</strong> for the  restarting</p>
+<p><strong>NOTE</strong>:  If your system already in production you should use  <strong>fs_cli</strong> for the  restarting</p>
 <h5>Change directory</h5>
 <pre><code>    shell&gt; cd ../../bin/
 </code></pre>
@@ -1120,11 +1120,11 @@ Licensed under the MPL(Mozilla Public License Version 1.0)</p>
 <pre><code>    shell&gt; ./fs_cli
 </code></pre>
 
-<p>Type:</p>
+<p>Execute:</p>
 <pre><code>    freeswitch@internal&gt;  sofia profile external restart reloadxml
 </code></pre>
 
-<p><strong><em>NOTE:</em></strong> Restarting a profile will disconnect all active calls that 
+<p><strong>NOTE:</strong> Restarting a profile will disconnect all active calls that
 are currently routed through that profile. An alternate command to 
 add a newly created gateway without restarting the entire profile is:</p>
 <pre><code>    freeswitch@internal&gt;  sofia profile &lt;profile name&gt; rescan reloadxml.
@@ -1140,11 +1140,11 @@ add a newly created gateway without restarting the entire profile is:</p>
 <pre><code>    shell&gt; ./fs_cli
 </code></pre>
 
-<p>Type:</p>
+<p>Execute:</p>
 <pre><code>    freeswitch@internal&gt;  sofia global siptrace on
 </code></pre>
 
-<p>Logs show up when the calls will be made.</p>
+<p>Logs show up when calls will be made.</p>
 
 <h4>3.3 Codecs in FreeSWITCH</h4>
 <p>FreeSWITCH supports a large number of VoIP compression codecs. </p>
@@ -1181,16 +1181,16 @@ codec,iLBC,mod_ilbc
 
 <p>More information <a href="https://en.wikipedia.org/wiki/FreeSWITCH">FreeSWITCH</a></p>
 <h5>Change codecs</h5>
-<pre><code>    shell&gt; nano /usr/local/freeswitch/conf/vars.xml 
+<pre><code>shell&gt; nano /usr/local/freeswitch/conf/vars.xml
 </code></pre>
 
-<p>Find lines and set the codecs</p>
+<p>Find lines and set up codecs</p>
 <pre><code>&lt;X-PRE-PROCESS cmd=&quot;set&quot; data=&quot;global_codec_prefs=G722,PCMU,PCMA,GSM&quot;/&gt;
 &lt;X-PRE-PROCESS cmd=&quot;set&quot; data=&quot;outbound_codec_prefs=PCMU,PCMA,GSM&quot;/&gt;
 </code></pre>
 
 <a name="4.Subscribers properties"></a><h4>4. Subscribers properties<a class="anchorlink" href="#4.Subscribers properties"></a></h4>
-<p>This part shows you how to change subscriber options through Virtual Teletype (VTY). VTY has the concept of nodes and commands, which is consists of several words followed by a variable number of parameters. The VTY allows for runtime management and is available through telnet on the localhost. The arguments can be a single word, a string, numbers, ranges or a list of options. The available commands depend on the current node.</p>
+<p> Virtual Teletype (VTY) has the concept of nodes and commands, which is consists of several words followed by a variable number of parameters. The VTY allows for runtime management and is available through telnet on the localhost. The arguments can be a single word, a string, numbers, ranges or a list of options. The available commands depend on the current node.</p>
 <h4>4.1 Virtual Teletype. Login. Privileged mode.</h4>
 <p>Modifying subscriber properties requires the VTY to be in the privileged (<strong>enable</strong>) mode.</p>
 <p>Login to VTY   
@@ -1215,35 +1215,35 @@ codec,iLBC,mod_ilbc
 <p>3. Semi- automatically from the Virtual Tele Type (VTY)</p>
 </li>
 </ol>
-<p>Subscribers are stored in /etc/osmocom/hlr.sqlite3, which is an SQLite database file. You are able to view or change the database with sqlite3 command.The easiest way to add, assign, and change subscriber properties is semi-automatically through VTY.</p>
+<p>Subscribers are stored in /etc/osmocom/hlr.sqlite3, which is a SQLite database file. The easiest way to add, assign, and change subscriber properties is semi-automatically through VTY.</p>
 <b>Create the subscriber IMSI 9875648374658</b>
 <pre><code>    OpenBSC# subscriber create imsi 9875648374658
 </code></pre>
 
-<p><strong><em>NOTE:</em></strong> Command subscriber create only assign IMSI number; ID sequences automatically. You should set extension number and name manually.</p>
+<p><strong>NOTE:</strong> The "subscriber create" command assign IMSI number, ID sequences automatically. You should set up extension number and name manually.</p>
 <h4>4.3 Changing the subscriber phone number</h4>
-<p>You can set extension phone number of the subscriber with <strong>IMSI 123321123321</strong> to <strong>25822</strong>  by issuing the following VTY command from the enable node:</p>
+<p>You can set extension phone number of the subscriber with <strong>IMSI 123321123321</strong> to <strong>25822</strong>  by issuing the following VTY command:</p>
 <pre><code>OpenBSC# subscriber imsi 123321123321 extension 25822
 </code></pre>
 
 <h4>4.4 Changing the subscriber name</h4>
-<p>In order to set the name of subscriber with extension number <strong>25822</strong> to &quot;<strong>Chris</strong>&quot;, you can issue the following command on the from the enable node:   
+<p>In order to set subscriber name with extension number <strong>25822</strong> to &quot;<strong>Chris</strong>&quot;, issue the following command:
 </p>
 <pre><code>OpenBSC# subscriber extension 25822 name Chris
 </code></pre>
 
-<p><strong><em>NOTE:</em></strong>
-The name may contain spaces and special characters. You can verify the modified subscriber record by issuing the</p>
+<p><strong>NOTE:</strong>
+The name may contain spaces and special characters. You can verify the modified subscriber record by issuing</p>
 <pre><code>OpenBSC# Show subscriber extension 2522
 </code></pre>
 
 <h4>4.5 Changing the authorization status</h4>
-<p>As the HLR automatically adds records for all subscribers that are actually permitted to use the network, you can set the authorized property of the subscriber using the following VTY command from the enable node: (see information above about auth policy)   
+<p>The HLR automatically adds records for all subscribers that are actually permitted to use the network, you can set the authorized property of the subscriber using the following VTY command: (see information above about auth policy)
 </p>
 <pre><code>OpenBSC# subscriber extension 25822 authorized 0
 </code></pre>
 
-<p><strong><em>NOTE:</em></strong>
+<p><strong>NOTE:</strong>
 If you change auth policy to <strong>closed</strong>  (<em>openbsc.cfg</em>), handsets would fail to register but it would still create new entry in subscribers table.
 Set authorised to 1 to allow the handset to your network.</p>
 <pre><code>OpenBSC# subscriber extension 25822 authorized 1
@@ -1268,11 +1268,11 @@ Set authorised to 1 to allow the handset to your network.</p>
 </code></pre>
 
 <p>Information about a specific subscriber can be obtained from the HLR by showing the subscriber command.</p>
-<p><strong>For example:</strong> Display information about a subscriber with the <strong>IMSI 123321123321</strong>, you can use the following command:</p>
+<p><strong>For example:</strong> Display information about a subscriber with the <strong>IMSI 123321123321</strong></p>
 <pre><code>OpenBSC# show subscriber imsi 123321123321
 </code></pre>
 
-<p>You'll see   
+<p>You'll see
 </p>
 <pre><code>ID: 3, Authorized: 0
 Name: 'jack'
@@ -1285,22 +1285,22 @@ Pending: 0
 Use count: 1 
 </code></pre>
 
-<p>Also you can get information using the <strong>extension number</strong> </p>
+<p>Also you can get information by <strong>extension number</strong> </p>
 <pre><code>OpenBSC# show subscriber extension 25825
 </code></pre>
 
-<p>or <strong>ID</strong>   
+<p>or <strong>ID</strong>
 </p>
 <pre><code>OpenBSC# show subscriber id 1
 </code></pre>
 
 <a name="5.Configuration via VTY"></a><h4>5. Configuration via VTY<a class="anchorlink" href="#5.Configuration via VTY"></a></h4>
-<p>Along with working on the subscriber database, VTY is used for configuring files as well. The configuration commands are available at runtime, but they are not all applied immediately. It is necessary to save the new configuration and then restart the application.</p>
+<p>VTY can be used for files configuration. The configuration commands are available at runtime, but they are not all applied immediately. It is necessary to save the new configuration and then restart the application.</p>
 <h4>5.1 Log in</h4>
 <pre><code>root@fairwaves:/# telnet localhost 4242
 </code></pre>
 
-<p><strong><em>NOTE:</em></strong> This is the default node when connecting to the VTY interface. This node does not require any additional permission and allows
+<p><strong>NOTE:</strong> This is the default node when connecting to the VTY interface. This node does not require any additional permission and allows
 to introspect the application.</p>
 
 <p><strong>Print available commands for that node</strong></p>
@@ -1363,7 +1363,7 @@ to introspect the application.</p>
 </code></pre>
 
 <h4>5.3 Configuration Node</h4>
-<p>After you get in VTY, you are able to change configuration files through the VTY</p>
+<p>As soon as you get into VTY command promt, you will be able to change configuration</p>
 <p><strong>Turn on privileged mode command</strong></p>
 <pre><code>OpenBSC&gt; enable
 </code></pre>
@@ -1481,7 +1481,7 @@ to introspect the application.</p>
 <li>  0 about 1W of output power. </li>
 <li>188 about 3W of output power.</li>
 </ul>
-<p><strong><em>NOTE:</em></strong> In terms of ABIS specific, only even values allow</p>
+<p><strong>NOTE:</strong> In terms of ABIS specific, only even values allow</p>
 
 
 
@@ -1532,9 +1532,9 @@ to introspect the application.</p>
 <pre><code>OpenBSC(config-smpp)# policy &lt;accept-all/closed&gt;
 </code></pre>
 
-<p>&#8226 accept-all - Accept all SMPP connections independeint of system ID / passwd
+<p><strong>accept-all</strong> - Accept all SMPP connections independeint of system ID / passwd
 <br>
-<p>&#8226 closed     - Accept only SMPP connections from configured ESMEs      
+<p><strong>closed</strong>     - Accept only SMPP connections from configured ESMEs
 </p>
 <p><strong>Configure a particular ESME</strong></p>
 <pre><code>OpenBSC(config-smpp)# esme &lt;NAME  Alphanumeric System ID of the ESME&gt; 
