@@ -34,7 +34,7 @@
 		<a href="#1. Branch release set for UmTRX">1. Branch release set for UmTRX</a>
         <a href="#2. UmTRX firmware">2. UmTRX firmware</a>
         <a href="#- Firmware upgrade"> - Firmware upgrade</a>
-        <a href="#3. UHD installation">3. UHD installation</a>
+        <a href="#3. UHD Driver">3. UHD Driver</a>
     	<a href="#4. Osmo-TRX rebuild (optional)"> 4. Osmo-TRX rebuild (optional)</a>
 		<a href="#5. How Freeswitch connects to LCR">5. How Freeswitch connects to LCR</a>
 		<a href="#6. How to set up a MultiBTS">6. How to set up a MultiBTS</a>
@@ -48,7 +48,7 @@
 		</ul>
       </div>
       <div class="span9 main">
-   
+
 <title>UmSITE Quick Start</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
@@ -420,7 +420,20 @@ Follow the steps below described in UHD installation chapter.</p>
 
 <h4>Summary: old UHD -&gt; new firmware -&gt; new UHD</h4>
 <br>
- <a name="3. UHD installation"></a><h4>2. UHD installation<a class="anchorlink" href="#2. UHD installation"></a></h4>
+ <a name="3. UHD Driver"></a><h4>2. UHD Driver<a class="anchorlink" href="#2. UHD Driver"></a></h4>
+<p>A host driver is provided by UHD plus a loadable module that adds UmTRX support.</p>
+<p>If you already have a reasonably recent UHD install that was built with module support, you may only need to build and install the UmTRX module. However, at the time of writing the binary downloads from Ettus were built without this option enabled. See below for details.</p>
+<p>We provide instructions for Linux users only, but the driver should work under Windows and MacOS X as well.</p>
+<strong>Installation</strong>
+<p>UmTRX driver is a loadable module for the UHD library, so the main UHD library is required for the UmTRX driver to operate. Loading UmTRX driver allows any of the myriad of UHD applications to work with UmTRX just like with any other UHD compatible device. Below we describe how to install the UHD library and UmTRX module for it.</p>
+<p>The UHD version supported by the current UmTRX driver is 003.008.</p>
+<p><strong>NOTE:</strong> <em>The binary downloads from Ettus have module support disabled and does not work with UmTRX.</em></p>
+<p>If you’re an Ubuntu user, you can download UHD library built with loadable modules support from <a href="https://launchpad.net/~guruofquality/+archive/ubuntu/pothos/+packages">Josh Blum’s PPA:</a></p>
+<pre><code>$ sudo apt-get install python-software-properties
+$ sudo add-apt-repository ppa:guruofquality/pothos
+</code></pre>
+
+<strong>Building form source </strong>
 
 <p>For UHD build and installation details see the <a href="http://code.ettus.com/redmine/ettus/projects/uhd/wiki/UHD_Build">UHD Wiki</a>.</p>
 <h4>UmTRX module</h4>
@@ -435,12 +448,12 @@ $ make
 $ sudo make install
 </code></pre>
 
-<p><strong>Note</strong> that if build fails with a boost-related error, a more recent version of this may need to be installed.</p>
+<p><strong>NOTE:</strong> that if build fails with a boost-related error, a more recent version of this may need to be installed.</p>
  <br>
 
 <a name="4. Osmo-TRX rebuild (optional)"></a><h4>4. Osmo-TRX rebuild (optional)<a class="anchorlink" href="#4. Osmo-TRX rebuild (optional)"></a></h4>
 
-<p><strong>Note:</strong> This required, If you have already installed osmocom software before you update UHD</p>
+<p><strong>NOTE:</strong> This required, If you have already installed osmocom software before you update UHD</p>
 <p>After UHD update for 003.008, osmo-trx doesn't work! In terms of new UHD version, osmo-trx rebuild is required.</p>
 <p>go to osmo-trx directory in fairwaves-tools:</p>
 <p><em>/fairwaves-tools/deps/osmo-trx</em></p>
@@ -478,7 +491,7 @@ sudo make install
 <p>1. <code>ipa unit-id</code> - each BTS should have unique ipa unit-id</p>
 </li>
 <li>
-<p><strong>2. <code>oml remote-ip</code></strong> - BSC ip address</p>
+<p>2. <code>oml remote-ip</code> - BSC ip address</p>
 </li>
 </ul>
 <p><strong>path:</strong> <em>etc/osmocom/osmo-bts.cfg</em></p>
@@ -540,13 +553,13 @@ sudo make install
 <p>There are three parameters which should be checked in BSC configuration:</p>
 <ul>
 <li>
-<p><strong>1. <code>ip.access unit_id</code></strong> - you should set the same unit id in the BSC as well as in BTS, each BTS should have unique ipa unit-id</p>
+<p>1. <code>ip.access unit_id</code> - you should set the same unit id in the BSC as well as in BTS, each BTS should have unique ipa unit-id</p>
 </li>
 <li>
-<p><strong>2. <code>base_station_id_code</code></strong> - should be unique in location area &lt;0-63&gt;</p>
+<p>2. <code>base_station_id_code</code> - should be unique in location area &lt;0-63&gt;</p>
 </li>
 <li>
-<p><strong>3. <code>neighbor-list mode automatic</code></strong></p>
+<p>3. <code>neighbor-list mode automatic</code></p>
 </li>
 </ul>
 <p><strong>path:</strong> <em>etc/osmocom/openbsc.cfg</em></p>
