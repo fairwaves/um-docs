@@ -86,7 +86,7 @@
 
 #### 5. Configuration via VTY
 
- 5.1 Connecting 
+ 5.1 Log in
 
  5.2 Privileged Node 
 
@@ -284,48 +284,278 @@ We also recommend to keep configuration for the **eth1:1**
 want to configure a statis IP address, change **eth1** configuration.
 
 
-#### 2.3 GSM parameters	
-If you would like to change  GSM parameters, edit ***openbsc.cfg***
+#### 2.3 GSM parameters
+
+GSM network configuration parameters stored at ***openbsc.cfg*** You can use interactive VTY telnet interface for configuration editing, also it is possible to make changes direct in configuration file.
+
+   
+in order to edit **openbsc.cfg** run:     
   
 	Shell> sudo nano /etc/osmocom/openbsc.cfg
 
-The most important parameters:
+#### Network level:
 
-##### network code  
+**mobile network code**  
  	
-> unique identification number of mobile phone network
+- unique identification number of mobile phone network
 
-##### country code  
+**network country code**  
 	
-> unique identification number of mobile phone operator 
+ - unique identification number of mobile phone operator 
   
-##### short name  
+**short name** 
     
-> short name of the network
+ - short name of the network
 
-##### long name  
+**long name** 
   
-> long name of the network
+ - long name of the network
 
-##### auth policy    
+**auth policy**    
    
->policy of access to the network. it's open for all by default. 
+policy of access to the network. it's open for all by default. 
 Possible values are:  
->1.	closed: Don't allow anyone who is not marked as authorized=1 in the HLR database  
->2.	accept-all: Accept everyone into the network
 
-##### band   	
-> parameters of GSM standard 850/900/1800/1900  
+ - closed: Don't allow anyone who is not marked as authorized=1 in the HLR database  
+ - accept-all: Accept everyone into the network
+ - token: Use a special TokenAuthPolicy
 
-##### trx 0 arfcn and trx 1 arfcn    
-> absolute radio-frequency channel number. This is a code that specifies a pair of physical radio carriers used for transmission and reception signal. Different bands provides a different amount of channels.
 
-***NOTE:*** See below at the Configuration via VTY how to change these parameters
+**location updating reject cause <2-111>**
 
-Restart service when config changes:
+ - Set the CAUSE value when sending LOCATION UPDATING REJECT to a MS. Possible values are defined in GSM TS 04.08 / 10.5.3.6.
+
+**encryption a5 (0|1|2)**
+
+ - Enable/Disable A5/X encryption on the network.
+
+**mm info (0|1)**
+
+ - Should we send MM INFO messages with network name and timezone information?
+
+**handover (0|1)**
+
+ - Enable BSC in-call handover between multiple BTS
+
+**handover window rxlev averaging <1-10>**
+
+ - Over how many SACCH frames should the Rx Level of the serving cell be averaged?
+
+**handover window rxqual averaging <1-10>**
+
+ - Over how many SACCH frames should the Rx Quality of the serving cell be averaged?
+
+**handover window rxlev neighbor averaging <1-10>**
+
+ - Over how many SACCH frames should the Rx Level of a neighbor cell be averaged?
+
+**handover power budget interval <1-99>**
+
+ - Every how many SACCH frames should the BSC think about performing a power budget (rx level) handover?
+
+**handover power budget hysteresis <0-999>**
+
+ - How large should the hysteresis be, i.e. to prevent continuous handover back and forth
+
+**handover maximum distance <0-9999> ¶**
+
+ - What is the maximum distance from a BTS, after which we try to perform distance handover?
+
+**timer t3101 <0-65535>**
+
+ - The timer starts at the allocation of channel using IMMEDIATE ASSIGMENT message, should be higher than the time for a L2 establishment attempt
+
+**timer t3103 <0-65535>**
+
+ - The timer starts when handover message is sent by mobile. This timer is currently not in use.
+
+**timer t3105 <0-65535>**
+
+ - This timer is used for the repetition of the PHYSICAL INFORMATION message during handover. This timer is currently not in use.
+
+**timer t3107 <0-65535>**
+
+ - Started after ASSIGMENT COMMAND to keep the old channel long enough alive. This timer is currently not in use due the usage of very early assignment in Call Control
+
+**timer t3109 <0-65535>**
+
+ - Starts at the lower layer failure detection by network.
+Used for channel release procedure. Purpose is to release the channels when communication is lost.
+
+**timer t3111 <0-65535>**
+
+ - GSM Spec: This timer value is equal to T3110 and is used to delay the channel deactivation after disconnecting the main signalling link.
+ - OpenBSC will wait t3111 seconds after all SAPIs were released to send the RF Channel Release to the BTS. After the following RF Channel Release ACK OpenBSC will reuse the channel for further requests.
+
+**timer t3113 <0-65535>**
+
+ - This timer is started when the network has sent a PAGING REQUEST message and is stopped when the network has received the PAGING RESPONSE message.
+
+**timer t3115 <0-65535>**
+
+ - This timer is used for the repetition of the VGCS UPLINK GRANT message, it is currently not in use.
+
+**timer t3117 <0-65535>**
+
+ - This timer is started after sending the PDCH ASSIGNMENT COMMAND
+
+**timer t3119 <0-65535>**
+
+ - This timer is started after sending the RR-CELL CHANGE ORDER message.
+
+**timer t3141 <0-65535>**
+
+ - This timer is started when a temporary block flow is allocated with an IMMEDIATE ASSIGNMENT message during a Packet Access Procedure.
+
+#### BTS level:
+
+**type**
+
+The type of the BTS. Currently supported;
+
+ - bs-11
+ - nanobts
+ - sysmobts
+
+**band**
+
+The GSM band of the BTS. Currently supported:
+
+ - GSM400
+ - GSM850
+ - GSM900
+ - DCS1800
+ - PCS1900
+	
+**cell_identity <0-65535>**
+
+ - The Cell Identity of this BTS
+
+**location area code <0-65535>**
+
+ - The LAC of the location area to which this BTS belongs. The classification of LAC has a significant effect on increasing signaling load and call completion rate. 
+
+**training sequence code <0-255>**
+
+ - Training sequence code(TSC). In cells that use FH, TSC must be set to 
+be the same as the BCC in the cell. Otherwise, the TCH 
+channels cannot be properly occupied. 
+
+**base station id code <0-63>**
+
+ - The BSIC of this BTS within the location area.
+
+**ip.access unit_id**
+
+ - Unit ID is used to identify the BTS to the BSC. Unit ID should be the same in the BTS and OpenBSC configuration files:
+
+openbsc.cfg:
+
+	ip.access unit_id 1801 0
+
+osmo-bts.cfg:
+
+	ipa unit-id 1801 0
+
+To connect another BTS to the same OpenBSC, you usually need to change just the first number: e.g. 1802 0
+
+**oml ip.access stream_id <0-255>**
+
+ - Which IPA stream identifier is to be used for the OML link between BTS and BSC.
+
+**oml e1 line E1_LINE timeslot <1-31> sub-slot (0|1|2|3|full)**
+
+ - Set the E1 line, E1 timeslot and E1 sub-slot for the OML link to this BTS. Make sure you use the same value than you have set in the BTS
+
+**channel allocator (ascending|descending)**
+
+ - Whether the channels should be allocated in ascending or descending order.
+
+If the channel allocator is in ascending mode, it will first allocate timeslot 0, then timeslot 1, ... of TRX0. If TRX0 is full, it will switch to TRX1. In descending order, it is the other way around.
+
+**rach tx integer <0-15>**
+
+ - Use to determine the timeslot number of the interval between two 
+continuous requests when MS continuously sends multiple 
+channel requests. The purpose of this parameter is to reduce the 
+number of collisions on RACH which mainly affects the execution 
+efficiency of immediate assignment process.
+
+**rach max transmission (1|2|4|7)**
+
+ - How many retransmissions should a MS make on a RACH request?
+
+**ms max power <0-40>**
+
+ - maximum transmit power (in dBm) to be used by MS in this BTS. This is used in the System Information on the BCCH as well as for the MS power level at the time a dedicated channel is activated.
+
+**cell reselection hysteresis <0-14>**
+
+ - How many dB has a neighbor cell to be received better than the serving cell to perform cell reselection in idle mode.
+
+**rxlev access min <0-63>**
+
+ - The minimum receiving level for the MS accessing the network.
+
+**gprs mode (none|gprs|egprs)**
+
+ - Enable GPRS or EGPRS (EDGE)
+
+#### TRX level:
+
+**arfcn**
+
+ - Absolute Radio-Frequency Channel number. The ARFCN of a non-hopping TRX. This is a code that specifies a pair of physical radio carriers used for transmission and reception signal. Different bands provides a different amount of channels.
+
+
+**nominal power <0-100>**
+
+ - How many dBm is the nominal power of this BTS. This setting is only used as a base for computing power levels displayed to the user.
+
+**max power red <0-100>**
+
+ - How many dB the nominal transmit power of the TRX should be reduced from its maximum (by OML means) If your transmitter is set to e.g. 24 dBm and you set this to 10, your actual output power will be 14 dBm.
+
+**rf_locked (0|1)**
+
+This option can be used at start and at runtime to enable/disable RF of the transceiver.
+
+ - 0: RF is not locked (enabled)
+ - 1: RF is locked (disabled)
+
+**rsl e1 line E1_LINE timeslot <1-31> sub-slot (0|1|2|3|full)**
+
+ - Set the E1 Line, E1 timeslot and E1 sub-slot for the RSL link to this BTS.
+
+#### Timeslot level: 
+
+The timeslot level lists parameters for one specific on-air timeslot.
+
+**phys chan config**
+
+Indicating the channel type and the function of each timeslot of all 
+carriers in a cell. Every cell is configured with a BCCH carrier. 
+Generally, the TRX ID of BCCH is fixed to be the smallest TRX ID in the cell. 
+Set the physical channel configuration of this GSM on-air timeslot:
+
+ - NONE: do not use this timeslot
+ - CCCH: regular CCCH configuration (BCCH+RACH+PCH+AGCH)
+ - CCCH+SDCCH4: CCCH plus SDCCH/4 combination
+ - TCH/F: Full TCH
+ - TCH/H: Half TCH
+ - SDCCH8: SDCCH/8 combination
+ - PDCH: Packed Data CHannel
+ - TCH/F_PDCH: Alternating TCH/F and PDCH use
+
+
+
+
+**NOTE:** Osmocom services must be restarted whenever config files have changed.
 
 	Shell> sudo sv restart osmo-nitb osmo-bts osmo-trx
 
+
+**NOTE:** More configuration parameters available at the VTY telnet interface. 
 Refer to Osmocom documentation for details:
 
 •	[OpenBSC home page](http://openbsc.osmocom.org/trac/)
@@ -336,14 +566,14 @@ Refer to Osmocom documentation for details:
  
 ##### Transceiver module:
                                           
-				/var/log/osmo-trx/current
+	/var/log/osmo-trx/current
  
 ##### Network in the box module
   
-				/var/log/osmo-nitb/current  
+	/var/log/osmo-nitb/current  
 
 ##### Base station    
-				/var/log/osmo-bts/current  
+	/var/log/osmo-bts/current  
 
 ##### FreeSWITCH:
 	/var/log/freeswitch/current
@@ -705,45 +935,7 @@ Handover is the ability to keep connection an ongoing call between two base stat
 		 handover power budget hysteresis 3
 		 handover maximum distance 9999
 
-
-### Parameters
-
-Enable BSC in-call handover between multiple BTS
-
-	handover (0|1)
-
-Over how many SACCH frames should the Rx Level of the serving cell be averaged?
-
-	handover window rxlev averaging <1-10>
-
-Over how many SACCH frames should the Rx Quality of the serving cell be averaged?
-
-	handover window rxqual averaging <1-10>
-
-Over how many SACCH frames should the Rx Level of a neighbor cell be averaged?
-
-	handover window rxlev neighbor averaging <1-10>
-
-Every how many SACCH frames should the BSC think about performing a power budget (rx level) handover?
-
-	handover power budget interval <1-99>
-
-How large should the hysteresis be, i.e. to prevent continuous handover back and forth
-
-	handover power budget hysteresis <0-999>
-
-What is the maximum distance from a BTS, after which we try to perform distance handover?
-
-	handover maximum distance <0-9999>
-
-
 **Note: ** Handover configuration available through the VTY command line. See below at 5.4 Network configuration chapter
-
-
-
-
-
-
 
 
 ##3. FreeSWITCH configuration
@@ -998,7 +1190,7 @@ or **ID**
 
 ## 5. Configuration via VTY 
 
-VTY can be used for files configuration. The configuration commands are available at runtime, but they are not all applied immediately. It is necessary to save the new configuration and then restart the application.
+VTY can be used for files configuration. Configuration commands are available at runtime, but they are not all applied immediately. It is necessary to save the new configuration and then restart the application.
 
 #### 5.1 Log in
 
@@ -1106,7 +1298,7 @@ As soon as you get into the VTY command prompt, you will be able to change confi
 
 	OpenBSC(config-net)# auth policy accept-all
 
-Parameters
+Parameters:
 
 **closed**
 
@@ -1180,7 +1372,7 @@ What is the maximum distance from a BTS, after which we try to perform distance 
 
 
 
-***NOTE:*** For the changes to take effect you should write it in to a file (see below)
+***NOTE:*** For the changes to take effect you should write it into a file (see below)
 
 **Write running configuration to file (openbsc.cfg)**
 
@@ -1206,19 +1398,6 @@ What is the maximum distance from a BTS, after which we try to perform distance 
 
 	OpenBSC(config-net-bts)# list
 
-**Real time output power control**
-
-Set **power oml** in *etc/osmocom/osmo-bts.cfg* instead of  **power 0** before run
-
-	OpenBSC# max_power_red 188
-
- -  0 about 1W of output power. 
- - 188 about 3W of output power.
-
-**NOTE:**
-In terms of ABIS specific, only even values allow
-
-
 
 #### 5.6 TRX Configuration 
 
@@ -1235,12 +1414,23 @@ arfcn <0-1023>
 
 	OpenBSC(config-net-bts-trx)# arfcn 74 
 
+**Real time output power control**
+
+Set **power oml** in *etc/osmocom/osmo-bts.cfg* instead of  **power 0** before run.
+
+	OpenBSC(config-net-bts-trx)# max_power_red 188
+
+ -  0 about 1W of output power. 
+ - 188 about 3W of output power.
+
+**NOTE:**In terms of ABIS specific, only even values allow
+
 
 **Write running configuration to file (openbsc.cfg)**
 
 	OpenBSC(config-net-bts-trx)# write file
 
-More VTY commands at [osmo NITB VTY](http://openbsc.osmocom.org/trac/wiki/osmo-nitb_VTY)
+More VTY commands available at [osmo NITB VTY](http://openbsc.osmocom.org/trac/wiki/osmo-nitb_VTY)
 
 #### 5.7 SMPP Configuration
 
