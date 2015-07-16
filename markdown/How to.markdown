@@ -257,6 +257,8 @@ Find the `ipa unit-id <new-UNIT-ID> 0` line in `osmo-bts.cfg ` file. Change only
 	make
 	cd ..
 
+GPRS configuration can be configured through the VTY telnet interface. Refer to [osmocom](http://openbsc.osmocom.org/trac/wiki/osmo-nitb_VTY#gprsmodenonegprsegprs) for details
+
 ### UmTRX 2.2 Box STL file
 
 Here is the 3D box model for the UmTRX 2.2 
