@@ -136,14 +136,11 @@ For the mast at least of 100 ft (30m) in height, antennas can be mounted upright
 
 ![](http://s50.radikal.ru/i130/1507/7a/eb8b60961081.png)
 
-**NOTE:** 
-
-TRX1 has a [Beacon (Broadcast) Channel (BCCH) ](https://en.wikipedia.org/wiki/Broadcast_control_channel)
-
-TRX2 serves as traffic channels ([TCH](http://www.althos.com/tutorial/GSM-tutorial-traffic-channels.html))
+**NOTE:** Every cell is configured with a [BCCH](https://en.wikipedia.org/wiki/Broadcast_control_channel) carrier. 
+Generally, the TRX ID of BCCH is fixed to be the smallest TRX ID in the cell.
 
 
-Therefore TRX1 antenna  has to be situated below TRx2 antenna. In other case, it may cause call disconnection If the connection would be established when the TRx1 antenna is higher and then has assigned to a timeslot of the lower antenna TRX2.  
+Therefore TRX1 antenna  has to be situated below TRx2 antenna e.g. If the connection would be established when the TRx1 antenna is higher and then has assigned to a timeslot of the lower antenna TRX2, call connection could be lost.  
 
 *The antenna attached to the TRX1 should not have an advantage by height in that particular case.*
 
