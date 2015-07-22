@@ -456,11 +456,9 @@ img {
 <hr />
 <p>For the mast at least of 100 ft (30m) in height, antennas can be mounted upright within the 10 ft (3m) distance between each other.</p>
 <p><img src="http://s50.radikal.ru/i130/1507/7a/eb8b60961081.png" /></p>
-<p><strong>NOTE:</strong></p>
-<p>&#8226TRX1 has a <a href="https://en.wikipedia.org/wiki/Broadcast_control_channel">Beacon (Broadcast) Channel (BCCH) </a></p>
-<p>&#8226TRX2 serves as traffic channels (<a href="http://www.althos.com/tutorial/GSM-tutorial-traffic-channels.html">TCH</a>)</p>
-<p>Therefore TRX1 antenna  has to be situated below TRx2 antenna. In other case, it may cause call disconnection If the connection would be established when the TRx1 antenna is higher and then has assigned to a timeslot of the lower antenna TRX2.  
-</p>
+<p><strong>NOTE:</strong> Every cell is configured with a <a href="https://en.wikipedia.org/wiki/Broadcast_control_channel">BCCH</a> carrier. 
+Generally, the TRX ID of BCCH is fixed to be the smallest TRX ID in the cell.</p>
+<p>Therefore TRX1 antenna  has to be situated below TRx2 antenna e.g. If the connection would be established when the TRx1 antenna is higher and then has assigned to a timeslot of the lower antenna TRX2, call connection could be lost.</p>
 <p><em>The antenna attached to the TRX1 should not have an advantage by height in that particular case.</em></p>
 
 <h4><a name="2.2 Getting started"></a>2.2 Getting started<a class="anchorlink" href="#2.2	Getting started"></a></h4>
@@ -471,7 +469,7 @@ img {
 <li>
 <p>&#8226 Make sure that Ethernet cable connected.</p>
 </li>
-
+</ol>
 <p><strong>NOTE:</strong> We strongly recommend does not put UmSITE on a public network. Connect it to your local network where is access to Internet through NAT or Firewall. Keep <u>UDP port 1195</u> open on your server for fairwaves VPN in case technical support</p>
 <p><img src="http://s019.radikal.ru/i633/1505/04/7e1b573f0b89.png" /></p>
 <p>Take any GSM phone with any SIM card and try to search the network. Network might have a different names such as <u>Fairwaves, 1011, Test, etc.</u></p>
@@ -526,7 +524,6 @@ img {
 <h4>Login over Serial cable (Only for UmSITE)</h4>
 <p>Serial connection allows you to choose boot options and log into the system if network connection is not available.</p>
 <p>You'll get options like:</p>
-<ol>
 <ol>
 <li>1. Advanced options for Ubuntu</li>
 <li>2. Test RAM memory</li>
