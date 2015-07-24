@@ -11,6 +11,7 @@
 ##### 5.  UmTRX scripts
 ##### 6.  Set a 2nd TxRX channel for the calls of UmTRX 2.2 (optional)
 ##### 7.  EEPROM   
+##### 8.  GPS testing
 
 ### 1. Preparing PC/Laptop 
 Firt of all you have to install UHD Driver on your 1st and 2nd PC/Laptop: [UHD-Fairwaves](https://github.com/fairwaves/UHD-Fairwaves) We going to use 2nd PC/Laptop at the testing step.
@@ -235,4 +236,24 @@ Run to set the value:
 	./usrp_burn_mb_eeprom --key <key> --val <val>
 
 **Note:** all values should be stored in decimal format
+
+### 8. GPS testing
+
+1. Attach GPS antenna. Good visibility to the sky is required
+2. Make sure that G LED is lit right after power on
+3. During 3-5 min G LED should start blinking
+4. Check TCXO DAC value. The value should decrease constantly. Default: 2048  
+
+*First clone the umtrx_scripts repository:* 
+
+	$ git clone https://github.com/fairwaves/umtrx_scripts
+
+run:
+
+	./python_lib/umtrx_vcxo.py
+
+5.Retrieving raw NMEA data from the GPS module
+
+
+	$ echo . | nc -u 192.168.10.2 49171
 
