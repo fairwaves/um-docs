@@ -77,7 +77,7 @@ for the indoor purposes would fit a basic laptop charger like [this](http://www.
 
 
 ##### Antenna 
-Faiwaves doesn’t provide an antenna. You can use any other antenna suitable for 850/900/1800/1900 GSM frequency band with N-male connectors.
+Faiwaves doesn’t provide GSM antennas. You can use any other antenna suitable for 850/900/1800/1900 GSM frequency band with N-male connectors.
 
 #### 1.2 Software specification
 

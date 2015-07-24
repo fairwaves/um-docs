@@ -992,7 +992,7 @@ restart services
 
 		shell> sudo sv restart freeswitch
 
-***NOTE***:  If your system already in production you should use  **fs_cli** for the  restarting
+***NOTE***:  If your system already in production you should use  **fs_cli** for restarting
 
 ##### Change directory
 
