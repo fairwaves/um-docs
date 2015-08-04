@@ -1,0 +1,520 @@
+<html class="global desktop"><head><meta name="viewport" content="user-scalable=yes,width=device-width,initial-scale=1"><style type="text/css">html,body,div,span,applet,object,iframe,h1,h4,h3,h4,h4,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}body{-webkit-text-size-adjust:none}</style><style type="text/css">*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}</style><meta name="viewport" content="initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="global.css">
+<title>Fairwaves</title>
+	</head>
+<body class="homepage">
+	<div class="wrapper">
+
+		<div id="header">
+					<div class="s1"></div>
+					<div class="menu">
+					
+					<a href="index.html" class="home">Home</a>
+					
+					<a href="faq.html" class="faq">FAQ</a>
+
+                    <a href="how_to's.html" class="how_to's">How to</a>
+					
+					</div>
+					<div class="logo">
+					<a href="https://fairwaves.co/"><img class="imglogo"  alt=""  src="logo2.png"></a>
+					</div>
+		
+		</div>
+		
+		<div id="content">
+			
+				<div class="container-fluid">
+  
+    <div class="row-fluid">
+	
+      <div class="span3">
+          <ul class="nav nav-list">
+		<a href="#Fairwaves Architecture">Fairwaves Architecture</a>
+		<a href="#Components">Components</a>
+		<a href="#Protocols">Protocols</a>
+        <a href="#Services">Services</a>
+        <a href="#Configuration">Configuration</a>
+        <a href="#MNO Integration">MNO Integration</a>
+        <a href="#Summary of benefits">Summary of benefits</a>
+		</ul>
+      </div>
+      <div class="span9 main">
+   
+<title>UmSITE Quick Start</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h4, h3, h4, h4, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+?
+h1, h4, h3, h4, h4, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h4 tt, h4 code, h3 tt, h3 code, h4 tt, h4 code, h4 tt, h4 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
+h4 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h4:first-child, body>h1:first-child, body>h1:first-child+h4, body>h3:first-child, body>h4:first-child, body>h4:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h4, a:first-child h3, a:first-child h4, a:first-child h4, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h4+p, h3+p, h4+p, h4+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1><a name="Fairwaves Architecture"></a>Fairwaves Architecture<a class="anchorlink" href="#Fairwaves Architecture"></a></h1>
+
+<p>The Fairwaves Architecture defines a set of components, protocols, services and configurations used to build cost-optimized mobile networks in rural and remote areas.</p>
+<p>In contrast to the traditional GSM architecture that is highly centralized, dependent upon backhaul and making
+heavy use of this, the Fairwaves Architecture is built upon a distributed VoIP core that benefits from local
+switching and is resilient to network failure.</p>
+<p>All the functions of a mobile network are integrated into a single, self-contained cellular base station, that is built
+to withstand the elements and suited to being powered from off-grid energy sources such as solar. Scaling and
+integration with operator networks is made possible via local and cloud-based UmCORE servers.</p>
+<p>The Fairwaves Architecture significantly reduces the financial and technical barriers to deploying cellular
+networks, while ensuring that during their operation backhaul costs are minimised thanks to local call routing and
+use of effective voice compression algorithms.</p>
+<p>Designed from the ground up for flexibility, Fairwaves mobile networks can be operated independently,
+interconnected, and integrated with existing PLMN, PSTN and private cellular networks, with support for roaming
+and industry standard billing protocols.</p>
+<p>The Fairwaves Architecture enables mobile networks to be installed, commissioned and generating revenue in as
+little as one day, proving markets and providing an early return on investment for both new and existing
+operators. </p>
+<h1><a name="Components"></a>Components<a class="anchorlink" href="#Components"></a></h1>
+<p><strong>Radio Access Network (RAN)</strong></p>
+<p><strong>UmSITE</strong></p>
+<p>The UmSITE is more than simply a rugged BTS and is essentially a complete network-in-a-box, seamlessly
+integrating functionality that is usually provided by GSM components such as BSC, MSC, VLR, HLR and SMSC.
+Its software-centric design enables unprecedented flexibility, supporting remote configuration, maintenance and
+upgrade, and covering everything from transmit power control to end user features.</p>
+<p><strong>Key specifications:</strong></p>
+<ol>
+<li>&#8226 GSM 850/900/1800/1900</li>
+<li>&#8226 Dual-TRX, supporting up to 30 concurrent calls</li>
+<li>&#8226 Available with 2x3W or 2x10W TX output power</li>
+<li>&#8226 Omnidirectional and sectorized antenna installations</li>
+<li>&#8226 IP backhaul and VSAT optimization</li>
+<li>&#8226 Carrier integration via VoIP and SS7</li>
+<li>&#8226 A5/0, A5/1, A5/2 and A5/3 ciphering</li>
+<li>&#8226 GPSDO reference (OCXO on request)</li>
+<li>&#8226 IP65 (IP67 available on request)</li>
+<li>&#8226 Proven open source technology</li>
+</ol>
+<strong> Core Network</strong>
+<p>The UmCORE technology provides synchronization across distributed UmSITE installations, and enables
+integration with existing networks via VoIP and SS7.</p>
+<p><strong>Features include:</strong></p>
+<ul>
+<li>&#8226 System management console</li>
+<li>&#8226 Dynamic network information</li>
+<li>&#8226 Event logging</li>
+<li>&#8226 Billing</li>
+<li>&#8226 HLR</li>
+</ul>
+<p>UmCORE is available in customer co-located and cloud versions.</p>
+<p><strong>UmCORE Local</strong></p>
+<p>UmCORE Local is a turnkey solution comprised of a compact low power server loaded with preconfigured
+software, designed for ease of deployment and customer co-location.</p>
+<p>UmCORE Local can be managed and upgraded remotely via a secure VPN link.</p>
+<p><strong>UmCORE Cloud</strong></p>
+<p>UmCORE Cloud is a hosted solution that provides an additional layer of resilience and is used to enable
+integration with existing operator networks via a VoIP-SS7 gateway.</p>
+
+<h1><a name="Protocols"></a>Protocols<a class="anchorlink" href="#Protocols"></a></h1>
+<p>The Fairwaves Architecture eschews the complexity typically found in traditional GSM networks, in favour of a
+simplicity that facilitates rapid deployment and ease of use. This is reflected in the protocols that are used to
+create and interconnect networks. These are:</p>
+<ul>
+<li>&#8226 SIP for voice interconnect and value-added services</li>
+<li>&#8226 SMPP for SMS peering and value-added services</li>
+<li>&#8226 SS7 where required for PSTN and MNO interconnection</li>
+<li>&#8226 CAMEL and Diameter for integration with billing systems</li>
+</ul>
+<p>A flat IP architecture, SIP and SMPP are used to build distributed network cores, which means that low cost
+backhaul can be employed and highly specialist skills are not needed.</p>
+<p>SS7 is only used where this is required for interconnection with existing operator networks, and this is typically
+implemented via Fairwaves hosted UmCORE Cloud services.</p>
+<p>Integration with operator billing and real-time settlement systems is made possible via the CAMEL and Diameter
+— both offline (Rf) and online (Ro) interfaces — protocols.</p>
+<h1><a name="Services"></a>Services<a class="anchorlink" href="#Services"></a></h1>
+<p><strong>Voice and SMS</strong></p>
+<p>Affordable, reliable voice and SMS communications are the primary services supported by the Fairwaves Architecture.</p>
+<p><strong>Data</strong></p>
+<p>Wi-Fi technology is generally recommended for the provision of data services, since it is:</p>
+<ul>
+<li>&#8226 Commonly available</li>
+<li>&#8226 Affordable and cost-efficient</li>
+<li>&#8226 Capable of supporting high data rates</li>
+</ul>
+<p>Perhaps most importantly, Wi-Fi does not use up valuable cellular capacity, which is very often a key
+consideration for cost-constrained networks operating under heavy load.</p>
+<p><strong>GPRS and EDGE</strong></p>
+<p>While it is presently not considered to be of production quality and part of the supported Fairwaves Architecture,
+GPRS is available for testing purposes. The low bandwidth of GPRS and capacity considerations aside, it should
+not be enabled in production networks.</p>
+<p>EDGE provides a modest improvement on the data transfer speeds provided by GPRS, and support is currently
+in development, but not available for testing at the present time.</p>
+<p><em>Those with GPRS and EDGE requirements should contact Fairwaves to ascertain their current development
+status.</em></p>
+<p><strong>Value-added services</strong></p>
+<p>Thanks to use of SIP and SMPP protocols, the Fairwaves Architecture supports the rapid development of valueadded
+voice and messaging services. For example:</p>
+<ul>
+<li>&#8226 On-demand news</li>
+<li>&#8226 Event updates</li>
+<li>&#8226 Mobile payments</li>
+<li>&#8226 Polls and surveys</li>
+<li>&#8226 Voice and SMS chat</li>
+<li>&#8226 Telehealth applications</li>
+<li>&#8226 Location based services</li>
+ </ul>
+<p>Such services allow for flexible pricing that is based upon user value, providing an excellent source of additional
+revenue and enabling partnership opportunities.</p>
+</ul>
+<h1><a name="Configuration"></a>Configuration<a class="anchorlink" href="#Configuration"></a></h1>
+<p>The Fairwaves Architecture scales all the way from a self-contained single site network, through multi-site
+installations, to full integration with existing mobile operator networks.</p>
+<p><strong>Single site</strong></p>
+<p>The simplest possible deployment is a single UmSITE that supports intra-network use only. Applications include
+remote villages, disaster relief and military operations.</p>
+<p><strong>Key features:</strong></p>
+<ul>
+<li>&#8226 No backhaul requirement</li>
+<li>&#8226 Can be deployed in a day</li>
+</ul>
+<p><img src="http://s019.radikal.ru/i612/1508/33/84fcb12e0853.png" /></p>
+<p>A single base station provides coverage of up to 10km, depending upon the landscape.</p>
+<p><strong>Dual-site</strong></p>
+<p>Up to two villages can be connected via a microwave radio or long range Wi-Fi etc. link.</p>
+<p><img src="http://s50.radikal.ru/i130/1508/bc/22142888e5f3.png" /></p>
+<p>A distributed core ensures that calls can still be made, and SMS messages sent and received, within each area
+of coverage in the event of link failure.</p>
+<p><strong>Multi-site</strong></p>
+<p>In order to connect three or more sites a UmCORE Local server is required</p>
+<p><img src="http://s017.radikal.ru/i400/1508/d9/7c73384d9ae5.png" /></p>
+<p><strong>The UmCORE Local provides:</strong> </p>
+<ul>
+<li>&#8226 HLR and billing synchronization</li>
+<li>&#8226 System management console</li>
+<li>&#8226 Dynamic network information</li>
+<li>&#8226 Event logging</li>
+</ul>
+<p>Once again, thanks to a distributed core calls can still be made, and SMS messages sent and received, within
+each area of coverage in the event of link failure.</p>
+
+<h1><a name="MNO Integration"></a>MNO Integration<a class="anchorlink" href="#MNO Integration"></a></h1>
+<p>Integration with existing Mobile Network Operator (MNO) core networks is supported via MAP roaming protocols
+over SS7 and SIGTRAN links. Billing system integration is made possible via support for CAMEL and Diameter
+protocols.</p>
+<p>This configuration allows for existing MNO SIM cards to be used.</p>
+<p>External traffic is routed to and from the MNO core network via the UmCORE Cloud, which provides a gateway
+service, along with an additional layer of distributed HLR resilience.</p>
+<p><img src="http://s018.radikal.ru/i504/1508/f8/e25212f3df0e.png" /></p>
+<p>UmCORE Cloud automatically retrieves charging data from UmSITE/UmCORE Local and is used to provide
+integration with external billing systems. Real-time settlement of prepaid accounts is also possible. Indeed, the
+Fairwaves billing gateway can be customized to fit most MNO system requirements, both in terms of format and
+behavior.</p>
+<p>In this configuration Fairwaves networks typically service customers in rural and remote zones and may be
+considered subnetworks of the MNO, which continues to service customers in urban zones using existing
+infrastructure.</p>
+<p>It should be noted that while roaming describes the technical implementation and behaviour, a single operator is
+assumed; subscribers who are located in rural areas remain customers of the same MNO and use the same
+billing and payment mechanisms.</p>
+<p><em>Experiences to-date have shown that the most popular pricing plan for rural communities is a fixed price for
+unlimited calls and SMS within the remote area of coverage, and charging based on use for calls and messages
+routed via the MNO core.</em></p>
+<p><strong>Capacity and coverage scale-out</strong></p>
+<p>The network capacity and coverage of all of the configurations previously described may be increased by
+deploying additional UmSITEs, either co-located or remote and connected to a primary site via a reliable network
+link.</p>
+<p><img src="http://s017.radikal.ru/i416/1508/6a/6b6ba8fba1e9.png" /></p>
+<p>The first UmSITE is configured as master and along with serving as a BTS it implements GSM functions such as
+BSC, MSC, VLR, HLR and SMSC. However, the second UmSITE is configured as slave and operates as a BTSonly.
+A reliable network link is recommended since the slave will become inoperable in the event of link failure</p>
+<h1><a name="Summary of benefits"></a>Summary of benefits<a class="anchorlink" href="#Summary of benefits"></a></h1>
+<p>In short, the Fairwaves Architecture provides the foundations for a new breed of mobile network that is distributed
+in nature, but which retains centralised control and billing. Networks can start out small and, where backhaul is
+not initially available, operate independently, and then be interconnected with minimum effort at a later date. As
+such they offer the possibility of earlier revenue generation for new and existing operators alike.</p>
+<p><strong>Technical:</strong></p>
+<ul>
+<li>&#8226 Easy to install</li>
+<li>&#8226 Local call routing</li>
+<li>&#8226 Network failure resilience</li>
+<li>&#8226 Flat IP architecture</li>
+</ul>
+<p><strong>Economic:</strong></p>
+<ul>
+<li>&#8226 Low-cost turnkey base station</li>
+<li>&#8226 Zero maintenance</li>
+<li>&#8226 Greatly reduced backhaul costs</li>
+<li>&#8226 Low power consumption</li>
+<li>&#8226 Can be generating revenue in a day!</li>
+</ul>
+
+</body>
+</html>
