@@ -1,167 +1,257 @@
-![](http://s017.radikal.ru/i435/1409/3a/35cfd52210c9.png)
-
-### Contents:
-
-1. Fairwaves architecture
-2. Deployment options
-3. Componets 
-4. Network for a one
-5. Multiple networks
-	* Master - slave
-	
-6. Integration with MNO
-	* Roaming
-	* Simcard
-	* Billing
-	* A-bis interface
-
-7. Benefits
-8. About Fairwaves
-
-______
-
-### Intro
-Major GSM networks, as we know today, was designed primary for the urban locations in developed countries. General type of the network definitely non suitable to serve a rural area, because deployment requirements and cost is too expensive.
-
-Why the rural populations living beyond the reach of traditional
-communications networks of any kind? 
-
-The rural consumer cannot pay the $50 per month like in USA or Europe. Fairwaves experience in Yaviche has shown that amount they will be  able to pay is around $2 - 3 per month. To better understand the problem, it doesn’t make economic sense to install the original GSM technology there and the challenge of Fairwaves company is not to only deliver a mobile service to rural users but also solve a fundamental business issue for mobile operators to turn rural coverage profitable. 
+## Fairwaves Architecture
 
 
+The Fairwaves Architecture defines a set of components, protocols, services and configurations used to build cost-optimized mobile networks in rural and remote areas.
+
+In contrast to the traditional GSM architecture that is highly centralized, dependent upon backhaul and making
+heavy use of this, the Fairwaves Architecture is built upon a distributed VoIP core that benefits from local
+switching and is resilient to network failure.
+
+All the functions of a mobile network are integrated into a single, self-contained cellular base station, that is built
+to withstand the elements and suited to being powered from off-grid energy sources such as solar. Scaling and
+integration with operator networks is made possible via local and cloud-based UmCORE servers.
+
+The Fairwaves Architecture significantly reduces the financial and technical barriers to deploying cellular
+networks, while ensuring that during their operation backhaul costs are minimised thanks to local call routing and
+use of effective voice compression algorithms.
+
+Designed from the ground up for flexibility, Fairwaves mobile networks can be operated independently,
+interconnected, and integrated with existing PLMN, PSTN and private cellular networks, with support for roaming
+and industry standard billing protocols.
+
+The Fairwaves Architecture enables mobile networks to be installed, commissioned and generating revenue in as
+little as one day, proving markets and providing an early return on investment for both new and existing
+operators. 
+
+##Components
+
+**Radio Access Network (RAN)**
+
+**UmSITE**
+
+The UmSITE is more than simply a rugged BTS and is essentially a complete network-in-a-box, seamlessly
+integrating functionality that is usually provided by GSM components such as BSC, MSC, VLR, HLR and SMSC.
+Its software-centric design enables unprecedented flexibility, supporting remote configuration, maintenance and
+upgrade, and covering everything from transmit power control to end user features.
+
+**Key specifications:**
+
+ - GSM 850/900/1800/1900
+ - Dual-TRX, supporting up to 30 concurrent calls
+ - Available with 2x3W or 2x10W TX output power
+ - Omnidirectional and sectorized antenna installations
+ - IP backhaul and VSAT optimization
+ - Carrier integration via VoIP and SS7
+ - A5/0, A5/1, A5/2 and A5/3 ciphering
+ - GPSDO reference (OCXO on request)
+ - IP65 (IP67 available on request)
+ - Proven open source technology
 
 
-### 1. Fairwaves architecture
+#### Core Network
 
-The Fairwaves network is made up of multiple components and interfaces that facilitate making call and sending messages inside of covered areas as well as outside. Networks could be isolated or interconnected with existed PLMN, PSTN as well as Private GSM Netwoks. This is a set of Base stations which include all GSM components and integrated with any other larger networks over VoIP as a BSC/BTS. Fairwaves solution can be used in rural and semi-rural locations.
+The UmCORE technology provides synchronization across distributed UmSITE installations, and enables
+integration with existing networks via VoIP and SS7.
 
-### 2. Deployment options
+**Features include:**
 
-The deployment options can be  combined into a single (Private) networks or as a extensions to any existing GSM network.
+ - System management console
+ - Dynamic network information
+ - Event logging
+ - Billing
+ - HLR
+ 
+UmCORE is available in customer co-located and cloud versions.
 
- - GSM networks for rural and semi-rural locations.
- - Private GSM networks (PBX style use)
- - Rapid deployment GSM networks
- - GSM related research and development
+**UmCORE Local**
 
-### 3. Componets
+UmCORE Local is a turnkey solution comprised of a compact low power server loaded with preconfigured
+software, designed for ease of deployment and customer co-location.
 
-1. UmSITE (base station) Linux-based completely network in the box system, implement all GSM components such as BSC, BTS, MSC, VLR, HLR, SMSC. The software covers everything from power control to end user features.
-2. UmCORE (server) node for data caching and billing integration between rural areas and MNO core network
-3. Backhaul communications (Satellite/VSAT) for the remote connection with MNO core network
+UmCORE Local can be managed and upgraded remotely via a secure VPN link.
 
-### Protocols
+**UmCORE Cloud**
 
-4. VoIP - flat IP architecture
-5. SS7 - route calls to public switched telephone network (PSTN)
+UmCORE Cloud is a hosted solution that provides an additional layer of resilience and is used to enable
+integration with existing operator networks via a VoIP-SS7 gateway.
 
+## Protocols
 
-### 4. Network for a one 
+The Fairwaves Architecture eschews the complexity typically found in traditional GSM networks, in favour of a
+simplicity that facilitates rapid deployment and ease of use. This is reflected in the protocols that are used to
+create and interconnect networks. These are:
 
-**Let's take a look how the Fairwaves goes rural.**
+ - SIP for voice interconnect and value-added services
+ - SMPP for SMS peering and value-added services
+ - SS7 where required for PSTN and MNO interconnection
+ - CAMEL and Diameter for integration with billing systems
 
-![](http://s017.radikal.ru/i431/1411/16/c202f6073648.png)
+A flat IP architecture, SIP and SMPP are used to build distributed network cores, which means that low cost
+backhaul can be employed and highly specialist skills are not needed.
 
-Here is a village, covered by Fairwaves UmSITE base station. Base station provides up to 10 km radius coverege, it depends on the landscape. People who are living within the village area are able to call between each other locally without any other external connection.
+SS7 is only used where this is required for interconnection with existing operator networks, and this is typically
+implemented via Fairwaves hosted UmCORE Cloud services.
 
-### 5. Multiple network
-Fairwaves connects two or more villages by using microwave radio transmission either long-distance Wi-Fi amplified router. 
+Integration with operator billing and real-time settlement systems is made possible via the CAMEL and Diameter
+— both offline (Rf) and online (Ro) interfaces — protocols.
 
-![](http://s020.radikal.ru/i700/1411/03/a4833979a5cb.png)
-_____
-#### Master-slave
+## Services
 
-Sometimes a village has more people than one base station can handle (Usually that's fine for 500 subscribers). Fairwaves is installing a second Base station to increase total capacity  and set it up in slave mode. 
+**Voice and SMS**
 
-![](http://s018.radikal.ru/i503/1412/ba/7ca6993c3d42.png)
+Affordable, reliable voice and SMS communications are the primary services supported by the Fairwaves Architecture.
 
+**Data**
 
-Independent UmSITEs can be clustered through a distributed HLR connected
-via peer to peer links
+Wi-Fi technology is generally recommended for the provision of data services, since it is:
 
-First one become a master Base station which is connecting with the slave through the microwave. Master Base station implement all GSM components such as BSC, BTS, MSC, VLR, HLR, SMSC and Softswitch for the connection of telephone calls from one phone line to another, located remotely from rural areas across the public Internet through the VoIP protocol. Master Base Station connected with the colocated Fairwaves UmCORE Server and then with MNO Server through the VoIP/SS7 Gateway. 
-Second Base Station(slave) implements only GSM component BTS for the increasing capacity and expanding coverage.  
+ - Commonly available
+ - Affordable and cost-efficient
+ - Capable of supporting high data rates
 
-Master responsible for: 
-
-1. MSC (Mobile switching center)
-2. Billing
-3. Core network connection
-
-Slave serves as:
-
-1. Expanding coverage
-2. Increase capacity
-
-
-![](http://s16.radikal.ru/i191/1412/a1/8c1aa44b3c90.png)
-
-_________________________
-### 6. Integration with MNO
-
-Fairwaves solution Can be integrated into existing core network through roaming protocols (MAP, CAMEL over SS7 or SIGTRAN)
-
-Fairwaves provides a service to make a calls outside of local areas. The village gets access to the satellite Internet, all traffic goes directly to Mobile Network Operator (MNO) core network through the Fairwaves UmCORE server.
-
-![](http://s017.radikal.ru/i426/1412/e7/ce2e6749af33.png)
-
-_________________________ 
-Fairwaves allows mobile operators to build independent networks with distributed VoIP cores, we are still responsible for the support for local routing of the calls and connection with MNO Core Network through the UmCORE server which is used for the Billing system integration between Fairwaves and Mobile operator software for the caching data as well as a HLR cache 
-
-![](http://s005.radikal.ru/i209/1412/4e/883d0d867272.png)
-
-**Fairwaves network required:**
-
- - License for one of the GSM bands: GSM-900, GSM-1800, GSM-850 or GSM-1900
- - Access to a power source, may be solar electricity.
- - Access to an IP backhaul, including VSAT, long-distance Wi-Fi, a microwave link, fixed WiMAX, or Ethernet.   
-
-#### Roaming (Я думаю что мы должны избегать слово Roaming, только упомянуть его в тех-описании вскользь)
-
-Roaming service is the ability to get access to the Network when you away from home location likes different countries, in our case between rural and urban locations.
-Subscribers keep connected to the network while they traveling between village and MNO city. Fairwaves is a subnetwork of MNO core network and **logically** this is an entire infrastructure of Mobile operator but **technically** this is called roaming for our scenario and Fairwaves experience has shown that better way is providing sim cards and plan for rural subscribers separately than main plans. Most popular is fixed price for unlimited calls and text for the internal usage and per minute rate if they visit MNO core network location (roaming). 
+Perhaps most importantly, Wi-Fi does not use up valuable cellular capacity, which is very often a key
+consideration for cost-constrained networks operating under heavy load.
 
 
-#### Billing
+**GPRS and EDGE**
 
-All subscribers belong to Mobile operators and the payment terms still remains with the operators. Fairwaves only caching data of HLR, VLR and Billing, and provide service for rural areas. 
+While it is presently not considered to be of production quality and part of the supported Fairwaves Architecture,
+GPRS is available for testing purposes. The low bandwidth of GPRS and capacity considerations aside, it should
+not be enabled in production networks.
 
-#### Simcard 
+EDGE provides a modest improvement on the data transfer speeds provided by GPRS, and support is currently
+in development, but not available for testing at the present time.
 
-(без понятия! Может где то в тексте указать что возможен выпуск симок)
+*Those with GPRS and EDGE requirements should contact Fairwaves to ascertain their current development
+status.*
 
-#### A-bis interface 
+**Value-added services**
 
-(это уж очень тонкий вопрос, как бы нас не восприняли как производители железа и не пасанули над сервисами. VNL писали про A-bis, не знаю на сколько это критично для нас. Интерфейсы расписать не проблема)
+Thanks to use of SIP and SMPP protocols, the Fairwaves Architecture supports the rapid development of valueadded
+voice and messaging services. For example:
+
+ - On-demand news
+ - Event updates
+ - Mobile payments
+ - Polls and surveys
+ - Voice and SMS chat
+ - Telehealth applications
+ - Location based services
+ - 
+Such services allow for flexible pricing that is based upon user value, providing an excellent source of additional
+revenue and enabling partnership opportunities.
+
+## Configurations
+
+The Fairwaves Architecture scales all the way from a self-contained single site network, through multi-site
+installations, to full integration with existing mobile operator networks.
+
+**Single site**
+
+The simplest possible deployment is a single UmSITE that supports intra-network use only. Applications include
+remote villages, disaster relief and military operations.
+
+**Key features:**
+
+ - No backhaul requirement
+ - Can be deployed in a day
+
+![](http://s019.radikal.ru/i612/1508/33/84fcb12e0853.png)
+
+A single base station provides coverage of up to 10km, depending upon the landscape.
+
+**Dual-site**
+
+Up to two villages can be connected via a microwave radio or long range Wi-Fi etc. link.
+
+![](http://s50.radikal.ru/i130/1508/bc/22142888e5f3.png)
+
+A distributed core ensures that calls can still be made, and SMS messages sent and received, within each area
+of coverage in the event of link failure.
+
+**Multi-site**
+
+In order to connect three or more sites a UmCORE Local server is required
+
+![](http://s017.radikal.ru/i400/1508/d9/7c73384d9ae5.png)
 
 
-**Benefits:**
+**The UmCORE Local provides:** 
 
-Technical:
+ - HLR and billing synchronization
+ - System management console
+ - Dynamic network information
+ - Event logging
+ - 
+Once again, thanks to a distributed core calls can still be made, and SMS messages sent and received, within
+each area of coverage in the event of link failure.
+
+## MNO Integration
+
+Integration with existing Mobile Network Operator (MNO) core networks is supported via MAP roaming protocols
+over SS7 and SIGTRAN links. Billing system integration is made possible via support for CAMEL and Diameter
+protocols.
+
+This configuration allows for existing MNO SIM cards to be used.
+
+External traffic is routed to and from the MNO core network via the UmCORE Cloud, which provides a gateway
+service, along with an additional layer of distributed HLR resilience.
+
+![](http://s018.radikal.ru/i504/1508/f8/e25212f3df0e.png)
+
+UmCORE Cloud automatically retrieves charging data from UmSITE/UmCORE Local and is used to provide
+integration with external billing systems. Real-time settlement of prepaid accounts is also possible. Indeed, the
+Fairwaves billing gateway can be customized to fit most MNO system requirements, both in terms of format and
+behavior.
+
+In this configuration Fairwaves networks typically service customers in rural and remote zones and may be
+considered subnetworks of the MNO, which continues to service customers in urban zones using existing
+infrastructure.
+
+It should be noted that while roaming describes the technical implementation and behaviour, a single operator is
+assumed; subscribers who are located in rural areas remain customers of the same MNO and use the same
+billing and payment mechanisms.
+
+*Experiences to-date have shown that the most popular pricing plan for rural communities is a fixed price for
+unlimited calls and SMS within the remote area of coverage, and charging based on use for calls and messages
+routed via the MNO core.*
+
+**Capacity and coverage scale-out**
+
+The network capacity and coverage of all of the configurations previously described may be increased by
+deploying additional UmSITEs, either co-located or remote and connected to a primary site via a reliable network
+link.
+
+![](http://s017.radikal.ru/i416/1508/6a/6b6ba8fba1e9.png)
+
+The first UmSITE is configured as master and along with serving as a BTS it implements GSM functions such as
+BSC, MSC, VLR, HLR and SMSC. However, the second UmSITE is configured as slave and operates as a BTSonly.
+A reliable network link is recommended since the slave will become inoperable in the event of link failure
+
+## Summary of benefits
+
+In short, the Fairwaves Architecture provides the foundations for a new breed of mobile network that is distributed
+in nature, but which retains centralised control and billing. Networks can start out small and, where backhaul is
+not initially available, operate independently, and then be interconnected with minimum effort at a later date. As
+such they offer the possibility of earlier revenue generation for new and existing operators alike.
+
+**Technical:**
 
  - Easy to install
- - Network failure tolerance 
- - Routing of local calls
- - Compatible with any GSM phone
- - Compatible with LTE core network
- - VoIP cloud core network
-  
-Economic:
-
- - Low-cost base station
- - Zero maintanance
- - Reduce traffic transfer costs by allowing local call routing
- - Low power consumption 
-
-____
+ - Local call routing
+ - Network failure resilience
+ - Flat IP architecture
 
 
+**Economic:**
 
-### About Fairwaves
+ - Low-cost turnkey base station
+ - Zero maintenance
+ - Greatly reduced backhaul costs
+ - Low power consumption
+ - Can be generating revenue in a day!
 
-Fairwaves provides GSM system that helps mobile operators reach rural markets and  turn it profitable.
 
-UmSITE is a complete GSM system entirely optimized for rural markets.
 
 
 
