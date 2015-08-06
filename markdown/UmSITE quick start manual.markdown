@@ -27,7 +27,7 @@
 
 ![](http://s017.radikal.ru/i406/1501/84/ef8c97c62e48.jpg)
 
-The UmSITE is an IP-backhaul GSM BTS, BSC and Network In The Box.  This is tower-mounted, fault-tolerant and completely protected from any weather conditions solution, which is used for wide range network.
+The UmSITE is an IP-backhaul GSM BTS, BSC and Network In The Box.  This is solution that is tower-mounted, fault-tolerant, and completely protected from any weather conditions, which is used for wide range network.
 
 
 
@@ -65,7 +65,7 @@ The UmSITE is an IP-backhaul GSM BTS, BSC and Network In The Box.  This is tower
 
 
 ##### Power supply
-Fairwaves doesn’t provide the power supply. This is because, different places want to use different power sources. Fairwaves products compatible with any power sources including solar panels as well.	
+Fairwaves doesn’t provide the power supply. This is because, different places want to use different power sources. Fairwaves products are compatible with any power sources, including solar panels, as well.	
 
 ####List of the power supply you may use:
 
@@ -110,29 +110,29 @@ Embedded Linux
 
 ## 2.	Installation 
 
-Base station comes with already installed and configured software, just attach GPS antenna, GSM antennas and power supply.
+Base station comes with already installed and configured software; just attach the GPS and GSM antennas and power supply.
 
 **Steps**
 
-1. Place the UmSite on the mast directly connectors down
-2. Attach GSM antennas. We recommend having at least 10 ft (3m) between them
-3. Attach GPS antenna. Good antenna visibility to the sky is required
-4. Turn on Base station
+1. Place the UmSite on the mast directly, with connectors down. 
+2. Attach GSM antennas. We recommend having at least 10 feet (3m) between them.
+3. Attach GPS antenna. Good antenna visibility to the sky is required.
+4. Turn on Base station.
 
-**Note:** GSM antennas are not included in a standard package. We do not recomend to operate base station without antennas
+**Note:** GSM antennas are not included in a standard package. We do not recommend to operating the base station without antennas.
 
 #### 2.1 Antennas installation
 
-Each of both antennas complement each other. The second antenna must have the same position as the first antenna on a mast as well as the same direction and incline angle to the ground. 
+Each of the antennas complement each other. The second antenna must have the same position as the first antenna on a mast, as well as the same direction and incline angle to the ground. 
 
-For the GPS antenna, there are no strict requirements only good antenna visibility to the sky
+For the GPS antenna, there are no strict requirements, only good antenna visibility to the sky
 
 
 ![](http://s019.radikal.ru/i618/1507/f7/780db1eb7edf.png)
 
 ---------
 
-For the mast at least of 100 ft (30m) in height, antennas can be mounted upright within the 10 ft (3m) distance between each other.
+For the mast at least of 100 feet (30m) in height, antennas can be mounted upright within the 10 foot (3m) distance between each other.
 
 ![](http://s50.radikal.ru/i130/1507/7a/eb8b60961081.png)
 
@@ -140,22 +140,22 @@ For the mast at least of 100 ft (30m) in height, antennas can be mounted upright
 Generally, the TRX ID of BCCH is fixed to be the smallest TRX ID in the cell.
 
 
-Therefore TRX1 antenna  has to be situated below TRx2 antenna e.g. If the connection would be established when the TRx1 antenna is higher and then has assigned to a timeslot of the lower antenna TRX2, call connection could be lost.  
+Therefore, TRX1 antenna  has to be situated below the TRX2 antenna. For example, if the connection would be established when the TRX1 antenna is higher and then it has been assigned to a timeslot of the lower antenna TRX2, call connection could be lost.  
 
 *The antenna attached to the TRX1 should not have an advantage by height in that particular case.*
 
 #### 2.2	Getting started   
 
-1.	Connect to power source and turn it on. LED on the front pannel will flashing in 1-2 minutes later turned on.
+1.	Connect to the power source and turn it on. LED on the front panel will begin flashing in one to two minutes after being turned on.
   
-2.	Make sure that Ethernet cable connected.
+2.	Make sure that the Ethernet cable is connected.
 
-**Note:** We strongly recommend does not put UmSITE on a public network. Connect it to your local network where is access to Internet through NAT or Firewall. Keep UDP port 1195 open on your server for fairwaves VPN in case technical support
+**Note:** We strongly recommend not putting UmSITE on a public network. Connect it to your local network where there is access to the Internet through NAT or Firewall. Keep UDP port 1195 open on your server for Fairwaves VPN in case  of technical support
 
 ![](http://s019.radikal.ru/i633/1505/04/7e1b573f0b89.png)
 
 
-Take any GSM phone with any SIM card and try to search the network. Network might have a different names such as *Fairwaves, 1011, Test, etc*.
+Take any GSM phone with any SIM card and try to search the network. The network might have a different name such as *Fairwaves, 1011, Test, etc*.
     
 #### 2.3 Test call:
    
@@ -198,13 +198,12 @@ Before startng to work with the device, set up IP address on laptop like **192.1
 3. Login: fairwaves
 4. Password: fairwaves
  
-Once you logged in, you will get access to Linux terminal.
 
-You may use a deferent client software for remote access, but we recommend **PuTTY** (you can download at [www.putty.org](www.putty.org "PuTTY") ).  PuTTY is an open source SSH and telnet client, for the Windows platform. 
+You may use a defferent client software for remote access, but we recommend **PuTTY** (you can download at [www.putty.org](www.putty.org "PuTTY") ).  PuTTY is an open source SSH and telnet client, for the Windows platform. 
 
 ##### Login over Serial cable
 
-Serial connection allows  you to look over the system on the booting level.
+Serial connection allows you to choose boot options and log into the system if network connection is not available.
 
 You'll get options like:
 
@@ -222,12 +221,11 @@ For the Windows user [**putty**](www.putty.org "PuTTY")
 
 ![](http://s017.radikal.ru/i413/1503/ad/0b02ea2dc90f.png)
 
-Number of the COM port available at **Desktop manager** when you are connecting to the laptop. 
+Number of the COM port available at the **Desktop manager** when you are connecting to the laptop. 
 
 
 For the Linux user **[minicom](http://www.cyberciti.biz/tips/connect-soekris-single-board-computer-using-minicom.html)**
 
-Run the command to connect via serial cable:
 
 	shell> minicom -D/dev/ttyUSB0 -b38400 -o 
 
@@ -243,10 +241,10 @@ If you would like to set another static address for the device, edit
 
 Refer to Ubuntu documentation [**UBUNTU**](www.help.ubuntu.com/14.04/serverguide/network-configuration.html) for details  
 
-**Note:** Base station configured to get IP address through DHCP. 
-We also recommend to keep configuration for the **eth1:1** 
-(192.168.50.50/24), because it's used as a backup IP address. If you
-want to configure a statis IP address, change **eth1** configuration.
+**Note:** The base station is configured to get an IP address through DHCP. 
+We also recommend to keeping the configuration for the **eth1:1** 
+(192.168.50.50/24) because it's used as a backup IP address. If you
+want to configure a static IP address, change **eth1** configuration.
 ____________
 
 

@@ -25,7 +25,7 @@
 
 ![](http://s019.radikal.ru/i608/1409/60/3a29878257fd.png)
 
-The UmDESK is an IP-backhaul GSM Network In The Box shaped in mini-ITX case which has ability to work separately as BTS and BSC. As NITB it includes BSC, MSC, HLR, VLR and SMSC core network components.
+The UmDESK is an IP-backhaul GSM Network In The Box shaped in mini-ITX case which has the ability to work separately as BTS and BSC. As NITB, it includes BSC, MSC, HLR, VLR, and SMSC core network components.
 
 #### 1.1 Mechanical / Electrical specification   
 
@@ -107,7 +107,7 @@ Embedded Linux
 
 ![](http://i068.radikal.ru/1409/01/5150385cd640.png)
 
-The difference between those variants is only in the installed and configured software packages on the Linux based OS.  
+The difference between those variants is only in the installed and configured software packages on the Linux-based OS.  
 
 ## 2.	Installation 
 
@@ -115,13 +115,12 @@ UmDESK comes with already installed and configured software.
 
 #### 2.1 Getting started   
 
-1.	Connect to power source, attach GSM antennas, monitor and turn it on.
+1.	Connect to a power source, attach GSM antennas, monitor, and turn it on.
 
-2. Check the LEDs on the front panel (Tx1 Rx1 Tx2 Rx2) if it lights, UmDESK works properly 
+2. Check the LEDs on the front panel (TX1 RX1 TX2 RX2). if it lights up, UmDESK works properly 
 
-3.	Make sure that the Ethernet cable connects UmTRX with internal interface.
+3.	Make sure that the Ethernet cable is connected.
 	
-**Note:** PCI card is for backhaul which is on the right corner of the back side panel of UmDesk)
 
 Take any GSM phone with any SIM card and try to search the network. Network might have a different names such as *Fairwaves, 1011, Test, etc*.
     
@@ -153,7 +152,7 @@ Take any GSM phone with any SIM card and try to search the network. Network migh
  
 ### 2.3	Log in 
 
-In order to configure and administer the UmDESK, you have to attach monitor, keyboard, mouse or login into device remotely over SSH. There are two physical ethernet interfaces which are have a static IP for the external ethernet card **192.168.50.100** also it's configured to get IP address via DHCP. and **192.168.10.10** is internal interface for the UmTRX.
+In order to configure and administer the UmDESK, you have to attach monitor or log in into device remotely over SSH. There are two physical ethernet interfaces.  External interface IP is **192.168.50.100** also it's configured to obtain IP address via DHCP. **192.168.10.10** is internal interface for the UmTRX.
 
 ###### Note: 
 
@@ -182,7 +181,7 @@ Before startng to work with the device, set up IP address on laptop like this **
  
 Once you have logged into the system, you will be at a Linux shell command prompt. 
 
-You may use a deferent client software for remote access, but we recommend **PuTTY** (you can download at [www.putty.org](www.putty.org "PuTTY") ).  PuTTY is an open source SSH and telnet client, for the Windows platform. 
+You may use a deferent client software for remote access, we recommend **PuTTY** (you can download at [www.putty.org](www.putty.org "PuTTY") ).  PuTTY is an open source SSH and telnet client, for the Windows platform. 
 
 
 #### 2.4	IP and network configuration (optional)

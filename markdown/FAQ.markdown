@@ -15,9 +15,9 @@
 ___________________
 
 **Q:**
-How does installation without GPS antenna affect the system?
+How does installation without a GPS antenna affect the system?
 
- **A:** We strongly recommend to use GPS antenna, however it possible to work without it ,but it's may cause the problem of cell phone registration to the network in terms of surrounding GSM networks, cell phone model, temperature. Once the phone has registered to network, GPS does not affect productivity of the system at all.
+ **A:** We strongly recommend using a GPS antenna; however, it is possible to work without it, but it may cause problems with cell phone registration to the network in terms of surrounding GSM networks, cell phone model, temperature. Once the phone has registered to a network, GPS does not affect the productivity of the system at all.
 _____________
 
 **Q:**
@@ -31,7 +31,7 @@ ____________________
  How does the system handle handover between **MultiBTS** systems.
 
 **A:** 
-BSC on a separate server. We use intra BSC handover. How to set up, described in **How to's** chapter.
+BSC is on a separate server. We use intra BSC handover. Setup is described at  **How to's**.
 _______________
  
 **Q:** How is roaming handled?
@@ -53,10 +53,9 @@ up to 10 km with 10W output power
 _________________
  
 **Q:**
-Do you have specific simcards or usual simcards can be used?
+Do you have specific SIM-cards or can any SIM-cards be used?
 
-**A:** Fairwaves base station could be configured to work with any SIM-cards. However it’s impossible to provide subscriber authentication and traffic encryption if you don’t know Ki secret key of your SIM-cards.
-If you operate a normal mobile network with encryption and subscriber authentication,you can set up only open network either get SIM-cards with known Ki keys to set up close network. 
+**A:** Fairwaves base station could be configured to work with any SIM-cards. However, it is impossible to provide subscriber authentication and traffic encryption if you do not know Ki secret key of your SIM-cards. If you operate a normal mobile network with encryption and subscriber authentication, you can only set up an open network and either get SIM-cards with known Ki keys or set up a closed network. 
 
 You can buy SIM-cards and program them.
 ______________________
@@ -65,37 +64,30 @@ ______________________
 How do you handle SMS and GPRS in your systems? 
 
 **A:**
-Fairwaves base stations are able to provide basic services: Voice and 
-SMS also Fairwaves provide GPRS, in terms of quality it disabled in production systems to get more capacity for the voice and SMS either that’s too slow to use it as data service. We considering to use WiFi instead of GPRS: 
-
- - it’s affordable 
- - it has enough bandwidth
- - It’s cost efficient
-
+Fairwaves base stations are able to provide basic services: Voice and SMS. Also, Fairwaves provide GPRS; in terms of quality it is disabled in production systems to get more capacity for the voice and SMS that is too slow to use it as data service. We are considering using WiFi instead of GPRS. 
 
 _________________________
 
 **Q:**  What is the capacity of the subscriber database?
 
 **A:**
-A base station with one transceiver is able to handle from 200 subscribers (if you offer your subscribers a flat tariff with free local calls) to 500 (normal mode with tariffs still comfortable for subscribers). For example, with 10 000 subscribers you will need around 20 base stations. Please note this is very rough estimation.
+A base station with one transceiver is able to handle from 200 (if you offer your subscribers a flat tariff with free local calls) to 500 subscribers (normal mode with tariffs still comfortable for subscribers). For example, with 10,000 subscribers, you will need around 20 base stations. Please note this is a very rough estimation.
 __________________
 
 
 **Q:** Will the UMTRX work with UMTS?
-
-**A:** UmTRX will be able to work with UMTS, but we don't have a software implementation for that. 
+Ho
+**A:** UmTRX will work with UMTS, but we don't have a software implementation for that.
 _____________________
 
 **Q:** How do subscribers pay their bills in terms of village service?
 
-**A:** 1. express card payment 2. physically bring money to the person who have an access for the enroll payments.
+**A:** 1. Express card payment; 2. Physically bring money to the person who has access to the enroll payments.
 ____________ 
 
-**Q:** How is subscriber provisioning  process goes, SIM Cards or Phone?
+**Q:** How does the subscriber provisioning process go, with SIM-cards or Phone?
 
-**A:** Sim card. You can program your own sim cards and this would be a closed network either you can use existed sim, then network would be open. 
-
+**A:** SIM card. You can program your own SIM-cards and this would be a closed network. You can also use an existing SIM-card, then the network would be open.
 _______________
 
 **Q:** How is the billing system interconnected with MNO?
@@ -105,7 +97,7 @@ ____________
 
 **Q:**  Is it possible to connect external BTS to the network through A-bis interface?
 
-**A:** We don’t support external BTS connection through A-bis interface, because this architecture is not fault-tolerant from the connection lost. It does not have local calls switching, there is no simple way of backhaul optimization, that brings extra expenses for the village connection through the VSAT.
+**A:** We do not support external BTS connection through A-bis interface, because this architecture is not fault-tolerant from the connection lost. It does not have local call switching, and there is no simple way of backhaul optimization, which brings extra expenses for the village connection through the VSAT.
 ___________
 **Q:** Do you have a stable branch/release set for UmTRX?
 
@@ -172,14 +164,15 @@ We can help you do a non-standart configuration on demand and run a commercial n
 
 ______
 
-**Q:** Will all calls be charged (inside/outside) ?
+**Q:** Will all calls be charged (inside/outside)?
 
 **A:** It depends on whether you want to bill local calls or not.
 _____
 
-**Q:** Wouldn't it get a network congestion cause providing free internal calls?
+**Q:** Wouldn't providing free internal calls cause network congestion?
  
-**A:** We're developing advanced options to avoid full network congestion in UmCORE server which will be available as part of the commercial agreement.
+**A:** We're developing advanced options to avoid full network congestion in the UmCORE server, which will be available as part of the commercial agreement.
+
 _____
 
 **Q:** Do you have another option of commercial billing for inside and outside calls?

@@ -104,13 +104,13 @@
 
 ##1.	Introduction
 
-This manual should help you get started with basic overview of the GSM architecture and Fairwaves software. It covers all aspects of configuring and running the products such as UmSITE, UmDESK.
+This manual should help you get started with basic overview of the GSM architecture and Fairwaves software. It covers all aspects of configuring and running the products such as UmSITE and UmDESK.
 
 #### 1.1 GSM Network Architecture
 
 A GSM network is made up of multiple components and interfaces that facilitate sending and receiving of signaling and traffic messages. It is
 a collection of transceivers, controllers, switches, routers, and registers.
-The GSM network can be divided into following parts.
+The GSM network can be divided into the following parts:
 
 ![](http://s47.radikal.ru/i117/1503/82/cd1fa45d5acc.png)
 
@@ -126,7 +126,7 @@ The GSM network can be divided into following parts.
 
 consists of two elements:
 
-  - **Base Transceiver Station (BTS)** responsible for carrying out radio communications between the network and the MS,it handles speech encoding, encryption, multiplexing (TDMA), and modulation/demodulation of the radio signals.
+  - **Base Transceiver Station (BTS)** is responsible for carrying out radio communications between the network and the MS. It handles speech encoding, encryption, multiplexing (TDMA), and modulation/demodulation of the radio signals.
  
   - **Base Station Controller (BSC)** handles allocation of radio channels, frequency administration, power and signal measurements from the MS, and handovers from one BTS to another.
 
@@ -140,12 +140,12 @@ provides the main control and interfacing for the whole mobile network.
  - **Home Location Register (HLR)** is a central database that contains details of each mobile phone subscriber that is authorized (AuC) to use the GSM core network.The HLR maintains information such as the MSISDN, IMSI, current location of the MS, roaming restrictions, and subscriber
 features.
 
- - **Visitor Location Register (VLR)** contains subset of the information about the mobile subscribers which came from the other MSC.
+ - **Visitor Location Register (VLR)** contains a subset of the information about the mobile subscribers which came from the other MSC.
 
  - **Equipment Identity Register (EIR)** is a database that keeps tracks of handsets on the network using the IMEI.
 
- - **Authentication Centre (AuC):** is responsible for generating the necessary cryptovariables for authentication and encryption on the network. The Auc also stores the Ki for each IMSI on the network. Although it is not
-required, the Auc is normally physically collocated with the HLR.
+ - **Authentication Centre (AuC):** is responsible for generating the necessary cryptovariables for authentication and encryption on the network. The AuC also stores the Ki for each IMSI on the network. Although it is not
+required, the AuC is normally physically collocated with the HLR.
 
  - **Gateway Mobile Switching Centre (GMSC)** is a gateway between
 two networks. If a mobile subscriber wants to place a call to a regular land line, then the call would have to go through a GMSC in order to
@@ -156,7 +156,7 @@ switch to the Public Switched Telephone Network (PSTN).
  is used to control and monitor the overall GSM network and it is also used to control the traffic load of the BSS.
 
 
-More information about specification, protocol stack, security and etc, you can get [**here**](http://www.tutorialspoint.com/gsm/index.htm).
+You can get more information about specification, protocol stack, security, etc. [**here**](http://www.tutorialspoint.com/gsm/index.htm).
 
 #### 1.2 Fairwaves network architecture
 
@@ -244,7 +244,7 @@ Once you logged in, you will get access to Linux terminal.
 
 You may use a deferent client software for remote access, we recommend **PuTTY** (you can download at [**www.putty.org**](www.putty.org "PuTTY") ).  PuTTY is an open source SSH and telnet client, for the Windows platform. 
 
-##### Login over Serial cable (Only for UmSITE)
+##### Log in over Serial cable (Only for UmSITE)
 
 Serial connection allows you to choose boot options and log into the system if network connection is not available.
 
@@ -279,14 +279,14 @@ If you would like to set another static address for the device, edit  */etc/netw
 Refer to [**Ubuntu**](https://help.ubuntu.com/14.04/ubuntu-help/index.html) documentation for details  
 
 **Note:** Base station configured to get IP address through DHCP. 
-We also recommend to keep configuration for the **eth1:1** 
+We also recommend keeping the configuration for the **eth1:1** 
 (192.168.50.50/24), because it's used as a backup IP address. If you
 want to configure a statis IP address, change **eth1** configuration.
 
 
 #### 2.3 GSM parameters
 
-GSM network configuration parameters stored at ***openbsc.cfg*** You can use interactive VTY telnet interface for configuration editing, also it is possible to make changes direct in configuration file.
+GSM network configuration parameters are stored at ***openbsc.cfg*** You can use interactive VTY telnet interface for configuration editing, and it is also possible to make changes directly in the configuration file.
 
    
 in order to edit **openbsc.cfg** run:     
@@ -621,7 +621,7 @@ DEBUG
 
 	Will degrade system performance; only for use by developers
 
-**NOTE:** To get different information out of the system, you may set different logging level in the VTY command line
+**NOTE:** To get different information out of the system, you may set different logging levels in the VTY command line
 
 #### 2.5 Multi BTS configuration
 
@@ -935,7 +935,7 @@ Handover is the ability to keep connection an ongoing call between two base stat
 		 handover power budget hysteresis 3
 		 handover maximum distance 9999
 
-**Note: ** Handover configuration available through the VTY command line. See below at 5.4 Network configuration chapter
+**Note: ** Handover configuration is available through the VTY command line. See below at 5.4 Network configuration chapter
 
 
 ##3. FreeSWITCH configuration
@@ -1071,14 +1071,14 @@ More information [FreeSWITCH](https://en.wikipedia.org/wiki/FreeSWITCH)
 
 		shell> nano /usr/local/freeswitch/conf/vars.xml 
 
-Find lines and set up codecs
+Find lines and set up codecs:
  
 	<X-PRE-PROCESS cmd="set" data="global_codec_prefs=G722,PCMU,PCMA,GSM"/>
 	<X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=PCMU,PCMA,GSM"/>
 
 ## 4	 Subscriber properties
 
- Virtual Teletype (VTY) has the concept of nodes and commands, which is consists of several words followed by a variable number of parameters. The VTY allows for runtime management and is available through telnet on the localhost. The arguments can be a single word, a string, numbers, ranges or a list of options. The available commands depend on the current node.
+ Virtual Teletype (VTY) has the concept of nodes and commands, which consists of several words followed by a variable number of parameters. The VTY allows for runtime management and is available through telnet on the localhost. The arguments can be a single word, a string, numbers, ranges or a list of options. The available commands depend on the current node.
 
 #### 4.1	Virtual Teletype. Login. Privileged mode.
 
@@ -1097,11 +1097,11 @@ Set to privileged mode
 
 A subscriber can be added to the network in 3 ways:
 
-1.	Directly insert into SQL database
+1.	Inserted directly into SQL database.
 
-2.	Automatically, during the first connection: system automatically assign number, contained (IMSI, TMSI, Extension number, ID (internal identifier)
+2.	Automatically, during the first connection, system automatically assigns a number, containing (IMSI, TMSI, Extension number, ID (internal identifier).
 
-3.	 Semi- automatically from the Virtual Tele Type (VTY)
+3.	 Semi- automatically from the Virtual Tele Type (VTY).
 
 Subscribers are stored in /etc/osmocom/hlr.sqlite3, which is an SQLite database file. The easiest way to add, assign, and change subscriber’s properties is semi-automatically through VTY.
 

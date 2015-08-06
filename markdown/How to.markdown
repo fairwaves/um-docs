@@ -135,11 +135,11 @@ Go to *master* branch of the UHD-Fairwaves repository,
 
 ### Osmo-TRX rebuild  
 
-**Note:** This required, If you have already installed osmocom software before you update UHD
+**Note:** This is required, If you have already installed Osmocom software before you update UHD.
 
-After UHD update for 003.008, osmo-trx doesn't work! In terms of new UHD version, osmo-trx rebuild is required.
+After the UHD update for 003.008, Osmo-TRX doesn't work! In terms of the new UHD version, an Osmo-TRX rebuild is required.
 
-go to osmo-trx directory in fairwaves-tools:
+go to:
 
 */fairwaves-tools/deps/osmo-trx*
 
@@ -152,7 +152,7 @@ and run
 
 ### How Freeswitch connects to LCR 
 
-Freeswitch talk to LCR throuh the SIP protocol 
+Freeswitch talk to LCR through the SIP protocol 
 
 path: *etc/lcr/interface.conf*
 
