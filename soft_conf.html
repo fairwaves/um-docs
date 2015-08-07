@@ -436,12 +436,12 @@ img {
 <br>
 
 <a name="1.Introduction"></a><h4>1. Introduction<a class="anchorlink" href="#1.Introduction"></a></h4>
-<p>This manual should help you get started with Fairwaves software. It covers all aspects of configuring and running the Fairwaves products such as UmSITE, UmDESK.</p>
+<p>This manual should help you get started with Fairwaves software. It covers all aspects of configuring and running the Fairwaves products, such as UmSITE and UmDESK.</p>
 
 <h4>1.1 GSM Network Architecture</h4>
 <p>A GSM network is made up of multiple components and interfaces that facilitate sending and receiving of signaling and traffic messages. It is
 a collection of transceivers, controllers, switches, routers, and registers.
-The GSM network can be divided into following parts.</p>
+The GSM network can be divided into the following parts.</p>
 <p><img src="http://s47.radikal.ru/i117/1503/82/cd1fa45d5acc.png" /></p>
 <h4>Mobile Station (MS)</h4>
 <p>is made up of two components:</p>
@@ -455,7 +455,7 @@ The GSM network can be divided into following parts.</p>
 <p>consists of two elements:</p>
 <ul>
 <li>
-<p><strong>1. Base Transceiver Station (BTS)</strong> responsible for carrying out radio communications between the network and the MS,it handles speech encoding, encryption, multiplexing (TDMA), and modulation/demodulation of the radio signals.</p>
+<p><strong>1. Base Transceiver Station (BTS)</strong> is responsible for carrying out radio communications between the network and the MS. It handles speech encoding, encryption, multiplexing (TDMA), and modulation/demodulation of the radio signals.</p>
 </li>
 <li>
 <p><strong>2. Base Station Controller (BSC)</strong> handles allocation of radio channels, frequency administration, power and signal measurements from the MS, and handovers from one BTS to another.</p>
@@ -472,14 +472,14 @@ The GSM network can be divided into following parts.</p>
 features.</p>
 </li>
 <li>
-<p><strong>3. Visitor Location Register (VLR)</strong> contains subset of the information about the mobile subscribers which came from the other MSC.</p>
+<p><strong>3. Visitor Location Register (VLR)</strong> contains a subset of the information about the mobile subscribers which came from the other MSC.</p>
 </li>
 <li>
 <p><strong>4. Equipment Identity Register (EIR)</strong> is a database that keeps tracks of handsets on the network using the IMEI.</p>
 </li>
 <li>
-<p><strong>5. Authentication Centre (AuC)</strong> is responsible for generating the necessary cryptovariables for authentication and encryption on the network. The Auc also stores the Ki for each IMSI on the network. Although it is not
-required, the Auc is normally physically collocated with the HLR.</p>
+<p><strong>5. Authentication Centre (AuC)</strong> is responsible for generating the necessary cryptovariables for authentication and encryption on the network. The AuC also stores the Ki for each IMSI on the network. Although it is not
+required, the AuC is normally physically collocated with the HLR.</p>
 </li>
 <li>
 <p><strong>6. Gateway Mobile Switching Centre (GMSC)</strong> is a gateway between
@@ -489,7 +489,7 @@ switch to the Public Switched Telephone Network (PSTN).</p>
 </ul>
 <h4>Operation Support Subsystem (OSS)</h4>
 <p>is used to control and monitor the overall GSM network and it is also used to control the traffic load of the BSS.
-More information about specification, protocol stack, security and etc, you can get <a href="http://www.tutorialspoint.com/gsm/index.htm"><strong>here</strong></a>.</p>
+You can get more information about specification, protocol stack, security, etc. <a href="http://www.tutorialspoint.com/gsm/index.htm"><strong>here</strong></a>.</p>
 <h4>1.2 Fairwaves network architecture</h4>
 <p> The Fairwaves Architecture defines a set of components, protocols, services and configurations used to build cost-optimized mobile networks in rural and remote areas.</p>
 
@@ -582,12 +582,12 @@ use of effective voice compression algorithms.</p>
 </p>
 
 <p><strong>  NOTE:</strong>   Base station configured to get IP address through DHCP.
-We also recommend to keep configuration for the
+We also recommend keeping the configuration for the
 <u>eth1:1</u> (192.168.50.50/24), because it's used as a backup IP address. If you
 want to configure a statis IP address, change <u>eth1</u> configuration.</p>
 
 <h4>2.3 GSM parameters</h4>
-<p>GSM network configuration parameters stored at <strong><em>openbsc.cfg</em></strong> You can use interactive VTY telnet interface for configuration editing, also it is possible to make changes direct in configuration file.</p>
+<p>GSM network configuration parameters are stored at <strong><em>openbsc.cfg</em></strong> You can use interactive VTY telnet interface for configuration editing, and it is also possible to make changes directly in the configuration file.</p>
 <p>in order to edit <strong>openbsc.cfg</strong> run:     
 </p>
 <pre><code>Shell&gt; sudo nano /etc/osmocom/openbsc.cfg
@@ -908,7 +908,7 @@ Refer to Osmocom documentation for details:</p>
 <pre><code>Will degrade system performance; only for use by developers
 </code></pre>
 
-<p> <strong>  NOTE:</strong>   To get different information out of the system, you may set different logging level in the VTY command line</p>
+<p> <strong>  NOTE:</strong>   To get different information out of the system, you may set different logging levels in the VTY command line</p>
 
 
 <h4>2.5 Multi BTS configuration</h4>
@@ -1226,7 +1226,7 @@ enable handover in <u>osmo-nitb</u> configuration: <em>etc/osmocom/openbsc.cfg</
 </code></pre>
 
 
-<p><strong>NOTE:</strong>Handover configuration available through the VTY command line. See below at <u>5.4 Network configuration</u></i></p>
+<p><strong>NOTE:</strong>Handover configuration is available through the VTY command line. See below at <u>5.4 Network configuration</u></i></p>
 
 <a name="3.FreeSWITCH Configuration"></a><h4>3. FreeSWITCH Configuration<a class="anchorlink" href="#3.FreeSWITCH Configuration"></a></h4>
 <p>FreeSWITCH is a scalable open source cross-platform telephony platform designed to route and interconnect popular communication protocols using audio, video, text or any other form of media.
@@ -1350,13 +1350,13 @@ codec,iLBC,mod_ilbc
 <pre><code>shell&gt; nano /usr/local/freeswitch/conf/vars.xml
 </code></pre>
 
-<p>Find lines and set up codecs</p>
+<p>Find lines and set up codecs:</p>
 <pre><code>&lt;X-PRE-PROCESS cmd=&quot;set&quot; data=&quot;global_codec_prefs=G722,PCMU,PCMA,GSM&quot;/&gt;
 &lt;X-PRE-PROCESS cmd=&quot;set&quot; data=&quot;outbound_codec_prefs=PCMU,PCMA,GSM&quot;/&gt;
 </code></pre>
 
 <a name="4.Subscribers properties"></a><h4>4. Subscribers properties<a class="anchorlink" href="#4.Subscribers properties"></a></h4>
-<p> Virtual Teletype (VTY) has the concept of nodes and commands, which is consists of several words followed by a variable number of parameters. The VTY allows for runtime management and is available through telnet on the localhost. The arguments can be a single word, a string, numbers, ranges or a list of options. The available commands depend on the current node.</p>
+<p> Virtual Teletype (VTY) has the concept of nodes and commands, which consists of several words followed by a variable number of parameters. The VTY allows for runtime management and is available through telnet on the localhost. The arguments can be a single word, a string, numbers, ranges or a list of options. The available commands depend on the current node.</p>
 <h4>4.1 Virtual Teletype. Login. Privileged mode.</h4>
 <p>Modifying subscriber properties requires the VTY to be in the privileged (<strong>enable</strong>) mode.</p>
 <p>Login to VTY   
@@ -1372,13 +1372,13 @@ codec,iLBC,mod_ilbc
 <p>A subscriber can be added to the network in 3 ways:</p>
 <ol>
 <li>
-<p>1. Directly insert into SQL database</p>
+<p>1. Inserted directly into SQL database.</p>
 </li>
 <li>
-<p>2. Automatically, during the first connection: system automatically assign number, contained (IMSI, TMSI, Extension number, ID (internal identifier)</p>
+<p>2. Automatically, during the first connection, system automatically assigns a number, containing (IMSI, TMSI, Extension number, ID (internal identifier).</p>
 </li>
 <li>
-<p>3. Semi- automatically from the Virtual Tele Type (VTY)</p>
+<p>3. Semi- automatically from the Virtual Tele Type (VTY).</p>
 </li>
 </ol>
 <p>Subscribers are stored in /etc/osmocom/hlr.sqlite3, which is an SQLite database file. The easiest way to add, assign, and change subscriber properties is semi-automatically through VTY.</p>

@@ -453,9 +453,9 @@ $ sudo make install
 
 <a name="4. Osmo-TRX rebuild (optional)"></a><h4>4. Osmo-TRX rebuild (optional)<a class="anchorlink" href="#4. Osmo-TRX rebuild (optional)"></a></h4>
 
-<p><strong>NOTE:</strong> This required, If you have already installed osmocom software before you update UHD</p>
-<p>After UHD update for 003.008, osmo-trx doesn't work! In terms of new UHD version, osmo-trx rebuild is required.</p>
-<p>go to osmo-trx directory in fairwaves-tools:</p>
+<p><strong>NOTE:</strong> This is required, If you have already installed Osmocom software before you update UHD.</p>
+<p>After the UHD update for 003.008, Osmo-TRX doesn't work! In terms of the new UHD version, an Osmo-TRX rebuild is required.</p>
+<p>go to:</p>
 <p><em>/fairwaves-tools/deps/osmo-trx</em></p>
 <p>and run</p>
 <pre><code>./autoreconf -fi
@@ -466,7 +466,7 @@ sudo make install
 
 <a name="5. How Freeswitch connects to LCR"></a><h4>5. How Freeswitch connects to LCR<a class="anchorlink" href="#5. How Freeswitch connects to LCR"></a></h4>
 
-<p>Freeswitch talk to LCR throuh the SIP protocol </p>
+<p>Freeswitch talk to LCR through the SIP protocol </p>
 <p>path: etc/lcr/interface.conf</p>
 <p><strong>Freeswitch IP</strong></p>
 <pre><code>&lt;remote ip&gt;[:&lt;remote port&gt;]
