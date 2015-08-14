@@ -6,6 +6,8 @@
 
 1.1 Mechanical specification
 
+- Power supply
+
 1.2 Software specification
 
 1.3 Hardware Options
@@ -67,13 +69,16 @@ The UmSITE is an IP-backhaul GSM BTS, BSC and Network In The Box.  This is solut
 ##### Power supply
 Fairwaves doesn’t provide the power supply. This is because, different places want to use different power sources. Fairwaves products are compatible with any power sources, including solar panels, as well.	
 
-####List of the power supply you may use:
+#### List of the power supplies:
 
 UmSITE-TM10 (100W) ( IP65: [Mean Well HLG-100H-30A](http://www.onlinecomponents.com/mean-well-hlg100h30a.html?p=42885969)
 
 UmSITE-TM3 (60~80W) IP65:  [Mean Well HLG-60H-15A](http://www.onlinecomponents.com/mean-well-hlg60h15a.html?p=43545144)
 
-for the indoor purposes would fit a basic laptop charger like [this](http://www.amazon.com/Universal-Laptop-Notebook-Power-Adapter/dp/B00406ITIA/ref=sr_1_11?ie=UTF8&qid=1429815258&sr=8-11&keywords=laptop+charger) 
+Indoor power supply: Any basic [laptop charger](http://www.amazon.com/Universal-Laptop-Notebook-Power-Adapter/dp/B00406ITIA/ref=sr_1_11?ie=UTF8&qid=1429815258&sr=8-11&keywords=laptop+charger) can be used
+
+#### Power/COM-port wires connection schema
+![](http://s018.radikal.ru/i527/1508/9a/b63174d67c20.png)
 
 
 ##### Antenna 
