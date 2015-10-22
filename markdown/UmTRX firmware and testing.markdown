@@ -12,6 +12,7 @@
 ##### 6.  Set a 2nd TxRX channel for the calls of UmTRX 2.2 (optional)
 ##### 7.  EEPROM   
 ##### 8.  GPS testing
+##### 9.  CMD57 testing
 
 ### 1. Preparing PC/Laptop 
 Firt of all you have to install UHD Driver on your 1st and 2nd PC/Laptop: [UHD-Fairwaves](https://github.com/fairwaves/UHD-Fairwaves) We going to use 2nd PC/Laptop at the testing step.
@@ -117,6 +118,11 @@ For the testing receiving part, you need device called signal hound tracking gen
 		shell> ./tx_waveforms --rate 1083333 --freq 857e6 --wave-type SINE --wave-freq 1e3
 
 **NOTE:** We set 857Mhz frequency, that means, parameter should be the same on the receiving side. 
+
+#### CMD57 frequency generator: 
+
+*Press on CMD57* MODULE TEST=>RF GEN=>FREQ./RF CHAN
+
 
 
 **2.** Connect the tested UmTRX directly to the 1st PC/Laptop, attach antenna on the receiver spot
@@ -256,4 +262,77 @@ run:
 
 
 	$ echo . | nc -u 192.168.10.2 49171
+
+
+### 9. CMD57 testing
+
+
+Frequency ERROR should be less than 50Hz
+
+#### Check Frequency ERROR
+
+
+*Press on CMD57*: MANUAL TEST => TRY TO SYNC.
+
+#### Set Frequency ERRORS less than 50Hz
+
+In order to set a proper *Freq error*, tcxo-dac has to be changed.
+
+1. Run **umtrx_vcxo** and adjust value between (1880-1920) unless *Freq.Error* hits < 50Hz
+
+		shell> /umtrx_scripts/python_lib/umtrx_vcxo --dac -value 1890
+
+2. Stop **osmo-trx** service and set **tcxo-dac** into the EEPROM
+
+		shell> sv stop osmo-trx
+ 		shell> /usr/lib/uhd/utils/usrp_burn_mb_eeprom --value tcxo-dac="1890"
+		shell> sv start osmo-trx
+
+
+#### Manually:
+
+1. Plug CMD57 (RF IN RF OUT)  wires to UmTrx (TX1 RX1) 
+2. Set TRX which has to be tested (utils at */helpers/* directory): 
+
+ 		shell> osmo-trx-primary-trx.py (1|2)
+		shell> sv restart osmo-trx
+3. Run: 
+		
+		shell> ./osmobts-en-loopback.py
+
+4. *Press on CMD57*: MANUAL TEST => TRY TO SYNC => TCH TEST => BER TEST => TEST 3
+
+---------
+**Optional:** CONTINUOUS BIT ERROR RATE shows TRAFFIC CHANNEL LEVEL
+
+*Press on CMD57*: MANUAL TEST => TRY TO SYNC => TCH TEST => BER TEST => CONT.BER MEAS. => SEARCH
+
+-------
+
+5.Switch wires to TX2 RX2 once TRX1 test has passed. 
+
+
+		shell> osmo-trx-primary-trx.py 2
+		shell> sv restart osmo-trx
+
+6.Repeat step '**4**' above
+
+
+#### Automatically:
+
+1. Plug CMD57 (RF IN RF OUT)  wires to UmTrx (TX1 RX1) 
+2. Run from directory (*.../cmd57/python-scpi.git/*): 
+
+		shell>./run-bts-test.py
+3. Switch wires to TX2 RX2 and once script has done TRX1.  
+4. Results have stored in *bts-test.SERIAL_NUMBER.json* file
+
+
+
+
+
+
+
+
+
 
