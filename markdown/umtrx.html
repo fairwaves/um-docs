@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UmTRX firmware and testing</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p><img src="http://s017.radikal.ru/i435/1409/3a/35cfd52210c9.png" /></p>
+<h2>UmTRX. Firmware and testing (Fairwaves version)</h2>
+<h3>Contents:</h3>
+<h5>1.  Preparing PC/Laptop</h5>
+<h5>2.  Installing firmware (automatically)</h5>
+<h5>3.  Testing UmTRX</h5>
+<h5>4.  Installing firmware (manually)</h5>
+<h5>5.  UmTRX scripts</h5>
+<h5>6.  Set a 2nd TxRX channel for the calls of UmTRX 2.2 (optional)</h5>
+<h5>7.  EEPROM</h5>
+<h5>8.  GPS testing</h5>
+<h5>9.  CMD57 testing</h5>
+<h3>1. Preparing PC/Laptop</h3>
+<p>Firt of all you have to install UHD Driver on your 1st and 2nd PC/Laptop: <a href="https://github.com/fairwaves/UHD-Fairwaves">UHD-Fairwaves</a> We going to use 2nd PC/Laptop at the testing step.</p>
+<ul>
+<li><strong>umtrx</strong> branch  - 003.004 (old version UHD)   </li>
+<li><strong>umtrx_update</strong> branch  - 003.008 (new version of UHD)</li>
+</ul>
+<p><strong>NOTE:</strong> Old vesion of UHD working only with the old firmware as a new one with the new.</p>
+<p>Here is the instruction how to install a 003.004 version</p>
+<p>Clone and build  </p>
+<pre><code>    git clone https://github.com/fairwaves/UHD-Fairwaves.git
+    cd UHD-Fairwaves/host
+    mkdir -p build
+    cd build
+    cmake ../
+    make -j4
+    make test
+    sudo make install
+    sudo ldconfig
+</code></pre>
+
+<p>Before starting to work with UmTRX you should download this utility
+<a href="http://xc3sprog.sourceforge.net/guide.php">xc3sprog</a> on the 1st PC/Laptop</p>
+<p>Run:</p>
+<pre><code>    shell&gt; svn co https://xc3sprog.svn.sourceforge.net/svnroot/xc3sprog/trunk xc3sprog
+</code></pre>
+
+<p>then:</p>
+<pre><code>cd xc3sprog
+cmake .
+make
+make install
+</code></pre>
+
+<h3>2.  Installing firmware (automatically)</h3>
+<p><strong>1.</strong> Plug the cables to the UmTRX board</p>
+<p><img src="http://s020.radikal.ru/i712/1411/6c/5d94fbd5f9f1.jpg" /></p>
+<p>make shure you pull the switch down</p>
+<p><img src="http://s017.radikal.ru/i406/1411/93/21805c64d9a2.png" /></p>
+<p><strong>2.</strong> Download firmware and utils here:</p>
+<p><strong>3.</strong> Now go to <strong>umtrx</strong> directory on your PC which contains all files and utils for the firmware UmTRX board:</p>
+<p><img src="http://s017.radikal.ru/i433/1411/7a/f16487835048.jpg" /></p>
+<p>and run <strong>tester.py</strong></p>
+<pre><code>shell&gt; ./tester.py
+</code></pre>
+
+<p><img src="http://s017.radikal.ru/i441/1411/52/d07003dce853.png" /></p>
+<p><strong>4.</strong> Choose version of the firmware by the checking or not 4xDDC square: </p>
+<ul>
+<li>
+<p>if <strong>YES</strong>: You will setup cut version which is used just for the signal receive </p>
+</li>
+<li>
+<p>if <strong>NO</strong>: You will setup fully functionally firmware</p>
+</li>
+</ul>
+<p><strong>5.</strong> Set the serial number and press start.</p>
+<p><em>Baseline</em> -- <strong>BB001</strong> (<strong>B</strong>=Baseline (fixed), <strong>B</strong>=Batch series (can change), <strong>001</strong>=UmTRX number. increment by 1) </p>
+<p><em>Tx</em> -- <strong>XA001</strong> (<strong>X</strong>=Tx (fixed), <strong>A</strong>=Batch series (can change), <strong>001</strong>=UmTRX number. increment by 1)</p>
+<p><strong>Note:</strong> Serial number should be marked on the board itself by marker and match with the number you've typed</p>
+<p><img src="http://s50.radikal.ru/i127/1411/4f/808bf5326462.jpg" /></p>
+<h3>3.  Testing UmTRX</h3>
+<p>For the testing receiving part, you need device called signal hound tracking generator or another fully functional UmTRX with PC/Laptop.  </p>
+<p><strong>NOTE:</strong> Before start testing receiving part of the UmTRX you have to install  <a href="http://gnuradio.org/redmine/projects/gnuradio/files">GNU Radio 3.6.5.1</a> from the source on the 1st PC/Laptop(tested). <a href="http://gnuradio.org/redmine/projects/gnuradio/wiki/BuildGuide">Build guide</a></p>
+<p><strong>We're going to owerview a method with UmTRX.</strong></p>
+<p><strong>1.</strong> Connect UmTRX with already firmware  directly to 2nd PC/Laptot (UHD driver has to be installed as well) and attach the antenna to tx1 of TRX1.</p>
+<ul>
+<li>
+<p>go to: </p>
+<pre><code>shell&gt; cd /usr/local/lib/uhd/examples/
+</code></pre>
+
+</li>
+</ul>
+<p><strong>NOTE:</strong> If you can't find that directory, just run: </p>
+<pre><code>    shell&gt; locate uhd/examples
+</code></pre>
+
+<ul>
+<li>
+<p>run command for the frequency streaming.</p>
+<pre><code>shell&gt; ./tx_waveforms --rate 1083333 --freq 857e6 --wave-type SINE --wave-freq 1e3
+</code></pre>
+
+</li>
+</ul>
+<p><strong>NOTE:</strong> We set 857Mhz frequency, that means, parameter should be the same on the receiving side. </p>
+<h4>CMD57 frequency generator:</h4>
+<p><em>Press on CMD57</em> MODULE TEST=&gt;RF GEN=&gt;FREQ./RF CHAN</p>
+<p><strong>2.</strong> Connect the tested UmTRX directly to the 1st PC/Laptop, attach antenna on the receiver spot</p>
+<p><img src="http://s57.radikal.ru/i157/1411/ee/0483845891fd.jpg" /></p>
+<p><img src="http://s019.radikal.ru/i625/1411/9b/74c8c26cc810.jpg" /></p>
+<p>and run command for the <strong>Rx1</strong> :</p>
+<pre><code>sudo uhd_fft -f 857M -s 3.25M --spec A:0
+</code></pre>
+
+<p>Change the antenna cpot for the <strong>Rx2</strong> and run:</p>
+<pre><code>sudo uhd_fft -f 857M -s 3.25M --spec B:0
+</code></pre>
+
+<p>If the receiver works properly, you will see the waves like on the picture below</p>
+<p><img src="http://s013.radikal.ru/i323/1411/be/238efddcff7a.jpg" /></p>
+<h3>4. Installing firmware manually</h3>
+<ol>
+<li>
+<p>If you would like to load firmware manually, here is a detailed instruction how to:  <strong><a href="http://umtrx.org/hardware/flashing/">umtrx.org</a></strong></p>
+</li>
+<li>
+<p>If you would like to overwrite the firmware, just follow this steps:</p>
+<ul>
+<li>
+<p>Firt of all you should load <strong><a href="http://umtrx.org/hardware/booting/#safemode">safe mode</a></strong> (push safe button and wait for LEDs D and F to light constantly and release “Safe”):</p>
+<pre><code>sudo umtrx_net_burner --addr=192.168.10.2 --fpga=u2plus_umtrx_v2.bin --fw=umtrx_txrx_uhd.bin --overwrite-safe
+</code></pre>
+
+</li>
+<li>
+<p>and then:</p>
+<pre><code>sudo umtrx_net_burner --addr=192.168.10.2 --fpga=u2plus_umtrx_v2.bin --fw=umtrx_txrx_uhd.bin
+</code></pre>
+
+</li>
+</ul>
+</li>
+</ol>
+<h3>5. UmTRX Scripts</h3>
+<pre><code>git clone https://github.com/fairwaves/umtrx_scripts.git
+</code></pre>
+
+<p>Scripts for UmTRX control, including LMS6002D control library.</p>
+<h3>6.  Set a 2nd TxRx channel for the calls of UmTRX 2.2 (optional)</h3>
+<p>If you would like test a calls through the second TxRX channel only, you should change config file: </p>
+<p><em>/etc/osmocom/openbsc.cfg</em></p>
+<p>You have to replace parameters TCH/F on SDCCH8 over all timeslots of TRx0 (first channel)</p>
+<p><strong>Example:</strong></p>
+<pre><code>trx 0
+rf_locked 0
+arfcn 74
+nominal power 23
+max_power_red 0
+rsl e1 tei 0
+timeslot 0
+phys_chan_config CCCH+SDCCH4
+timeslot 1
+phys_chan_config SDCCH8
+timeslot 2
+phys_chan_config SDCCH8
+timeslot 3
+phys_chan_config SDCCH8
+timeslot 4
+phys_chan_config SDCCH8
+timeslot 5
+phys_chan_config SDCCH8
+timeslot 6
+phys_chan_config SDCCH8
+timeslot 7
+phys_chan_config SDCCH8
+trx 1
+rf_locked 0
+arfcn 84
+nominal power 23
+max_power_red 0
+rsl e1 tei 0
+timeslot 0
+phys_chan_config TCH/F
+timeslot 1
+phys_chan_config TCH/F
+timeslot 2
+phys_chan_config TCH/F
+timeslot 3
+phys_chan_config TCH/F
+timeslot 4
+phys_chan_config TCH/F
+timeslot 5
+phys_chan_config TCH/F
+timeslot 6
+phys_chan_config TCH/F
+timeslot 7
+phys_chan_config TCH/F
+</code></pre>
+
+<h3>7. EEPROM</h3>
+<p>Here is the value by default <a href="https://github.com/fairwaves/UHD-Fairwaves/blob/eb69bb2a78bc4cbe63394b0b25057299832291c3/host/umtrx_eeprom.cpp#L53">UHD-Fairwaves</a></p>
+<h6>Set value</h6>
+<p>Use <strong>master</strong> branch at: </p>
+<pre><code>UHD-Fairwaves/host/utils/
+</code></pre>
+
+<p>Run to set the value:</p>
+<pre><code>./usrp_burn_mb_eeprom --key &lt;key&gt; --val &lt;val&gt;
+</code></pre>
+
+<p><strong>Note:</strong> all values should be stored in decimal format</p>
+<h3>8. GPS testing</h3>
+<ol>
+<li>Attach GPS antenna. Good visibility to the sky is required</li>
+<li>Make sure that G LED is lit right after power on</li>
+<li>During 3-5 min G LED should start blinking</li>
+<li>Check TCXO DAC value. The value should decrease constantly. Default: 2048  </li>
+</ol>
+<p><em>First clone the umtrx_scripts repository:</em> </p>
+<pre><code>$ git clone https://github.com/fairwaves/umtrx_scripts
+</code></pre>
+
+<p>run:</p>
+<pre><code>./python_lib/umtrx_vcxo.py
+</code></pre>
+
+<p>5.Retrieving raw NMEA data from the GPS module</p>
+<pre><code>$ echo . | nc -u 192.168.10.2 49171
+</code></pre>
+
+<h3>9. CMD57 testing</h3>
+<p>Frequency ERROR should be less than 50Hz</p>
+<h4>Check Frequency ERROR</h4>
+<p><em>Press on CMD57</em>: MANUAL TEST =&gt; TRY TO SYNC.</p>
+<h4>Set Frequency ERRORS less than 50Hz</h4>
+<p>In order to set a proper <em>Freq error</em>, tcxo-dac has to be changed.</p>
+<ol>
+<li>
+<p>Run <strong>umtrx_vcxo</strong> and adjust value between (1880-1920) unless <em>Freq.Error</em> hits &lt; 50Hz</p>
+<pre><code>shell&gt; /umtrx_scripts/python_lib/umtrx_vcxo --dac -value 1890
+</code></pre>
+
+</li>
+<li>
+<p>Stop <strong>osmo-trx</strong> service and set <strong>tcxo-dac</strong> into the EEPROM</p>
+<pre><code>shell&gt; sv stop osmo-trx
+shell&gt; /usr/lib/uhd/utils/usrp_burn_mb_eeprom --value tcxo-dac=&quot;1890&quot;
+shell&gt; sv start osmo-trx
+</code></pre>
+
+</li>
+</ol>
+<h4>Manually:</h4>
+<ol>
+<li>Plug CMD57 (RF IN RF OUT)  wires to UmTrx (TX1 RX1) </li>
+<li>
+<p>Set TRX which has to be tested (utils at <em>/helpers/</em> directory): </p>
+<pre><code>shell&gt; osmo-trx-primary-trx.py (1|2)
+shell&gt; sv restart osmo-trx
+</code></pre>
+
+</li>
+<li>
+<p>Run: </p>
+<pre><code>shell&gt; ./osmobts-en-loopback.py
+</code></pre>
+
+</li>
+<li>
+<p><em>Press on CMD57</em>: MANUAL TEST =&gt; TRY TO SYNC =&gt; TCH TEST =&gt; BER TEST =&gt; TEST 3</p>
+</li>
+</ol>
+<hr />
+<p><strong>Optional:</strong> CONTINUOUS BIT ERROR RATE shows TRAFFIC CHANNEL LEVEL</p>
+<p><em>Press on CMD57</em>: MANUAL TEST =&gt; TRY TO SYNC =&gt; TCH TEST =&gt; BER TEST =&gt; CONT.BER MEAS. =&gt; SEARCH</p>
+<hr />
+<p>5.Switch wires to TX2 RX2 once TRX1 test has passed. </p>
+<pre><code>    shell&gt; osmo-trx-primary-trx.py 2
+    shell&gt; sv restart osmo-trx
+</code></pre>
+
+<p>6.Repeat step '<strong>4</strong>' above</p>
+<h4>Automatically:</h4>
+<ol>
+<li>Plug CMD57 (RF IN RF OUT)  wires to UmTrx (TX1 RX1) </li>
+<li>
+<p>Run from directory (<em>.../cmd57/python-scpi.git/</em>): </p>
+<pre><code>shell&gt;./run-bts-test.py
+</code></pre>
+
+</li>
+<li>Switch wires to TX2 RX2 and once script has done TRX1.  </li>
+<li>Results have stored in <em>bts-test.SERIAL_NUMBER.json</em> file</li>
+</ol>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
