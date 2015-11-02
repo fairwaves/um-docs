@@ -112,7 +112,7 @@ If you’re an Ubuntu user, you can download UHD library built with loadable mod
 
 ##### Building form source
 
-For UHD build and installation details see the [UHD Wiki](http://code.ettus.com/redmine/ettus/projects/uhd/wiki/UHD_Build).
+For UHD build and installation details see the [UHD Wiki](http://files.ettus.com/manual/page_build_guide.html).
 
 ##### UmTRX module
 
