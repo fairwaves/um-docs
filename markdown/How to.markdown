@@ -26,10 +26,13 @@
 
 	Source            Branch
 
-1. [UHD-Fairwaves](https://github.com/fairwaves/UHD-Fairwaves.git) (master)
+1. [UHD](https://github.com/EttusResearch/uhd/tree/maint) (maint)
+2. [UHD-Fairwaves](https://github.com/fairwaves/UHD-Fairwaves.git) (master)
 2. [Osmo-trx](http://git.osmocom.org/osmo-trx) (fairwaves/master)
-3.  [libosmocore](http://git.osmocom.org/libosmocore ) (fairwaves/master)
-4.  [libosmo-abis](http://git.osmocom.org/libosmo-abis ) (fairwaves/master)
+3.  [libosmocore](http://git.osmocom.org/libosmocore ) (master)
+4.  [libosmo-abis](http://git.osmocom.org/libosmo-abis ) (master)
+5.  [libosmo-netif](http://git.osmocom.org/libosmo-netif ) (master)
+6.  [libosmo-sccp](http://git.osmocom.org/libosmo-sccp ) (master)
 5.  [openBSC](http://git.osmocom.org/openbsc ) (fairwaves/master)
 6.  [osmoBTS](http://git.osmocom.org/osmo-bts ) (fairwaves/master)
 
