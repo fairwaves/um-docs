@@ -145,8 +145,8 @@ go to:
 
 and run
 
-	./autoreconf -fi
-	configure
+	autoreconf -fi
+	./configure
 	make -j4
 	sudo make install
 
