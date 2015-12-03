@@ -286,6 +286,12 @@ In order to set a proper *Freq error*, tcxo-dac has to be changed.
 
 		shell> sv stop osmo-trx
  		shell> /usr/lib/uhd/utils/usrp_burn_mb_eeprom --value tcxo-dac="1890"
+
+Set **serial number**(optional):
+ 
+		shell>./usrp_burn_mb_eeprom --args arg="192.168.10.2" --values serial="A1522148"
+Start **osmo-trx** service:
+		
 		shell> sv start osmo-trx
 
 
