@@ -21,6 +21,7 @@
 11. UmDESK displaying problem
 12. How to disable a second TRx
 13. How to set TRx output power
+14. Jitter Buffer
 
 ### Stable branch release set for UmTRX
 
@@ -382,6 +383,13 @@ To overwrite EEPROM value you can set the environment variable for osmo-trx:
 osmo-trx start script is located in */etc/sv/osmo-trx/run*
 
 **NOTE:** Real time output power control is available, see instruction  5.5 BTS Configuration of  [software configuration manual](https://fairwaves.co/docs/soft_conf.html) 
+
+### Jitter Buffer 
+
+Osmo-bts has a fixed **100ms** jitter buffer by default. You can change the value "rtp jitter-buffer" **in osmo-bts.cfg** file, stored at *etc/osmocom/*
+
+Also [FreeSWITCH Jitter buffer](https://wiki.freeswitch.org/wiki/Jitterbuffer) can be activated 
+
 
 
 

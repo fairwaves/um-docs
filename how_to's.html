@@ -57,6 +57,7 @@
         <a href="#10. UmDESK displaying problem">10. UmDESK displaying problem</a>
         <a href="#11. How to disable a second TRx">11. How to disable a second TRx</a>
         <a href="#12. How to set TRx output power">12. How to set TRx output power</a>
+		<a href="#13. Jitter Buffer">13. Jitter Buffer</a>
 
 		</ul>
       </div>
@@ -913,7 +914,8 @@ cd ..
 
 <p><strong>NOTE:</strong> Real time output power control is available, see instruction  <u>5.5 BTS Configuration</u> of the <a href="https://fairwaves.co/docs/soft_conf.html">software configuration manual</a>
 
-
-
+<a name="13. Jitter Buffer"></a><h4>13. Jitter Buffer<a class="anchorlink" href="#13. Jitter Buffer"></a></h4>
+<p>Osmo-bts has a fixed <strong>100ms</strong> jitter buffer by default. You can change the value "rtp jitter-buffer" in <strong>osmo-bts.cfg</strong> file stored at <em>etc/osmocom/</em></p>
+<p>Also <a href="https://wiki.freeswitch.org/wiki/Jitterbuffer">FreeSWITCH Jitter buffer</a> can be activated </p>
 </body>
 </html>
