@@ -241,6 +241,16 @@ Run to set the value:
 
 	./usrp_burn_mb_eeprom --key <key> --val <val>
 
+Serial number:
+
+	/usr/lib/uhd/utils/usrp_burn_mb_eeprom --args arg="192.168.10.2" --values serial="xxxxxxx"
+
+tcxo-dac:
+ 
+	/usr/lib/uhd/utils/usrp_burn_mb_eeprom --value tcxo-dac="1910"
+
+
+
 **Note:** all values should be stored in decimal format
 
 ### 8. GPS testing
