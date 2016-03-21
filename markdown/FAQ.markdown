@@ -64,7 +64,7 @@ ______________________
 How do you handle SMS and GPRS in your systems? 
 
 **A:**
-Fairwaves base stations are able to provide basic services: Voice and SMS. Also, Fairwaves provide GPRS; in terms of quality it is disabled in production systems to get more capacity for the voice and SMS that is too slow to use it as data service. We are considering using WiFi instead of GPRS. 
+Fairwaves base stations are able to provide basic services: Voice and SMS. Also, Fairwaves provide GPRS; in terms of quality it is disabled in production systems to get more capacity for the voice and SMS that is too slow to use it as data service. MMS and GPRS can be implemented on request.
 
 _________________________
 
@@ -218,3 +218,60 @@ For example:
 
 If the GPS trackers and BTS would situated in 550 sq/ft room, then you will be able to use CS-4 coding scheme that allows up to ~ 20 kbit/s on gsm channel timeslot. Basically 2 TRx channels of UmDesk/UmSite with 15 timeslots for traffic provides up to 300 kbit/s. According to it, you can count how many trackers might work under one BTS.
 
+______________________________________
+
+**Q:** How to increase the capacity if I need more than 30 concurrent calls available on the one site? Does Fairwaves architecture support multiple UmSites installation on the mast?
+
+
+**A:** The network capacity may be increased by deploying additional UmSITEs, up to 5 UmSITEs can be deployed on the one mast in order to increase the capacity of a site.
+
+The first UmSITE is configured as master and along with serving as a BTS it implements GSM functions such as BSC, MSC, VLR, HLR and SMSC. However, the second UmSITE is configured as slave and operates as a BTS only.
+______________________________________
+
+**Q:** Does Fairwaves provide technical support and maintanance of a network?
+
+
+**A:** For the commercial network with multi-site Installations, Fairwaves provides annual support and maintenance for upcharge price.
+
+
+- System monitoring
+- Network configurtion and optimization
+- Troubleshooting
+- Software updates
+
+
+The main aim is to significantly streamline network operations and development. 
+__________________
+
+
+**Q:** Can I buy Base Station without Fairwaves support contract and ask for maintenance on demand?
+
+
+**A:**  Yes, you certainly can buy UmSite without support contract and ask maintenance on demand but in this particular case price for each request will be more expensive, than if you would have annual support contract.
+_____________
+
+**A:** How is your product distributed by cloud basis?
+
+**Q:** UmCore, our Core Network sub-system could be implemented either on a cloud platform (private or public) or on a dedicated server in MNO's Data Center. You can find more information in Fairwaves Architecture.
+___________
+
+**A:** How does backhaul failure affect to UmSITE operation?
+
+**Q:** Fairwaves Architecture is built upon a distributed VoIP core that benefits from local switching and is resilient to network failure. 
+
+Local switching, voice calls and SMS messages are implemented at the level of UmSITE. At the same time, all control and billing information is cached at UmSITE locally in case of failure of a backhaul link.
+
+___________
+
+**A:** How does your product scale out network coverage in rural area if there are no Operators? 
+
+**Q:** For expanding coverage in rural areas we build a new network based on Fairwaves solution and integrate with existing Mobile Network Operator (MNO) through our roaming UmCore Gateway. 
+
+
+**A:** What equipment do we need other than Base Stations to  build a network?  
+
+
+**Q:** Fairwaves solution consists of two major segments: Radio Access Network and Core Network:
+1. Radio Access Network can be built based on UmSITE-TM3 (3W per channel) and UmSITE-TM10 (10W per channel) outdoor base stations.
+2. Core Network is based on UmCore platform and may comprise different components primarily depending on integration tasks you need to accomplish.
+ 
