@@ -3,6 +3,18 @@
 <link rel="stylesheet" type="text/css" href="global.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="main.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69984948-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 <title>Fairwaves</title>
 	</head>
 <body class="homepage">
@@ -21,7 +33,7 @@
 					
 					</div>
 					<div class="logo">
-					<img class="imglogo" alt=""  src="logo.png">
+					<a href="https://fairwaves.co/"><img class="imglogo"  alt=""  src="logo2.png"></a>
 					</div>
 		
 		</div>
@@ -34,15 +46,66 @@
 	
       <div class="span3">
         <ul class="nav nav-list">
-		<br><a href="#Glossary">Glossary</a></br>
-		<a href="#1.Introduction">1.Introduction</a>
-		<a href="#2.Configuration">2.Configuration</a>
-		<a href="#3.FreeSWITCH Configuration">3.FreeSWITCH Configuration</a>
-		<a href="#4.Subscribers properties">4.Subscribers properties</a>
-		<a href="#5.Configuration via VTY">5.Configuration via VTY</a>
-		<a href="#6.Spectrum License Required">6.Spectrum License Required</a>
-		
+        
+		<br><a href="#Glossary">Glossary</a>
+		</br>
+          
+          
+          <ul  class="drop_vert_menu">
+	<li><a href="#1. Introduction"><span>1. Introduction</span></a>
+		<ul>
+     <li><a href="#1.1 GSM network architecture"><span>1.1 GSM network architecture</span></a></li>
+     <li><a href="#1.2 Fairwaves network architecture"><span>1.2 Fairwaves network architecture</span></a></li>
+   
+       </ul>
+     </li>
+	<li><a href="#2. Configuration"><span>2. Configuration</span></a>
+	    <ul>
+     <li><a href="#2.1 Log in"><span>2.1 Log in</span></a></li>
+     <li><a href="#2.2 IP and Network configuration"><span>2.2 IP and Network configuration</span></a></li>
+     <li><a href="#2.3 GSM parameters"><span>2.3 GSM parameters</span></a></li>
+     <li><a href="#2.4 Runtime Logs"><span>2.4 Runtime Logs</span></a></li>
+     <li><a href="#2.5 Multi BTS configuration"><span>2.5 Multi BTS configuration</span></a></li>
+     <li><a href="#2.6 Handover"><span>2.6 Handover</span></a></li>   
+        </ul>
+	</li>
+       
+       	  <li><a href="#3. FreeSWITCH Configuration"><span>3. FreeSWITCH Configuration</span></a>
+		<ul>
+     <li><a href="#3.1 Setting up a new gateway"><span>3.1 Setting up a new gateway</span></a></li>
+     <li><a href="#3.2 FreeSWITCH Traces"><span>3.2 FreeSWITCH Traces</span></a></li>
+     <li><a href="#3.3 Codecs"><span>3.3 Codecs</span></a></li>
+   
+       </ul>
+     </li>	
+       
+         <li><a href="#4. Subscribers properties"><span>4. Subscribers properties</span></a>
+	    <ul>
+     <li><a href="#4.1 Virtual Teletype. Login. Privileged mode"><span>4.1 Virtual Teletype. Login. Privileged mode</span></a></li>
+     <li><a href="#4.2 Add Subscriber"><span>4.2 Add Subscriber</span></a></li>
+     <li><a href="#4.3 Changing the subscriber phone number"><span>4.3 Changing the subscriber phone number</span></a></li>
+     <li><a href="#4.4 Changing the subscriber name"><span>4.4 Changing the subscriber name</span></a></li>
+     <li><a href="#4.5 Changing the authorization status"><span>4.5	Changing the authorization status</span></a></li>
+     <li><a href="#4.6 Changing subscriber properties"><span>4.6 Changing subscriber properties</span></a></li>   
+        </ul>
+	</li>  
+       
+       <li><a href="#5. Configuration via VTY"><span>5. Configuration via VTY</span></a>
+	    <ul>
+     <li><a href="#5.1 Log in"><span>5.1 Log in</span></a></li>
+     <li><a href="#5.2 Privileged Node"><span>5.2 Privileged Node</span></a></li>
+     <li><a href="#5.3 Configuration Node"><span>5.3 Configuration Node</span></a></li>
+     <li><a href="#5.4 Network Configuration"><span>5.4 Network Configuration</span></a></li>
+     <li><a href="#5.5 BTS Configuration"><span>5.5 BTS Configuration</span></a></li>
+     <li><a href="#5.6 TRX Configuration"><span>5.6 TRX Configuration</span></a></li> 
+     <li><a href="#5.7 SMPP Configuration"><span>5.7 SMPP Configuration</span></a></li>    
+        </ul>
+	</li> 
+       <li><a href="#6. Spectrum License Required"><span>6. Spectrum License Required</span></a> 
+        
       </div>
+	  
+	  
       <div class="span9 main">
    
 <title>Software configuration manual</title>
@@ -342,26 +405,28 @@ img {
 <p>2.1	Log in</p>
 <p>2.2	IP and Network configuration </p>
 <p>2.3	GSM parameters</p>
-<p>2.4  Runtime Log</p>
+<p>2.4  Runtime Logs</p>
 <p>2.5	Multi BTS configuration</p>
+<p>2.6 Handover</p>
 <h4>3. FreeSWITCH Configuration</h4>
 <p>3.1 Setiing up a new gateway</p>
 <p>3.2 FreeSWITCH Traces</p>
 <p>3.3 Codecs</p>
 <h4>4. Subscribers properties</h4>
-<p>4.1	Virtual Teletype. Login. Privileged mode.</p>
-<p>4.2    Add Subscriber</p>
+<p>4.1	Virtual Teletype. Login. Privileged mode</p>
+<p>4.2  Add Subscriber</p>
 <p>4.3	Changing the subscriber phone number</p>
 <p>4.4	Changing the subscriber name</p>
 <p>4.5	Changing the authorization status </p>
 <p>4.6	Changing subscriber properties</p>
 <h4>5. Configuration via VTY</h4>
-<p>5.1 Connecting </p>
+<p>5.1 Log in </p>
 <p>5.2 Privileged Node </p>
 <p>5.3 Configuration Node</p>
 <p>5.4 Network Configuration</p>
 <p>5.5 BTS Configuration </p>
 <p>5.6 TRX Configuration </p>
+<p>5.7 SMPP Configuration </p>
 <h4>6.	Spectrum License Required</h4>
 
  <br>
@@ -433,13 +498,13 @@ img {
 <br>
 <br>
 
-<a name="1.Introduction"></a><h4>1. Introduction<a class="anchorlink" href="#1.Introduction"></a></h4>
-<p>This manual should help you get started with Fairwaves software. It covers all aspects of configuring and running the Fairwaves products such as UmSITE, UmDESK.</p>
+<a name="1. Introduction"></a><h4>1. Introduction<a class="anchorlink" href="#1. Introduction"></a></h4>
+<p>This manual should help you get started with Fairwaves software. It covers all aspects of configuring and running the Fairwaves products, such as UmSITE and UmDESK.</p>
 
-<h4>1.1 GSM Network Architecture</h4>
+<a name="1.1 GSM Network Architecture"></a><h4>1.1 GSM Network Architecture<a class="anchorlink" href="#1.1 GSM Network Architecture"></a></h4>
 <p>A GSM network is made up of multiple components and interfaces that facilitate sending and receiving of signaling and traffic messages. It is
 a collection of transceivers, controllers, switches, routers, and registers.
-The GSM network can be divided into following parts.</p>
+The GSM network can be divided into the following parts.</p>
 <p><img src="http://s47.radikal.ru/i117/1503/82/cd1fa45d5acc.png" /></p>
 <h4>Mobile Station (MS)</h4>
 <p>is made up of two components:</p>
@@ -453,7 +518,7 @@ The GSM network can be divided into following parts.</p>
 <p>consists of two elements:</p>
 <ul>
 <li>
-<p><strong>1. Base Transceiver Station (BTS)</strong> responsible for carrying out radio communications between the network and the MS,it handles speech encoding, encryption, multiplexing (TDMA), and modulation/demodulation of the radio signals.</p>
+<p><strong>1. Base Transceiver Station (BTS)</strong> is responsible for carrying out radio communications between the network and the MS. It handles speech encoding, encryption, multiplexing (TDMA), and modulation/demodulation of the radio signals.</p>
 </li>
 <li>
 <p><strong>2. Base Station Controller (BSC)</strong> handles allocation of radio channels, frequency administration, power and signal measurements from the MS, and handovers from one BTS to another.</p>
@@ -470,14 +535,14 @@ The GSM network can be divided into following parts.</p>
 features.</p>
 </li>
 <li>
-<p><strong>3. Visitor Location Register (VLR)</strong> contains subset of the information about the mobile subscribers which came from the other MSC.</p>
+<p><strong>3. Visitor Location Register (VLR)</strong> contains a subset of the information about the mobile subscribers which came from the other MSC.</p>
 </li>
 <li>
 <p><strong>4. Equipment Identity Register (EIR)</strong> is a database that keeps tracks of handsets on the network using the IMEI.</p>
 </li>
 <li>
-<p><strong>5. Authentication Centre (AuC):</strong> is responsible for generating the necessary cryptovariables for authentication and encryption on the network. The Auc also stores the Ki for each IMSI on the network. Although it is not
-required, the Auc is normally physically collocated with the HLR.</p>
+<p><strong>5. Authentication Centre (AuC)</strong> is responsible for generating the necessary cryptovariables for authentication and encryption on the network. The AuC also stores the Ki for each IMSI on the network. Although it is not
+required, the AuC is normally physically collocated with the HLR.</p>
 </li>
 <li>
 <p><strong>6. Gateway Mobile Switching Centre (GMSC)</strong> is a gateway between
@@ -487,19 +552,30 @@ switch to the Public Switched Telephone Network (PSTN).</p>
 </ul>
 <h4>Operation Support Subsystem (OSS)</h4>
 <p>is used to control and monitor the overall GSM network and it is also used to control the traffic load of the BSS.
-More information about specification, protocol stack, security and etc, you can get <a href="http://www.tutorialspoint.com/gsm/index.htm"><strong>here</strong></a>.</p>
-<h4>1.2 Fairwaves network architecture</h4>
-<p>The architecture is made up of multiple components and interfaces that facilitate build a mobile network with indpeendent distributed VoIP cores and integrates functionality that is usually provided by GSM components such as BSC, MSC, VLR, HLR and SMSC in a single self-contained cellular base station. It's software-centric design enables unprecedented flexibility, supporting remote configuration, maintenance and upgrade, and covering everything from transmit power control to end user features.
+You can get more information about specification, protocol stack, security, etc. <a href="http://www.tutorialspoint.com/gsm/index.htm"><strong>here</strong></a>.</p>
+
+<a name="1.2 Fairwaves network architecture"></a><h4>1.2 Fairwaves network architecture<a class="anchorlink" href="#1.2 Fairwaves network architecture"></a></h4>
+
+<p> The Fairwaves Architecture defines a set of components, protocols, services and configurations used to build cost-optimized mobile networks in rural and remote areas.</p>
+
+<p>In contrast to the traditional GSM architecture that is highly centralized, dependent upon backhaul and making heavy use of this, the Fairwaves Architecture is built upon a distributed VoIP core that benefits from local switching and is resilient to network failure.</p>
+
+<p>All the functions of a mobile network are integrated into a single, self-contained cellular base station, that is built to withstand the elements and suited to being powered from off-grid energy sources such as solar.</p>
+
+<p>Scaling and integration with operator networks is made possible via local and cloud-based UmCORE servers.</p>
+
+<p>The Fairwaves Architecture significantly reduces the financial and technical barriers to deploying cellular networks, while ensuring that during their operation backhaul costs are minimised thanks to local call routing and
+use of effective voice compression algorithms.</p>
  For more details: <a href="https://fairwaves.co/wp/equipment/" title="fairwaves.co"><strong>fairwaves.co</strong></a> and <a href="http://umtrx.org/hardware/"><strong>umtrx.org</strong></a></p>
 <p>This software is licensed under GNU Affero General Public License Version 3. Refer to <a href="http://openbsc.osmocom.org/trac/wiki/osmo-nitb"><strong>osmocom</strong></a> for details.</p>
 <p><img src="http://s018.radikal.ru/i522/1501/d0/b4e90e8fe0bd.png" />
-<em>Fairwaves software architecture</em></p>
-<p>This <strong>network-in-a-box</strong> can be operated  independently, interconnected, and integrated with existing PLMN, PSTN and private cellular networks, with support for roaming and industry standard billing protocols.</p>
+<p>The <u>UmSITE</u> is more than simply a rugged BTS and is essentially a complete <u>network-in-a-box</u>, seamlessly integrating functionality that is usually provided by GSM components such as BSC, MSC, VLR, HLR and SMSC. Its software-centric design enables unprecedented flexibility, supporting remote configuration, maintenance and upgrade, and covering everything from transmit power control to end user features.
+</p>
 <p><img src="http://s017.radikal.ru/i414/1501/51/eac454667177.png" /></p>
 <p>Independent Base stations (UmSITE) can be clustered through a distributed HLR connected via peer to peer links</p>
 <p><img src="http://s020.radikal.ru/i709/1501/40/96d0dd3429eb.png" /></p>
 <h4>Core Network</h4>
-<p>The <strong>UmCORE</strong> technology provides synchronization across distributed UmSITE installations, and enables integration with existing networks via VoIP and SS7.</p>
+<p>The UmCORE technology provides synchronization across distributed UmSITE installations, and enables integration with existing networks via VoIP and SS7.</p>
 <p>Features include:</p>
 <ul>
 <li>1. System management console</li>
@@ -509,13 +585,20 @@ More information about specification, protocol stack, security and etc, you can 
 <li>5. HLR</li>
 </ul>
 <p>UmCORE is available in customer co-located and cloud versions.</p>
+
+<strong>   UmCORE Local</strong>
+<p>UmCORE Local is a turnkey solution comprised of a compact low power server loaded with preconfigured software, designed for ease of deployment and customer co-location.
+</p>
+<p>UmCORE Local can be managed and upgraded remotely via a secure VPN link.    </p>
+
+<strong>  UmCORE Cloud </strong>
+<p>UmCORE Cloud is a hosted solution that provides an additional layer of resilience and is used to enable integration with existing operator networks via a VoIP-SS7 gateway.
+</p>
+<a name="2. Configuration"></a><h4>2. Configuration<a class="anchorlink" href="#2. Configuration"></a></h4>
  <br>
-<a name="2.Configuration"></a><h4>2. Configuration<a class="anchorlink" href="#2.Configuration"></a></h4>
- <br>
-<h4>2.1	Log in</h4>
-<p>There are two physical ethernet interfaces for the <strong>UmDESK</strong>, which is have a static IP for the external ethernet card <u>192.168.50.100</u> also it's configured to get IP address via DHCP.</p>
-<p><u>192.168.10.10</u> is internal interface for the UmTRX.</p>
-<p><h3>NOTE:</h3>to detect radio devices and confirm connectivity run:</p>
+ <a name="2.1 Log in"></a><h4>2.1 Log in<a class="anchorlink" href="#2.1 Log in"></a></h4>
+
+<p><strong>NOTE:</strong>   to detect radio devices and confirm connectivity run:</p>
 <pre><code>uhd_find_devices
 </code></pre>
 
@@ -525,7 +608,7 @@ More information about specification, protocol stack, security and etc, you can 
 
 <p>In order to configure <strong>UmSITE</strong>, you have to login into device remotely over SSH. Interface configured to obtain IP address via DHCP and also has a static <u>192.168.50.100</u></p>
 <p>Connect laptop to the UmDESK/UmSITE via Ethernet cable.</p>
-<p><h3>NOTE:</h3> Make sure your interface in the same subnet as the UmSITE/UmDESK and has IP like <u>192.168.50.101</u>
+<p><strong> NOTE:</strong>   Make sure your interface in the same subnet as the UmSITE/UmDESK and IP like <u>192.168.50.101</u>
 </p>
 <ol>
 <li>1. Run PuTTY
@@ -536,93 +619,315 @@ More information about specification, protocol stack, security and etc, you can 
 <li>Password: fairwaves</li>
 </ol>
 <p>Once you logged in, you will get access to Linux terminal. </p>
-<p>You may use a deferent client software for remote access, but we recommend <strong>PuTTY</strong> (you can download at <a href="www.putty.org" title="PuTTY"><strong>www.putty.org</strong></a> ).  PuTTY is an open source SSH and telnet client, for the Windows platform. </p>
+<p>You may use a deferent client software for remote access, we recommend <strong>PuTTY</strong> (you can download it at <a href="www.putty.org" title="PuTTY"><strong>www.putty.org</strong></a> ).  PuTTY is an open source SSH and telnet client, for the Windows platform. </p>
 <h4>Login over Serial cable (Only for UmSITE)</h4>
-<p>Serial connection allows  you to look over the system on the booting level.</p>
+<p>Serial connection allows you to choose boot options and log into the system if network connection is not available.</p>
 <p>You'll get options like:</p>
 <ol>
 <li>1. Advanced options for Ubuntu</li>
 <li>2. Test RAM memory</li>
 </ol>
-<p>First of all you have to use <a href="http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2050601.m570.l1311.R1.TR11.TRC1.A0.H2.Xusb+serial+a.TRS0&_nkw=usb+serial+adapter&_sacat=0">USB Serial Adapter</a> for the connection (which is not included in a standard UmSITE package).</p>
+<p>First of all, you have to use <a href="http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2050601.m570.l1311.R1.TR11.TRC1.A0.H2.Xusb+serial+a.TRS0&_nkw=usb+serial+adapter&_sacat=0">USB Serial Adapter</a> for the connection (which is not included in a standard UmSITE package).</p>
 <p><img src="http://s017.radikal.ru/i422/1505/62/53fa6e8aaad9.jpg" /></p>
 <p>For the Windows user <a href="www.putty.org" title="PuTTY"><strong>putty</strong></a> </p>
 <p><img src="http://s017.radikal.ru/i413/1503/ad/0b02ea2dc90f.png" /></p>
-<p>Number of the COM port available at <u>Desktop manager</u> when you are connecting to the laptop. </p>
+<p>You can find a number of the COM port at the <u>Desktop manager</u>. </p>
 <p>For the Linux user <strong><a href="http://www.cyberciti.biz/tips/connect-soekris-single-board-computer-using-minicom.html">minicom</a></strong></p>
-<p>Run this command to connect via serial cabel:</p>
+<p>Run this command to connect via serial cable:</p>
 <pre><code>shell&gt; minicom -D/dev/ttyUSB0 -b38400 -o
 </code></pre>
 
-<h4>2.2	IP and network configuration</h4>
-<p>If you would like to set another static address for the device, edit  <u>/etc/network/interfaces</u></p>
-<pre><code>Shell&gt; sudo nano /etc/network/interfaces
+<a name="2.2 IP and network configuration"></a><h4>2.2 IP and network configuration<a class="anchorlink" href="#2.2	IP and network configuration"></a></h4>
+
+<p>eth0 - <u>192.168.10.10</u> This is internal interface linked to the UmTRX. <strong>Do not edit this</strong></p>
+<p>eth1 - Configured to obtain IP address through DHCP. In case of recovery, it also has a static IP <u>192.168.50.100</u></p>
+
+<p>Edit eth1 in <u>/etc/network/interfaces.d/</u> In order to change network configuration</p>
+<pre><code>Shell&gt; sudo nano /etc/network/interfaces.d/eth1
 </code></pre>
 
 <p>Refer to <a href="https://help.ubuntu.com/14.04/ubuntu-help/index.html"><strong>Ubuntu</strong></a> documentation for details
 </p>
 
-<p><h3>Note:</h3> Base station configured to get IP address through DHCP.
-We also recommend to keep configuration for the
-<u>eth1:1</u> (192.168.50.50/24), because it's used as a backup IP address. If you
-want to configure a statis IP address, change <u>eth1</u> configuration.</p>
+<p><strong>  NOTE:</strong>   Base station configured to get IP address through DHCP.
+We also recommend keeping the configuration for the
+<u>eth1:1</u> (192.168.50.50/24), because it's used to as a backup IP address. If you
+want to configure a static IP address, edit <u>eth1</u> configuration.</p>
 
-<h4>2.3 GSM parameters</h4>
-<p>If you would like to change  GSM parameters, edit <u>openbsc.cfg</u></p>
+<a name="2.3 GSM parameters"></a><h4>2.3 GSM parameters<a class="anchorlink" href="#2.3 GSM parameters"></a></h4>
+<p>GSM network configuration parameters are stored at <strong><em>openbsc.cfg</em></strong> You can use interactive VTY telnet interface for configuration editing, and it is also possible to make changes directly in the configuration file.</p>
+<p>in order to edit <strong>openbsc.cfg</strong> run:     
+</p>
 <pre><code>Shell&gt; sudo nano /etc/osmocom/openbsc.cfg
 </code></pre>
 
-<p>The most important parameters:</p>
-
-<h4>network code</h4>
-<p>unique identification number of mobile phone network</p>
-<h4>country code</h4>
-
-<p>unique identification number of mobile phone operator </p>
-
-<h4>short name</h4>
-
-<p>short name of the network</p>
-
-<h4>long name</h4>
-
-<p>long name of the network</p>
-
-<h4>auth policy</h4>
-
-<p>policy of access to the network. it's open for all by default.
-Possible values are:<br />
-<br></br>
-1.	<u>closed:</u> Don't allow anyone who is not marked as authorized=1 in the HLR database<br />
-<br></br>
-2.	<u>accept-all:</u> Accept everyone into the network</p>
-
-<h4>band</h4>
-
-<p>parameters of GSM standard 850/900/1800/1900
+<h4>Network level:</h4>
+<p><strong>mobile network code</strong>  
 </p>
+<ul>
+<li>unique identification number of mobile phone network</li>
+</ul>
+<p><strong>network country code</strong>  
+</p>
+<ul>
+<li>unique identification number of mobile phone operator </li>
+</ul>
+<p><strong>short name</strong> </p>
+<ul>
+<li>short name of the network</li>
+</ul>
+<p><strong>long name</strong> </p>
+<ul>
+<li>long name of the network</li>
+</ul>
+<p><strong>auth policy</strong>    
+</p>
+<p>policy of access to the network. it's open for all by default. 
+Possible values are:  
+</p>
+<ul>
+<li><u>closed:</u> Don't allow anyone who is not marked as authorized=1 in the HLR database  
+</li>
+<li><u>accept-all:</u> Accept everyone into the network</li>
+<li><u>token:</u> Use a special TokenAuthPolicy</li>
+</ul>
+<p><strong>location updating reject cause &lt;2-111&gt;</strong></p>
+<ul>
+<li>Set the CAUSE value when sending LOCATION UPDATING REJECT to a MS. Possible values are defined in GSM TS 04.08 / 10.5.3.6.</li>
+</ul>
+<p><strong>encryption a5 (0|1|2)</strong></p>
+<ul>
+<li>Enable/Disable A5/X encryption on the network.</li>
+</ul>
+<p><strong>mm info (0|1)</strong></p>
+<ul>
+<li>Should we send MM INFO messages with network name and timezone information?</li>
+</ul>
+<p><strong>handover (0|1)</strong></p>
+<ul>
+<li>Enable BSC in-call handover between multiple BTS</li>
+</ul>
+<p><strong>handover window rxlev averaging &lt;1-10&gt;</strong></p>
+<ul>
+<li>Over how many SACCH frames should the Rx Level of the serving cell be averaged?</li>
+</ul>
+<p><strong>handover window rxqual averaging &lt;1-10&gt;</strong></p>
+<ul>
+<li>Over how many SACCH frames should the Rx Quality of the serving cell be averaged?</li>
+</ul>
+<p><strong>handover window rxlev neighbor averaging &lt;1-10&gt;</strong></p>
+<ul>
+<li>Over how many SACCH frames should the Rx Level of a neighbor cell be averaged?</li>
+</ul>
+<p><strong>handover power budget interval &lt;1-99&gt;</strong></p>
+<ul>
+<li>Every how many SACCH frames should the BSC think about performing a power budget (rx level) handover?</li>
+</ul>
+<p><strong>handover power budget hysteresis &lt;0-999&gt;</strong></p>
+<ul>
+<li>How large should the hysteresis be, i.e. to prevent continuous handover back and forth</li>
+</ul>
+<p><strong>handover maximum distance &lt;0-9999&gt;</strong></p>
+<ul>
+<li>What is the maximum distance from a BTS, after which we try to perform distance handover?</li>
+</ul>
+<p><strong>timer t3101 &lt;0-65535&gt;</strong></p>
+<ul>
+<li>The timer starts at the allocation of channel using IMMEDIATE ASSIGMENT message, should be higher than the time for a L2 establishment attempt</li>
+</ul>
+<p><strong>timer t3103 &lt;0-65535&gt;</strong></p>
+<ul>
+<li>The timer starts when handover message is sent by mobile. This timer is currently not in use.</li>
+</ul>
+<p><strong>timer t3105 &lt;0-65535&gt;</strong></p>
+<ul>
+<li>This timer is used for the repetition of the PHYSICAL INFORMATION message during handover. This timer is currently not in use.</li>
+</ul>
+<p><strong>timer t3107 &lt;0-65535&gt;</strong></p>
+<ul>
+<li>Started after ASSIGMENT COMMAND to keep the old channel long enough alive. This timer is currently not in use due the usage of very early assignment in Call Control</li>
+</ul>
+<p><strong>timer t3109 &lt;0-65535&gt;</strong></p>
+<ul>
+<li>Starts at the lower layer failure detection by network.
+Used for channel release procedure. Purpose is to release the channels when communication is lost.</li>
+</ul>
+<p><strong>timer t3111 &lt;0-65535&gt;</strong></p>
+<ul>
+<li>GSM Spec: This timer value is equal to T3110 and is used to delay the channel deactivation after disconnecting the main signalling link.</li>
+<li>OpenBSC will wait t3111 seconds after all SAPIs were released to send the RF Channel Release to the BTS. After the following RF Channel Release ACK OpenBSC will reuse the channel for further requests.</li>
+</ul>
+<p><strong>timer t3113 &lt;0-65535&gt;</strong></p>
+<ul>
+<li>This timer is started when the network has sent a PAGING REQUEST message and is stopped when the network has received the PAGING RESPONSE message.</li>
+</ul>
+<p><strong>timer t3115 &lt;0-65535&gt;</strong></p>
+<ul>
+<li>This timer is used for the repetition of the VGCS UPLINK GRANT message, it is currently not in use.</li>
+</ul>
+<p><strong>timer t3117 &lt;0-65535&gt;</strong></p>
+<ul>
+<li>This timer is started after sending the PDCH ASSIGNMENT COMMAND</li>
+</ul>
+<p><strong>timer t3119 &lt;0-65535&gt;</strong></p>
+<ul>
+<li>This timer is started after sending the RR-CELL CHANGE ORDER message.</li>
+</ul>
+<p><strong>timer t3141 &lt;0-65535&gt;</strong></p>
+<ul>
+<li>This timer is started when a temporary block flow is allocated with an IMMEDIATE ASSIGNMENT message during a Packet Access Procedure.</li>
+</ul>
+<h4>BTS level:</h4>
+<p><strong>type</strong></p>
+<p>The type of the BTS. Currently supported;</p>
+<ul>
+<li>bs-11</li>
+<li>nanobts</li>
+<li>sysmobts</li>
+</ul>
+<p><strong>band</strong></p>
+<p>The GSM band of the BTS. Currently supported:</p>
+<ul>
+<li>GSM400</li>
+<li>GSM850</li>
+<li>GSM900</li>
+<li>DCS1800</li>
+<li>PCS1900</li>
+</ul>
+<p><strong>cell_identity &lt;0-65535&gt;</strong></p>
+<ul>
+<li>The Cell Identity of this BTS</li>
+</ul>
+<p><strong>location area code &lt;0-65535&gt;</strong></p>
+<ul>
+<li>The LAC of the location area to which this BTS belongs. The classification of LAC has a significant effect on increasing signaling load and call completion rate. </li>
+</ul>
+<p><strong>training sequence code &lt;0-255&gt;</strong></p>
+<ul>
+<li>Training sequence code(TSC). In cells that use FH, TSC must be set to 
+be the same as the BCC in the cell. Otherwise, the TCH 
+channels cannot be properly occupied. </li>
+</ul>
+<p><strong>base station id code &lt;0-63&gt;</strong></p>
+<ul>
+<li>The BSIC of this BTS within the location area.</li>
+</ul>
+<p><strong>ip.access unit_id</strong></p>
+<ul>
+<li>Unit ID is used to identify the BTS to the BSC. Unit ID should be the same in the BTS and OpenBSC configuration files:</li>
+</ul>
+<p>openbsc.cfg:</p>
+<pre><code>ip.access unit_id 1801 0
+</code></pre>
 
-<h4>trx 0 arfcn and trx 1 arfcn</h4>
+<p>osmo-bts.cfg:</p>
+<pre><code>ipa unit-id 1801 0
+</code></pre>
 
-<p>absolute radio-frequency channel number. This is a code that specifies a pair of physical radio carriers used for transmission and reception signal. Different bands provides a different amount of channels.</p>
-
-<p><h3>NOTE:</h3> See below at the Configuration via VTY how to change these parameters</p>
-<p>After changing configs, restart the services:</p>
+<p>In order to connect another BTS to the same OpenBSC, usually need to change just the first number: e.g. 1802 0</p>
+<p><strong>oml ip.access stream_id &lt;0-255&gt;</strong></p>
+<ul>
+<li>Which IPA stream identifier is to be used for the OML link between BTS and BSC.</li>
+</ul>
+<p><strong>oml e1 line E1_LINE timeslot &lt;1-31&gt; sub-slot (0|1|2|3|full)</strong></p>
+<ul>
+<li>Set the E1 line, E1 timeslot and E1 sub-slot for the OML link to this BTS. Make sure you use the same value than you have set in the BTS</li>
+</ul>
+<p><strong>channel allocator (ascending|descending)</strong></p>
+<ul>
+<li>Whether the channels should be allocated in ascending or descending order.</li>
+</ul>
+<p>If the channel allocator is in ascending mode, it will first allocate timeslot 0, then timeslot 1, ... of TRX0. If TRX0 is full, it will switch to TRX1. In descending order, it is the other way around.</p>
+<p><strong>rach tx integer &lt;0-15&gt;</strong></p>
+<ul>
+<li>Use to determine the timeslot number of the interval between two 
+continuous requests when MS continuously sends multiple 
+channel requests. The purpose of this parameter is to reduce the 
+number of collisions on RACH which mainly affects the execution 
+efficiency of immediate assignment process.</li>
+</ul>
+<p><strong>rach max transmission (1|2|4|7)</strong></p>
+<ul>
+<li>How many retransmissions should a MS make on a RACH request?</li>
+</ul>
+<p><strong>ms max power &lt;0-40&gt;</strong></p>
+<ul>
+<li>maximum transmit power (in dBm) to be used by MS in this BTS. This is used in the System Information on the BCCH as well as for the MS power level at the time a dedicated channel is activated.</li>
+</ul>
+<p><strong>cell reselection hysteresis &lt;0-14&gt;</strong></p>
+<ul>
+<li>How many dB has a neighbor cell to be received better than the serving cell to perform cell reselection in idle mode.</li>
+</ul>
+<p><strong>rxlev access min &lt;0-63&gt;</strong></p>
+<ul>
+<li>The minimum receiving level for the MS accessing the network.</li>
+</ul>
+<p><strong>gprs mode (none|gprs|egprs)</strong></p>
+<ul>
+<li>Enable GPRS or EGPRS (EDGE)</li>
+</ul>
+<h4>TRX level:</h4>
+<p><strong>arfcn</strong></p>
+<ul>
+<li>Absolute Radio-Frequency Channel number. The ARFCN of a non-hopping TRX. This is a code that specifies a pair of physical radio carriers used for transmission and reception signal. Different bands provides a different amount of channels.</li>
+</ul>
+<p><strong>nominal power &lt;0-100&gt;</strong></p>
+<ul>
+<li>How many dBm is the nominal power of this BTS. This setting is only used as a base for computing power levels displayed to the user.</li>
+</ul>
+<p><strong>max power red &lt;0-100&gt;</strong></p>
+<ul>
+<li>How many dB the nominal transmit power of the TRX should be reduced from its maximum (by OML means) If your transmitter is set to e.g. 24 dBm and you set this to 10, your actual output power will be 14 dBm.</li>
+</ul>
+<p><strong>rf_locked (0|1)</strong></p>
+<p>This option can be used at start and at runtime to enable/disable RF of the transceiver.</p>
+<ul>
+<li>0: RF is not locked (enabled)</li>
+<li>1: RF is locked (disabled)</li>
+</ul>
+<p><strong>rsl e1 line E1_LINE timeslot &lt;1-31&gt; sub-slot (0|1|2|3|full)</strong></p>
+<ul>
+<li>Set the E1 Line, E1 timeslot and E1 sub-slot for the RSL link to this BTS.</li>
+</ul>
+<h4>Timeslot level:</h4>
+<p>The timeslot level lists parameters for one specific on-air timeslot.</p>
+<p><strong>phys chan config</strong></p>
+<p>Indicating the channel type and the function of each timeslot of all 
+carriers in a cell. Every cell is configured with a BCCH carrier. 
+Generally, the TRX ID of BCCH is fixed to be the smallest TRX ID in the cell. 
+Set the physical channel configuration of this GSM on-air timeslot:</p>
+<ul>
+<li>NONE: do not use this timeslot</li>
+<li>CCCH: regular CCCH configuration (BCCH+RACH+PCH+AGCH)</li>
+<li>CCCH+SDCCH4: CCCH plus SDCCH/4 combination</li>
+<li>TCH/F: Full TCH</li>
+<li>TCH/H: Half TCH</li>
+<li>SDCCH8: SDCCH/8 combination</li>
+<li>PDCH: Packed Data CHannel</li>
+<li>TCH/F_PDCH: Alternating TCH/F and PDCH use</li>
+</ul>
+<p><strong>NOTE:</strong> Osmocom services must be restarted whenever config files have changed.</p>
 <pre><code>Shell&gt; sudo sv restart osmo-nitb osmo-bts osmo-trx
 </code></pre>
 
-<h4>2.4 Runtime logs</h4>
+<p><strong>NOTE:</strong> More configuration parameters available at the VTY telnet interface. 
+Refer to Osmocom documentation for details:</p>
+<p><a href="http://openbsc.osmocom.org/trac/">OpenBSC home page</a></p>
+<p><a href="http://openbsc.osmocom.org/trac/wiki/osmo-nitb_VTY">OsmoNITB parameters</a></p>
+
+<a name="2.4 Runtime logs"></a><h4>2.4 Runtime logs<a class="anchorlink" href="#2.4 Runtime logs"></a></h4>
+
  <br>
 <h5>Transceiver module:</h5>
-<pre><code>            /var/log/osmo-trx/current
+<pre><code>/var/log/osmo-trx/current
 </code></pre>
 
 <h5>Network in the box module</h5>
-<pre><code>            /var/log/osmo-nitb/current
+<pre><code>/var/log/osmo-nitb/current
 </code></pre>
 
 <h5>Base station</h5>
-<pre><code>            /var/log/osmo-bts/current
+<pre><code>/var/log/osmo-bts/current
 </code></pre>
 
 <h5>FreeSWITCH:</h5>
@@ -639,7 +944,46 @@ Possible values are:<br />
 
 <p>Refer to <a href="http://manpages.ubuntu.com/manpages/lucid/man1/tail.1.html">Ubuntu help</a> for tail options</p>
 
-<h4>2.5 Multi BTS configuration</h4>
+<h4>Log levels</h4>
+<p>EMERG</p>
+<pre><code>Report serious faults associated with service failure or hardware damage
+</code></pre>
+
+<p>ALERT</p>
+<pre><code>Report likely service disruption caused by misconfiguration or poor connectivity
+</code></pre>
+
+<p>CRIT</p>
+<pre><code>Report anomalous events that are likely to degrade service
+</code></pre>
+
+<p>ERR</p>
+<pre><code>Report internal errors of the software that may result in degradation of service in unusual circumstances
+</code></pre>
+
+<p>WARNING</p>
+<pre><code>Report anomalous events that may indicate a degradation of normal service
+</code></pre>
+
+<p>NOTICE</p>
+<pre><code>Report anomalous events that probably do not affect service but may be of interest to network operators
+</code></pre>
+
+<p>INFO</p>
+<pre><code>Report normal events
+</code></pre>
+
+<p>DEBUG</p>
+<pre><code>Will degrade system performance; only for use by developers
+</code></pre>
+
+<p> <strong>  NOTE:</strong>   To get different information out of the system, you may set different logging levels in the VTY command line</p>
+
+
+<a name="2.5 Multi BTS configuration"></a><h4>2.5 Multi BTS configuration<a class="anchorlink" href="#2.5 Multi BTS configuration"></a></h4>
+
+<p>This example has shown how to configure BSC to run with 2 separate BTS.</p>
+<p>We have one system running the BSC/NITB software and two BTS that are built on the OsmoBTS software.</p>
 <p><img src="http://s017.radikal.ru/i400/1501/92/d49ef7c4de2a.png" /></p>
 <ul>
 <li>BSC: osmo-nitb 172.30.1.10</li>
@@ -653,7 +997,7 @@ Possible values are:<br />
 <p>1. <code>ipa unit-id</code> - each BTS should have unique ipa unit-id</p>
 </li>
 <li>
-<p><strong>2. <code>oml remote-ip</code></strong> - BSC ip address</p>
+<p>2. <code>oml remote-ip</code> - BSC ip address</p>
 </li>
 </ul>
 <p><strong>path:</strong> <em>etc/osmocom/osmo-bts.cfg</em></p>
@@ -715,13 +1059,13 @@ Possible values are:<br />
 <p>There are three parameters which should be checked in BSC configuration:</p>
 <ul>
 <li>
-<p><strong>1. <code>ip.access unit_id</code></strong> - you should set the same unit id in the BSC as well as in BTS, each BTS should have unique ipa unit-id</p>
+<p>1. <code>ip.access unit_id</code> - you should set the same unit id in the BSC as well as in BTS, each BTS should have unique ipa unit-id</p>
 </li>
 <li>
-<p><strong>2. <code>base_station_id_code</code></strong> - should be unique in location area &lt;0-63&gt;</p>
+<p>2. <code>base_station_id_code</code> - should be unique in location area &lt;0-63&gt;</p>
 </li>
 <li>
-<p><strong>3. <code>neighbor-list mode automatic</code></strong></p>
+<p>3. <code>neighbor-list mode automatic</code></p>
 </li>
 </ul>
 <p><strong>path:</strong> <em>etc/osmocom/openbsc.cfg</em></p>
@@ -938,17 +1282,38 @@ network
 </code></pre>
 
 <br>
-<a name="3.FreeSWITCH Configuration"></a><h4>3. FreeSWITCH Configuration<a class="anchorlink" href="#3.FreeSWITCH Configuration"></a></h4>
+
+
+<a name="2.6 Handover"></a><h4>2.6 Handover<a class="anchorlink" href="#2.6 Handover"></a></h4>
+
+<p>Handover is the ability to keep connection an ongoing call between two base stations.
+You should use <strong>  MultiBTS mode</strong>   for osmo-nitb and osmo-bts
+enable handover in <u>osmo-nitb</u> configuration: <em>etc/osmocom/openbsc.cfg</em></p>
+<pre><code> handover 1
+ handover window rxlev averaging 10
+ handover window rxqual averaging 1
+ handover window rxlev neighbor averaging 10
+ handover power budget interval 6
+ handover power budget hysteresis 3
+ handover maximum distance 9999
+</code></pre>
+
+
+<p><strong>NOTE:</strong>Handover configuration is available through the VTY command line. See below at <u>5.4 Network configuration</u></i></p>
+
+<a name="3. FreeSWITCH Configuration"></a><h4>3. FreeSWITCH Configuration<a class="anchorlink" href="#3. FreeSWITCH Configuration"></a></h4>
 <p>FreeSWITCH is a scalable open source cross-platform telephony platform designed to route and interconnect popular communication protocols using audio, video, text or any other form of media.
 Licensed under the MPL(Mozilla Public License Version 1.0)</p>
-<p>FreeSWITCH comes already installed and configured for the internal working, but if you would like to make external calls, you need to set up gateway for your SIP provider.</p>
-<h4>3.1 Setiing up a new gateway</h4>
-<p>In order to add new gateway you should create a new XML file in </p>
-<pre><code>    /freeswitch/conf/sip_profiles/external
+<p>FreeSWITCH comes already installed and configured to route internal calls. If you would like to make external calls, you should set up the gateway for your SIP provider.</p>
+
+<a name="3.1 Setting up a new gateway"></a><h4>3.1 Setting up a new gateway<a class="anchorlink" href="#3.1 Setting up a new gateway"></a></h4>
+
+<p>In order to add a new gateway you should create a new XML file in </p>
+<pre><code>    /freeswitch/sip_profiles/external
 </code></pre>
 
 <h5>Change directory</h5>
-<pre><code>    shell&gt; cd /usr/local/freeswitch/conf/sip_profiles/external
+<pre><code>    shell&gt; cd /etc/freeswitch/sip_profiles/external
 </code></pre>
 
 <h5>Create file</h5>
@@ -966,7 +1331,7 @@ Licensed under the MPL(Mozilla Public License Version 1.0)</p>
 &lt;/include&gt;
 </code></pre>
 
-<p>and then you should add configuration in <strong>gateway.xml</strong> file </p>
+<p>then you should add the configuration in the <strong>gateway.xml</strong> file </p>
 <h5>Change directory</h5>
 <pre><code>    shell&gt;cd ../../dialplan/
 </code></pre>
@@ -975,7 +1340,7 @@ Licensed under the MPL(Mozilla Public License Version 1.0)</p>
 <pre><code>    shell&gt; sudo nano gateway.xml
 </code></pre>
 
-<p>and change the line </p>
+<p>change the line </p>
 <pre><code>&lt;action application=&quot;bridge&quot; data=&quot;sofia/gateway/net2phone/$1&quot;/&gt;
 </code></pre>
 
@@ -983,11 +1348,11 @@ Licensed under the MPL(Mozilla Public License Version 1.0)</p>
 <pre><code>&lt;action application=&quot;bridge&quot; data=&quot;sofia/gateway/yourprovidername/$1&quot;/&gt;
 </code></pre>
 
-<p>restart the service </p>
+<p>restart services </p>
 <pre><code>    shell&gt; sudo sv restart freeswitch
 </code></pre>
 
-<p><strong><em>NOTE</em></strong>:  If your system already in production you should use  <strong>fs_cli</strong> for the  restarting</p>
+<p><strong>NOTE</strong>:  If your system already in production you should use  <strong>fs_cli</strong> for restart</p>
 <h5>Change directory</h5>
 <pre><code>    shell&gt; cd ../../bin/
 </code></pre>
@@ -996,11 +1361,11 @@ Licensed under the MPL(Mozilla Public License Version 1.0)</p>
 <pre><code>    shell&gt; ./fs_cli
 </code></pre>
 
-<p>Type:</p>
+<p>Execute:</p>
 <pre><code>    freeswitch@internal&gt;  sofia profile external restart reloadxml
 </code></pre>
 
-<p><strong><em>NOTE:</em></strong> Restarting a profile will disconnect all active calls that 
+<p><strong>NOTE:</strong> Restarting a profile will disconnect all active calls that
 are currently routed through that profile. An alternate command to 
 add a newly created gateway without restarting the entire profile is:</p>
 <pre><code>    freeswitch@internal&gt;  sofia profile &lt;profile name&gt; rescan reloadxml.
@@ -1010,19 +1375,21 @@ add a newly created gateway without restarting the entire profile is:</p>
 <pre><code>    freeswitch@internal&gt; /exit
 </code></pre>
 
-<h4>3.2 FreeSWITCH Traces</h4>
-<p>For the calls tracing:</p>
+<a name="3.2 FreeSWITCH Traces"></a><h4>3.2 FreeSWITCH Traces<a class="anchorlink" href="#3.2 FreeSWITCH Traces"></a></h4>
+
+<p>In order to trace the calls:</p>
 <p>Run <strong>fs_cli</strong></p>
 <pre><code>    shell&gt; ./fs_cli
 </code></pre>
 
-<p>Type:</p>
+<p>Execute:</p>
 <pre><code>    freeswitch@internal&gt;  sofia global siptrace on
 </code></pre>
 
-<p>Logs show up when the calls will be made.</p>
+<p>Logs show up when calls will be made.</p>
 
-<h4>3.3 Codecs in FreeSWITCH</h4>
+<a name="3.3 Codecs"></a><h4>3.3 Codecs<a class="anchorlink" href="#3.3 Codecs"></a></h4>
+
 <p>FreeSWITCH supports a large number of VoIP compression codecs. </p>
 <pre><code>type,name,ikey
 codec,ADPCM (IMA),mod_spandsp
@@ -1057,17 +1424,19 @@ codec,iLBC,mod_ilbc
 
 <p>More information <a href="https://en.wikipedia.org/wiki/FreeSWITCH">FreeSWITCH</a></p>
 <h5>Change codecs</h5>
-<pre><code>    shell&gt; nano /usr/local/freeswitch/conf/vars.xml 
+<pre><code>shell&gt; nano /usr/local/freeswitch/conf/vars.xml
 </code></pre>
 
-<p>Find lines and set the codecs</p>
+<p>Find lines and set up codecs:</p>
 <pre><code>&lt;X-PRE-PROCESS cmd=&quot;set&quot; data=&quot;global_codec_prefs=G722,PCMU,PCMA,GSM&quot;/&gt;
 &lt;X-PRE-PROCESS cmd=&quot;set&quot; data=&quot;outbound_codec_prefs=PCMU,PCMA,GSM&quot;/&gt;
 </code></pre>
 
-<a name="4.Subscribers properties"></a><h4>4. Subscribers properties<a class="anchorlink" href="#4.Subscribers properties"></a></h4>
-<p>This part shows you how to change subscriber options through Virtual Teletype (VTY). VTY has the concept of nodes and commands, which is consists of several words followed by a variable number of parameters. The VTY allows for runtime management and is available through telnet on the localhost. The arguments can be a single word, a string, numbers, ranges or a list of options. The available commands depend on the current node.</p>
-<h4>4.1 Virtual Teletype. Login. Privileged mode.</h4>
+<a name="4. Subscribers properties"></a><h4>4. Subscribers properties<a class="anchorlink" href="#4. Subscribers properties"></a></h4>
+<p> Virtual Teletype (VTY) has the concept of nodes and commands, which consists of several words followed by a variable number of parameters. The VTY allows for runtime management and is available through telnet on the localhost. The arguments can be a single word, a string, numbers, ranges or a list of options. The available commands depend on the current node.</p>
+
+<a name="4.1 Virtual Teletype. Login. Privileged mode"></a><h4>4.1 Virtual Teletype. Login. Privileged mode<a class="anchorlink" href="#4.1 Virtual Teletype. Login. Privileged mode"></a></h4>
+
 <p>Modifying subscriber properties requires the VTY to be in the privileged (<strong>enable</strong>) mode.</p>
 <p>Login to VTY   
 </p>
@@ -1078,54 +1447,60 @@ codec,iLBC,mod_ilbc
 <pre><code>    OpenBSC#  enable
 </code></pre>
 
-<h4>4.2   Add Subscriber</h4>
+<a name="4.2 Add Subscriber"></a><h4>4.2 Add Subscriber<a class="anchorlink" href="#4.2 Add Subscriber"></a></h4>
+
 <p>A subscriber can be added to the network in 3 ways:</p>
 <ol>
 <li>
-<p>1. Directly insert into SQL database</p>
+<p>1. Inserted directly into SQL database.</p>
 </li>
 <li>
-<p>2. Automatically, during the first connection: system automatically assign number, contained (IMSI, TMSI, Extension number, ID (internal identifier)</p>
+<p>2. Automatically, during the first connection, system automatically assigns a number, containing (IMSI, TMSI, Extension number, ID (internal identifier).</p>
 </li>
 <li>
-<p>3. Semi- automatically from the Virtual Tele Type (VTY)</p>
+<p>3. Semi- automatically from the Virtual Tele Type (VTY).</p>
 </li>
 </ol>
-<p>Subscribers are stored in /etc/osmocom/hlr.sqlite3, which is an SQLite database file. You are able to view or change the database with sqlite3 command.The easiest way to add, assign, and change subscriber properties is semi-automatically through VTY.</p>
+<p>Subscribers are stored in /opt/fairwaves/api/hlr.sqlite3, which is an SQLite database file. The easiest way to add, assign, and change subscriber properties is semi-automatically through VTY.</p>
 <b>Create the subscriber IMSI 9875648374658</b>
 <pre><code>    OpenBSC# subscriber create imsi 9875648374658
 </code></pre>
 
-<p><strong><em>NOTE:</em></strong> Command subscriber create only assign IMSI number; ID sequences automatically. You should set extension number and name manually.</p>
-<h4>4.3 Changing the subscriber phone number</h4>
-<p>You can set extension phone number of the subscriber with <strong>IMSI 123321123321</strong> to <strong>25822</strong>  by issuing the following VTY command from the enable node:</p>
+<p><strong>NOTE:</strong> The "subscriber create" command assign IMSI number, ID sequences automatically. You should set up extension number and name manually.</p>
+
+<a name="4.3 Changing the subscriber phone number"></a><h4>4.3 Changing the subscriber phone number<a class="anchorlink" href="#4.3 Changing the subscriber phone number"></a></h4>
+
+<p>You can set extension phone number of the subscriber with <strong>IMSI 123321123321</strong> to <strong>25822</strong>  by issuing the following VTY command:</p>
 <pre><code>OpenBSC# subscriber imsi 123321123321 extension 25822
 </code></pre>
 
-<h4>4.4 Changing the subscriber name</h4>
-<p>In order to set the name of subscriber with extension number <strong>25822</strong> to &quot;<strong>Chris</strong>&quot;, you can issue the following command on the from the enable node:   
+<a name="4.4 Changing the subscriber name"></a><h4>4.4 Changing the subscriber name<a class="anchorlink" href="#4.4 Changing the subscriber name"></a></h4>
+
+<p>In order to set subscriber name with extension number <strong>25822</strong> to &quot;<strong>Chris</strong>&quot;, issue the following command:
 </p>
 <pre><code>OpenBSC# subscriber extension 25822 name Chris
 </code></pre>
 
-<p><strong><em>NOTE:</em></strong>
-The name may contain spaces and special characters. You can verify the modified subscriber record by issuing the</p>
+<p><strong>NOTE:</strong>
+The name may contain spaces and special characters. You can verify the modified subscriber record by issuing</p>
 <pre><code>OpenBSC# Show subscriber extension 2522
 </code></pre>
 
-<h4>4.5 Changing the authorization status</h4>
-<p>As the HLR automatically adds records for all subscribers that are actually permitted to use the network, you can set the authorized property of the subscriber using the following VTY command from the enable node: (see information above about auth policy)   
+<a name="4.5 Changing the authorization status"></a><h4>4.5 Changing the authorization status<a class="anchorlink" href="#4.5 Changing the authorization status"></a></h4>
+
+<p>The HLR automatically adds records for all subscribers that are actually permitted to use the network, you can set the authorized property of the subscriber using the following VTY command: (see information above about auth policy)
 </p>
 <pre><code>OpenBSC# subscriber extension 25822 authorized 0
 </code></pre>
 
-<p><strong><em>NOTE:</em></strong>
+<p><strong>NOTE:</strong>
 If you change auth policy to <strong>closed</strong>  (<em>openbsc.cfg</em>), handsets would fail to register but it would still create new entry in subscribers table.
-Set authorised to 1 to allow the handset to your network.</p>
+Set authorised to 1 to allow the handset register to your network.</p>
 <pre><code>OpenBSC# subscriber extension 25822 authorized 1
 </code></pre>
 
-<h4>4.6 Changing subscriber properties</h4>
+<a name="4.6 Changing subscriber properties"></a><h4>4.6 Changing subscriber properties<a class="anchorlink" href="#4.6 Changing subscriber properties"></a></h4>
+
 <p>All commands are single-line commands and always start with identifying the subscriber on which the operation shall be performed. Such identification can be performed by</p>
 <p><strong>IMSI</strong></p>
 <pre><code>    International Mobile Subscriber Identity
@@ -1144,11 +1519,11 @@ Set authorised to 1 to allow the handset to your network.</p>
 </code></pre>
 
 <p>Information about a specific subscriber can be obtained from the HLR by showing the subscriber command.</p>
-<p><strong>For example:</strong> Display information about a subscriber with the <strong>IMSI 123321123321</strong>, you can use the following command:</p>
+<p><strong>For example:</strong> Display information about a subscriber with the <strong>IMSI 123321123321</strong></p>
 <pre><code>OpenBSC# show subscriber imsi 123321123321
 </code></pre>
 
-<p>You'll see   
+<p>You'll see
 </p>
 <pre><code>ID: 3, Authorized: 0
 Name: 'jack'
@@ -1161,28 +1536,45 @@ Pending: 0
 Use count: 1 
 </code></pre>
 
-<p>Also you can get information using the <strong>extension number</strong> </p>
+<p>Also you can get information by <strong>extension number</strong> </p>
 <pre><code>OpenBSC# show subscriber extension 25825
 </code></pre>
 
-<p>or <strong>ID</strong>   
+<p>or <strong>ID</strong>
 </p>
 <pre><code>OpenBSC# show subscriber id 1
 </code></pre>
 
-<a name="5.Configuration via VTY"></a><h4>5. Configuration via VTY<a class="anchorlink" href="#5.Configuration via VTY"></a></h4>
-<p>Along with working on the subscriber database, VTY is used for configuring files as well. The configuration commands are available at runtime, but they are not all applied immediately. It is necessary to save the new configuration and then restart the application.</p>
-<h4>5.1 Connecting</h4>
+<a name="5. Configuration via VTY"></a><h4>5. Configuration via VTY<a class="anchorlink" href="#5. Configuration via VTY"></a></h4>
+<p>VTY can be used for files configuration. Configuration commands are available at runtime, but they are not all applied immediately. It is necessary to save the new configuration and then restart the application.</p>
+
+<a name="5.1 Log in"></a><h4>5.1 Log in<a class="anchorlink" href="#5.1 Log in"></a></h4>
+
 <pre><code>root@fairwaves:/# telnet localhost 4242
 </code></pre>
 
-<p><strong><em>NOTE:</em></strong> This is the default node when connecting to the VTY interface. This node does not require any additional permission and allows
+<p><strong>NOTE:</strong> This is the default node when connecting to the VTY interface. This node does not require any additional permission and allows
 to introspect the application.</p>
+
 <p><strong>Print available commands for that node</strong></p>
 <pre><code>OpenBSC&gt; list
 </code></pre>
 
-<h4>5.2 Privileged mode</h4>
+<p><strong>Enable Logs</strong></p>
+<pre><code>OpenBSC&gt; logging enable
+</code></pre>
+
+<p><strong>Log all messages or not</strong></p>
+<pre><code>OpenBSC&gt; logging filter all (0|1)
+</code></pre>
+
+<p><strong>Set the log level for a specified category</strong></p>
+<pre><code>OpenBSC&gt; logging level (all|rll|cc|mm|rr|rsl|nm|mncc|pag|meas|sccp|msc|mgcp|ho|db|ref|gprs|ns|bssgp|llc|sndcp|nat|ctrl|smpp|lglobal|llapd|linp|lmux|lmi|lmib|lsms) (everything|debug|info|notice|error|fatal)
+</code></pre>
+
+
+<a name="5.2 Privileged Node"></a><h4>5.2 Privileged Node<a class="anchorlink" href="#5.2 Privileged Node"></a></h4>
+
 <p><strong>Turn on privileged mode</strong></p>
 <pre><code>OpenBSC&gt; enable
 </code></pre>
@@ -1224,8 +1616,9 @@ to introspect the application.</p>
 <pre><code>OpenBSC# exit
 </code></pre>
 
-<h4>5.3 Configuration Node</h4>
-<p>After you get in VTY, you are able to change configuration files through the VTY</p>
+<a name="5.3 Configuration Node"></a><h4>5.3 Configuration Node<a class="anchorlink" href="#5.3 Configuration Node"></a></h4>
+
+<p>As soon as you get into VTY command promt, you will be able to change configuration</p>
 <p><strong>Turn on privileged mode command</strong></p>
 <pre><code>OpenBSC&gt; enable
 </code></pre>
@@ -1238,7 +1631,8 @@ to introspect the application.</p>
 <pre><code>OpenBSC(config)# list
 </code></pre>
 
-<h4>5.4 Network Configuration</h4>
+<a name="5.4 Network Configuration"></a><h4>5.4 Network Configuration<a class="anchorlink" href="#5.4 Network Configuration"></a></h4>
+
 <p><strong>Network configuration node</strong></p>
 <pre><code>OpenBSC(config)# network 
 </code></pre>
@@ -1287,12 +1681,42 @@ to introspect the application.</p>
 <pre><code>OpenBSC(config-net)# short name NAME
 </code></pre>
 
-<p><strong><em>NOTE:</em></strong> For the changes to take effect you should write it in to a file (see below)</p>
+<h4>Handover configuration</h4>
+<p>Enable BSC in-call handover between multiple BTS</p>
+<pre><code>OpenBSC(config-net)# handover (0|1)
+</code></pre>
+
+<p>Over how many SACCH frames should the Rx Level of the serving cell be averaged?</p>
+<pre><code>OpenBSC(config-net)# handover window rxlev averaging &lt;1-10&gt;
+</code></pre>
+
+<p>Over how many SACCH frames should the Rx Quality of the serving cell be averaged?</p>
+<pre><code>OpenBSC(config-net)# handover window rxqual averaging &lt;1-10&gt;
+</code></pre>
+
+<p>Over how many SACCH frames should the Rx Level of a neighbor cell be averaged?</p>
+<pre><code>OpenBSC(config-net)# handover window rxlev neighbor averaging &lt;1-10&gt;
+</code></pre>
+
+<p>Every how many SACCH frames should the BSC think about performing a power budget (rx level) handover?</p>
+<pre><code>OpenBSC(config-net)# handover power budget interval &lt;1-99&gt;
+</code></pre>
+
+<p>How large should the hysteresis be, i.e. to prevent continuous handover back and forth</p>
+<pre><code>OpenBSC(config-net)# handover power budget hysteresis &lt;0-999&gt;
+</code></pre>
+
+<p>What is the maximum distance from a BTS, after which we try to perform distance handover?</p>
+<pre><code>OpenBSC(config-net)# handover maximum distance &lt;0-9999&gt;
+</code></pre>
+
+<p><strong>NOTE:</strong> For the changes to take effect you should write it into a file (see below)</p>
 <p><strong>Write running configuration to file (openbsc.cfg)</strong></p>
 <pre><code>OpenBSC(config-net)# write file
 </code></pre>
 
-<h4>5.5 BTS Configuration</h4>
+<a name="5.5 BTS Configuration"></a><h4>5.5 BTS Configuration<a class="anchorlink" href="#5.5 BTS Configuration"></a></h4>
+
 <p><strong>This is the configuration of a single BTS</strong></p>
 <pre><code>OpenBSC(config-net)# bts 0
 </code></pre>
@@ -1305,24 +1729,12 @@ to introspect the application.</p>
 <pre><code>OpenBSC(config-net-bts)# write file
 </code></pre>
 
-<p><strong>Real time output power control</strong></p>
-<p>Set <u>power oml</u> in etc/osmocom/osmo-bts.cfg  instead of  <u>power 0</u> before run</p>
-<pre><code>OpenBSC# max_power_red 188
-</code></pre>
-
-<ul>
-<li>  0 about 1W of output power. </li>
-<li>188 about 3W of output power.</li>
-</ul>
-<p><strong><em>NOTE:</em></strong> In terms of ABIS specific, only even values allow</p>
-
-
-
 <p><strong>More commands for that node</strong></p>
 <pre><code>OpenBSC(config-net-bts)# list
 </code></pre>
 
-<h4>5.6 TRX Configuration</h4>
+<a name="5.6 TRX Configuration"></a><h4>5.6 TRX Configuration<a class="anchorlink" href="#5.6 TRX Configuration"></a></h4>
+
 <p>This node is a sub node of the BTS node and is responsible for configuring TRX .</p>
 <p><strong>This is the configuration of a first transceiver</strong></p>
 <pre><code>OpenBSC(config-net-bts)# trx 0
@@ -1333,12 +1745,95 @@ to introspect the application.</p>
 <pre><code>OpenBSC(config-net-bts-trx)# arfcn 74 
 </code></pre>
 
+<p><strong>Real time output power control</strong></p>
+<p>Set <strong>power oml</strong> in <em>etc/osmocom/osmo-bts.cfg</em> instead of  <strong>power 0</strong> before run.</p>
+<pre><code>OpenBSC(config-net-bts-trx)# max_power_red 188
+</code></pre>
+
+<ul>
+<li>0 about 1W of output power. </li>
+<li>188 about 3W of output power.</li>
+</ul>
+<p><strong>NOTE:</strong>In terms of ABIS specific, only even values allow</p>
+<p><strong>Write running configuration to file (openbsc.cfg)</strong></p>
+<pre><code>OpenBSC(config-net-bts-trx)# write file
+</code></pre>
+
+<p>More VTY commands available at <a href="http://openbsc.osmocom.org/trac/wiki/osmo-nitb_VTY">osmo NITB VTY</a></p>
 <p><strong>Write running configuration to file (openbsc.cfg)</strong></p>
 <pre><code>OpenBSC(config-net-bts-trx)# write file
 </code></pre>
 
 <p>More VTY commands at <a href="http://openbsc.osmocom.org/trac/wiki/osmo-nitb_VTY">osmo NITB VTY</a></p>
-<a name="6.Spectrum License Required"></a><h4>6. Spectrum License Required<a class="anchorlink" href="#6.Spectrum License Required"></a></h4>
+
+<a name="5.7 SMPP Configuration"></a><h4>5.7 SMPP Configuration<a class="anchorlink" href="#5.7 SMPP Configuration"></a></h4>
+
+<p>Use SMPP 3.4 protocol for SMS communication</p>
+<p><strong>SMPP configuration node</strong></p>
+<pre><code>OpenBSC(config)# smpp 
+</code></pre>
+
+<p><strong>Print available commands for that node</strong></p>
+<pre><code>OpenBSC(config-smpp)# list
+</code></pre>
+
+<p><strong>Show running configuration</strong></p>
+<pre><code>OpenBSC(config-smpp)# show running-config
+</code></pre>
+
+<p><strong>Set the local TCP port which listen on for SMPP</strong></p>
+<pre><code>OpenBSC(config-smpp)# local-tcp-port &lt;1-65535&gt;
+</code></pre>
+
+<p><strong>Set the System ID of the SMSC</strong></p>
+<pre><code>OpenBSC(config-smpp)# system-id &lt;ID&gt;  
+</code></pre>
+
+<p><strong>Set the authentication policy of the SMSC</strong></p>
+<pre><code>OpenBSC(config-smpp)# policy &lt;accept-all/closed&gt;
+</code></pre>
+
+<p><strong>accept-all</strong> - Accept all SMPP connections independeint of system ID / passwd
+<br>
+<p><strong>closed</strong>     - Accept only SMPP connections from configured ESMEs
+</p>
+<p><strong>Configure a particular ESME</strong></p>
+<pre><code>OpenBSC(config-smpp)# esme &lt;NAME  Alphanumeric System ID of the ESME&gt; 
+</code></pre>
+
+<p><strong>Print available commands for that node</strong></p>
+<pre><code>OpenBSC(config-smpp-esme)# list 
+</code></pre>
+
+<p><strong>Commands</strong></p>
+<pre><code>route               Configure the route for MO-SMS to be send to this ESME
+default-route       Set the ESME as a default-route for all SMS to unknown destinations
+deliver-src-imsi    Enable the use of IMSI as source addres in DELIVER
+osmocom-extensions  Enable the use of Osmocom SMPP Extensions for this ESME
+dcs-transparent     Enable the transparent pass-through of TP-DCS to SMPP DataCoding
+</code></pre>
+
+<p><strong>Write running configuration to file (openbsc.cfg)</strong></p>
+<pre><code>OpenBSC(config-smpp-esme)# write
+</code></pre>
+
+<p><strong>Example:</strong></p>
+<pre><code>telnet 127.0.0.1 4242
+OpenBSC&gt; enable 
+OpenBSC# configure terminal 
+OpenBSC(config)# smpp 
+OpenBSC(config-smpp)# 
+OpenBSC(config-smpp)# local-tcp-port 2775
+OpenBSC(config-smpp)# system-id OSMO-SMPP
+OpenBSC(config-smpp)# esme OSMPP
+OpenBSC(config-smpp-esme)# password 
+OpenBSC(config-smpp-esme)# password &lt;your_pass&gt;
+OpenBSC(config-smpp-esme)# write 
+</code></pre>
+
+<p>Configuration saved at <em>/etc/osmocom/openbsc.cfg</em></p>
+
+<a name="6. Spectrum License Required"></a><h4>6. Spectrum License Required<a class="anchorlink" href="#6. Spectrum License Required"></a></h4>
 <p>GSM operates in licensed frequency spectrum. As a result if you area covered by any GSM provider you should get an agreement from Regulatory authorities. You cannot operate a BTS without having obtained a license. Below the list Regulatory authorities</p>
 <pre><code>    Country         Name
 
