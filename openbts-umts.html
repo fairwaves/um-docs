@@ -1,0 +1,411 @@
+<html class="global desktop"><head><meta name="viewport" content="user-scalable=yes,width=device-width,initial-scale=1"><style type="text/css">html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h4,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}body{-webkit-text-size-adjust:none}</style><style type="text/css">*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}</style><meta name="viewport" content="initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="global.css">
+<title>Fairwaves</title>
+	</head>
+<body class="homepage">
+	<div class="wrapper">
+	
+		<div id="header">
+					<div class="s1"></div>
+					<div class="menu">
+					
+					<a href="index.html" class="home">Home</a>
+					
+					<a href="faq.html" class="faq">FAQ</a>
+
+                    <a href="how_to's.html" class="how_to's">How to</a>
+					
+					</div>
+					<div class="logo">
+					<img class="imglogo" alt=""  src="logo.png">
+					</div>
+		
+		</div>
+		
+		<div id="content">
+			
+				<div class="container-fluid">
+  
+    <div class="row-fluid">
+	
+      <div class="span3">
+          <ul class="nav nav-list">
+		<h4><a href="#1. Dependencies">1. Dependencies Installation</a></h4>
+		<h4><a href="#2. OpenBTS-UMTS">2. OpenBTS-UMTS Installation</a></h4>
+        <h4><a href="#3. Configure">3. OpenBTS-UMTS Configuration</a></h4>
+        <h4><a href="#4. Registry">4. Subscriber Registry</a></h4>
+        <h4><a href="#5. Run">5. OpenBTS-UMTS Launch</a></h4>
+		</li>
+		</ul>
+      </div>
+      <div class="span9 main">
+   
+<title>UmSITE Quick Start</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h4, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+?
+h1, h2, h3, h4, h4, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h4 tt, h4 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h4:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h4, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h4+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+
+<p>This document will provide an insight on how to run OpenBTS-UMTS with UmTRX. The installation was tested on Ubuntu 14.04 and assumes that user already has installed UHD and UmTRX module. The details of the UHD and UmTRX installation may be found there: <a href="http://umtrx.org/hardware/driver/">http://umtrx.org/hardware/driver/</a>. Please be advised, that unlike GSM, you can't have open registration and thus you can't just use any random SIM card – you need a programmable SIM-card.</p>
+<p>You may find the full version of the article with UMTS explanation in our blog: <a href="https://fairwaves.co/blog/openbts-umts-3g-umtrx/">https://fairwaves.co/blog/openbts-umts-3g-umtrx/</a></p>
+<br>
+<h4><a name="1. Dependencies"></a>1. Dependencies Installation<a class="anchorlink" href="#1. Dependencies"></a></h4>
+<p>To install the necessary dependencies, which required to run OpenBTS-UMTS software, run:</p>
+<pre><code>$ sudo apt-get install libreadline6 libreadline6-dev libosip2-dev</code></pre>
+<p>To install ASN.1 C compiler that turns the formal ASN.1 specifications into the C code:</p>
+<pre><code>$ git clone https://github.com/vlm/asn1c.git
+$ cd asn1c
+$ git checkout 80b3752c8093251a1ef924097e9894404af2d304
+$ ./configure
+$ make
+$ sudo make install</code></pre>
+
+<p>OpenBTS uses the coredumper shared library to produce meaningful debugging information if OpenBTS crashes:</p>
+<pre><code>$ git clone https://github.com/RangeNetworks/libcoredumper.git
+$ cd libcoredumper
+$ sudo ./build.sh
+$sudo dpkg -i libcoredumper1_1.2.1-1_amd64.deb libcoredumper-dev_1.2.1-1_amd64.deb</code></pre>
+
+<h4><a name="2. OpenBTS-UMTS"></a>2. OpenBTS-UMTS Installation<a class="anchorlink" href="#2. OpenBTS-UMTS"></a></h4>
+<p>To install OpenBTS-UMTS itself:</p>
+<pre><code>$ git clone -b fairwaves/umtrx https://github.com/fairwaves/OpenBTS-UMTS
+$ cd OpenBTS-UMTS
+$ git submodule init
+$ git submodule update
+$ sudo NodeManager/install_libzmq.sh
+$ ./autogen.sh
+$ ./configure
+$ make
+$ sudo make install</code></pre>
+
+<h4><a name="3. Configure"></a>3. OpenBTS-UMTS Configuration<a class="anchorlink" href="#3. Configure"></a></h4>
+<p>To setup OpenBTS-UMTS, it may be needed to modify the settings such as ARFCN, DNS, Firewall. Navigate to ~/OpenBTS-UMTS/apps folder and open OpenBTS-UMTS.example.sql file with the preferable text editor. You may need to edit following options:</p>
+<ul>
+<li>&#8226 'GGSN.DNS' set to '8.8.8.8' to enable Google DNS.</li>
+<li>&#8226 'GGSN.Firewall.Enable' set to '0' to disable Firewall.</li>
+<li>&#8226 'UMTS.Radio.Band' – set the band you are going to use. Select from 850, 900, 1700, 1800, 1900 or 2100.</li>
+<li>&#8226 'UMTS.Radio.C0' – set the UARFCN. Range of valid values depend upon the selected operating band. Please, ensure that you are using free operating band.</li>
+</ul>
+<p>To create folders and working database:</p>
+<pre><code>$ sudo mkdir /var/log/OpenBTS-UMTS
+$ cd /etc/OpenBTS
+$ sudo sqlite3 /etc/OpenBTS/OpenBTS-UMTS.db ".read OpenBTS-UMTS.example.sql"
+$ sudo cp TransceiverUHD/transceiver ~/OpenBTS-UMTS/
+$ sudo cp TransceiverUHD/transceiver apps</code></pre>
+<p>It's necessary to setup forwarding in iptables to properly forward data between devices, host machine, and the Internet:</p>
+<pre><code>$ sudo su
+$ iptables -t nat -A POSTROUTING -j MASQUERADE -o eth0
+$ echo 1 > /proc/sys/net/ipv4/ip_forward
+$ exit </code></pre>
+<p>If you have Internet connection through the another interface (for example, Wi-Fi), you need to change eth0 to the applicable one (i.e., wlan0). Please note, that you need to setup forwarding in iptables every time after you computer rebooted.</p>
+
+<h4><a name="4. Registry"></a>4. Subscriber Registry<a class="anchorlink" href="#4. Registry"></a></h4>
+<p>It's important to install Subscriber Registry API and SIP Authentication Server to be able to launch OpenBTS-UMTS. Subscriber Registry controls database of subscriber information and in fact works as HLR (Home Location Registry):</p>
+<pre><code>$ git clone https://github.com/RangeNetworks/subscriberRegistry.git
+$ cd subscriberRegistry
+$ git submodule init
+$ git submodule update
+$ sudo NodeManager/install_libzmq.sh
+$ autoreconf -i
+$ ./configure
+$ make
+$ sudo make install
+$ sudo mkdir /var/lib/asterisk/
+$ sudo mkdir /var/lib/asterisk/sqlite3dir/
+$ sudo cp apps/comp128 ~/OpenBTS-UMTS/
+$ sudo cp apps/comp128 ~/OpenBTS-UMTS/apps/
+$ sudo cp apps/comp128 /OpenBTS</code></pre>
+
+<h4><a name="5. Run"></a>5. OpenBTS-UMTS Launch<a class="anchorlink" href="#5. Run"></a></h4>
+<p>To run OpenBTS-UMTS and Subscriber Registry:</p>
+<pre><code>$ cd OpenBTS-UMTS/apps
+$ sudo ./OpenBTS-UMTS
+$ cd subscriberRegistry/apps
+$ sudo ./sipauthserve</code></pre>
+<p>To add the subscriber to the registry, you need to know IMSI and K_i value of your programmable SIM card. There are two common ways to get the values. The only way to use SIMs from another provider is to obtain the K_i through a roaming interface to the provider's HLR/HSS. The second way is to buy test SIM-card and flash it using the programmator and pysim utility (<a href="http://cgit.osmocom.org/pysim/">http://cgit.osmocom.org/pysim/</a>). Navigate to ~/subscriberRegistry/NodeManager/ and execute:</p>
+<pre><code>$ sudo ./nmcli.py sipauthserve subscribers create "name" imsi msisdn ki</code></pre>
+<p>Values imsi, msisdn and ki should be taken from your SIM-card.</p>
+<p>Now, connect your phone to the network and test 3G. That's it!</p>
+
+</body>
+</html>
