@@ -4,6 +4,17 @@ body{font-size:10px;font-family:sans-serif;padding-bottom:40px}.wrapper{width:98
 .grid_11{float:left;width:450px;padding:20px;margin-left:80px;padding-left:65px}
 
 
+/* Grid_13 */ 
+
+.grid_13{
+    float:left;
+    width:450px;
+    padding:20px;
+    margin-left:90px;
+    padding-left:40px;
+    padding-bottom:40px;
+}
+
 /* Drop Vert */ 
 
 .drop_vert_menu {
