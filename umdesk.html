@@ -59,6 +59,7 @@
      <li><a href="#2.2 Test call"><span>2.2 Test call</span></a></li>
      <li><a href="#2.3 Log in"><span>2.3 Log in</span></a></li>
      <li><a href="#2.4 IP and network configuration (optional)"><span>2.4 Network configuration</span></a></li>   
+     <li><a href="#2.5 A5 1/2 encryption configuration (optional)"><span>2.5 Encryption configuration</span></a></li>
         </ul>
     </ul>
 	</li>
@@ -360,7 +361,8 @@ img {
 <p>2.1 Getting started</p>
 <p>2.2 Test call
 <p>2.3 Log in</p>
-<p>2.4 IP and network configuration (optional) </p>
+<p>2.4 IP and network configuration (optional)</p>
+<p>2.5 A5 1/2 encryption configuration (optional)</p>
 <br>
 <br>
 <br>
@@ -558,6 +560,25 @@ img {
 
 <p>Refer to Ubuntu documentation <a href="www.help.ubuntu.com/14.04/serverguide/network-configuration.html">UBUNTU</a> for details
 </p>
+    
+<h4><a name="2.5 A5 1/2 encryption configuration (optional)"></a>2.5 A5 1/2 encryption configuration (optional)<a class="anchorlink" href="#2.5 A5 1/2 encryption configuration (optional)"></a></h4>
+
+<p>Open /etc/osmocom/openbsc.cfg configuration file and change encryption a5 0 to encryption a5 1. Restart osmo-nitb:</p>
+<pre><code>Shell&gt; sudo sv restart osmo-nitb
+</code></pre>
+
+<p>In order to perform cryptographic authentication of the subscriber, his Ki needs to be known to the HLR/AUC. Furthermore, the
+authentication algorithm implemented on the SIM card (A3/A8) must match that of the algorithm configured in the HLR.</p>
+
+<p>In order to configure a subscriber for COMP128v1 and to set his Ki, you can use the following VTY command from the enable
+node:</p>
+
+<pre><code>Shell&gt; OpenBSC# subscriber extension 2342 a3a8 comp128v1 000102030405060708090a0b0c0d0e0f
+</code></pre>
+
+<p>If you prefer to provision the SIM cards yourself, you can use the pySim tool available from <a href="http://cgit.osmocom.org/cgit/pysim/">http://cgit.osmocom.org/cgit/pysim/</a> .
+It has the ability to append the newly-provisioned SIM cards to an existing HLR database, please check its --write-hlr
+command line argument.</p>
 
 </body>
 </html>
