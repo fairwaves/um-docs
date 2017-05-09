@@ -57,7 +57,8 @@
      <li><a href="#2.2 Getting started"><span>2.2 Getting started</span></a></li>
      <li><a href="#2.3 Test call"><span>2.3 Test call</span></a></li>
      <li><a href="#2.4 Log in"><span>2.4 Log in</span></a></li>
-     <li><a href="#2.5 IP and network configuration (optional)"><span>2.5 Network configuration</span></a></li>   
+     <li><a href="#2.5 IP and network configuration (optional)"><span>2.5 Network configuration</span></a></li>
+     <li><a href="#2.6 Base station sensors"><span>2.6 Base station sensors</span></a></li>    
         </ul>
     </ul>
 	</li>
@@ -362,6 +363,7 @@ img {
 <p>2.3 Test call
 <p>2.4 Log in</p>
 <p>2.5 IP and network configuration (optional) </p>
+<p>2.6 Base station sensors </p>
 <br>
 <br>
 <br>
@@ -579,6 +581,61 @@ Generally, the TRX ID of BCCH is fixed to be the smallest TRX ID in the cell.</p
 We also recommend to keeping the configuration for the 
 <u>eth1:1</u> (192.168.50.50/24) because it's used to as a backup IP address. If you
 want to configure a static IP address, change <u>eth1</u> configuration.</p>
+
+<h4><a name="2.6 Base station sensors"></a>2.6 Base station sensors<a class="anchorlink" href="2.6 Base station sensors"></a></h4>
+
+<p> In order to obtain insights of temperature, voltage and TRX power of the base station you can run:
+
+<pre><code>Shell&gt; umtrx_query_sensors  </code></pre>
+
+<p>The output is:</p> 
+ 
+<pre><code>Shell&gt; Sensors:
+            TempA = 34.312500 C
+            TempB = 35.187500 C
+       VoltagePR1 =  2.580000 V
+       VoltagePF1 =  3.280000 V
+       VoltagePR2 =  0.760000 V
+       VoltagePF2 =  0.000000 V
+      Voltagezero =  0.000000 V
+       VoltageVin = 23.620000 V
+     VoltageVinPA = 23.640000 V
+     VoltageDCOUT = 21.640000 V
+TRX 1 power detector:
+              VPF =   3.26  V
+               PF =  65.2   dBm
+              VPR =   2.58  V
+               PR =  51.6   dBm
+             VSWR =   1.53
+            Gamma =   0.209
+      Return Loss =  13.6   dB
+    Mismatch Loss =   0.194 dB
+    Through power =  95.63  %
+  Reflected power =   4.37  %
+TRX 2 power detector:
+              VPF =   0.00  V
+               PF =   0.0   dBm
+              VPR =   0.76  V
+               PR =  15.2   dBm
+             VSWR =    nan
+            Gamma =   5.754
+      Return Loss = -15.2   dB
+    Mismatch Loss =     nan dB
+    Through power =    nan  %
+  Reflected power =    nan  %  </code></pre>
+      
+      
+    <p><strong>NOTE:</strong> If 'Return Loss' value: </p>
+    <p> < 6dB = major alarm state (100% malfunction)</p> 
+    <p> < 10db = minor alarm state (Check antenna for water subject)</p> 
+    <p> > 10dB = partly good (probably bad antenna or water in cable/connector)</p>     
+    <p> > 12dB = good </p> 
+    <p> > 15dB = excellent</p>      
+   
+ 
+ 
+  
+
 
 </body>
 </html>
