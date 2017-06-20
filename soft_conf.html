@@ -1747,13 +1747,14 @@ to introspect the application.</p>
 
 <p><strong>Real time output power control</strong></p>
 <p>Set <strong>power oml</strong> in <em>etc/osmocom/osmo-bts.cfg</em> instead of  <strong>power 0</strong> before run.</p>
-<pre><code>OpenBSC(config-net-bts-trx)# max_power_red 188
+<pre><code>OpenBSC(config-net-bts-trx)# max_power_red 35
 </code></pre>
+					
+<p>max_power_red parameter specifies how much dB power can be reduced</p>
+<p>if you have 3W output power ~ 35 dBm and for the test purposes assume you may need 0.2W ~ 23 dBm, then set max_power_red = 35 - 23 = 12.
+<p>use <a hfref='http://coolconversion.com/electronics/W-dBm/'>free tool to convert Watt to dBm</a></p>
 
-<ul>
-<li>0 about 1W of output power. </li>
-<li>188 about 3W of output power.</li>
-</ul>
+
 <p><strong>NOTE:</strong>In terms of ABIS specific, only even values allow</p>
 <p><strong>Write running configuration to file (openbsc.cfg)</strong></p>
 <pre><code>OpenBSC(config-net-bts-trx)# write file
