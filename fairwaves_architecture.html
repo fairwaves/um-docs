@@ -455,16 +455,16 @@ remote villages, disaster relief and military operations.</p>
 <li>&#8226 No backhaul requirement</li>
 <li>&#8226 Can be deployed in a day</li>
 </ul>
-<p><img src="http://s019.radikal.ru/i612/1508/33/84fcb12e0853.png" /></p>
+<p><img src="./content/architecture/1cell.png" /></p>
 <p>A single base station provides coverage of up to 10km, depending upon the landscape.</p>
 <p><strong>Dual-site</strong></p>
 <p>Up to two villages can be connected via a microwave radio or long range Wi-Fi etc. link.</p>
-<p><img src="http://s50.radikal.ru/i130/1508/bc/22142888e5f3.png" /></p>
+<p><img src="./content/architecture/dual.png" /></p>
 <p>A distributed core ensures that calls can still be made, and SMS messages sent and received, within each area
 of coverage in the event of link failure.</p>
 <p><strong>Multi-site</strong></p>
 <p>In order to connect three or more sites a UmCORE Local server is required</p>
-<p><img src="http://s017.radikal.ru/i400/1508/d9/7c73384d9ae5.png" /></p>
+<p><img src="./content/architecture/Multi-site.png" /></p>
 <p><strong>The UmCORE Local provides:</strong> </p>
 <ul>
 <li>&#8226 HLR and billing synchronization</li>
@@ -482,7 +482,7 @@ protocols.</p>
 <p>This configuration allows for existing MNO SIM cards to be used.</p>
 <p>External traffic is routed to and from the MNO core network via the UmCORE Cloud, which provides a gateway
 service, along with an additional layer of distributed HLR resilience.</p>
-<p><img src="http://s018.radikal.ru/i504/1508/f8/e25212f3df0e.png" /></p>
+<p><img src="./content/architecture/mno.png" /></p>
 <p>UmCORE Cloud automatically retrieves charging data from UmSITE/UmCORE Local and is used to provide
 integration with external billing systems. Real-time settlement of prepaid accounts is also possible. Indeed, the
 Fairwaves billing gateway can be customized to fit most MNO system requirements, both in terms of format and
@@ -500,7 +500,7 @@ routed via the MNO core.</em></p>
 <p>The network capacity and coverage of all of the configurations previously described may be increased by
 deploying additional UmSITEs, either co-located or remote and connected to a primary site via a reliable network
 link.</p>
-<p><img src="http://s017.radikal.ru/i416/1508/6a/6b6ba8fba1e9.png" /></p>
+<p><img src="./content/architecture/scale.png" /></p>
 <p>The first UmSITE is configured as master and along with serving as a BTS it implements GSM functions such as
 BSC, MSC, VLR, HLR and SMSC. However, the second UmSITE is configured as slave and operates as a BTSonly.
 A reliable network link is recommended since the slave will become inoperable in the event of link failure</p>
